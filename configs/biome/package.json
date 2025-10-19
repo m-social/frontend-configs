@@ -1,8 +1,13 @@
 {
 	"name": "@m-social/biome-config",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Shared biome configs for projects used at M-Social",
-	"keywords": ["m-social", "biome", "config", "biome-config"],
+	"keywords": [
+		"m-social",
+		"biome",
+		"config",
+		"biome-config"
+	],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -25,7 +30,11 @@
 		"./react": "./react.jsonc",
 		"./svelte": "./svelte.jsonc"
 	},
-	"files": ["base.jsonc", "react.jsonc", "svelte.jsonc"],
+	"files": [
+		"base.jsonc",
+		"react.jsonc",
+		"svelte.jsonc"
+	],
 	"peerDependencies": {
 		"@biomejs/biome": "^2.2.0"
 	},
