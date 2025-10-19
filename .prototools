@@ -1,0 +1,3 @@
+node = "24.10.0"
+npm = "bundled"
+pnpm = "10.18.3"

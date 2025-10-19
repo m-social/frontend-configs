@@ -1,0 +1,10 @@
+{
+	"name": "@m-social/prettier-config-utils",
+	"version": "0.1.0",
+	"private": true,
+	"license": "MIT",
+	"files": ["src"],
+	"exports": {
+		".": "./src/index.ts"
+	}
+}

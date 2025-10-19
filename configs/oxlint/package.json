@@ -1,0 +1,59 @@
+{
+	"name": "@m-social/oxlint-config",
+	"version": "0.2.0",
+	"description": "Shared oxlint configs for projects used at M-Social",
+	"keywords": ["m-social", "oxlint", "config", "oxlint-config"],
+	"author": {
+		"name": "M-Social",
+		"url": "https://msocialproduction.com"
+	},
+	"contributors": [
+		{
+			"name": "Artem Pitikin",
+			"email": "a.pitikin@msocialproduction.com"
+		}
+	],
+	"scripts": {
+		"release": "pnpm publish"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/m-social/frontend-configs.git",
+		"directory": "configs/oxlint"
+	},
+	"type": "module",
+	"exports": {
+		"./typescript.json": "./typescript.json",
+		"./react.json": "./react.json",
+		"./next.json": "./next.json",
+		"./eslint/react": {
+			"types": "./eslint/react.d.ts",
+			"import": "./eslint/react.js"
+		},
+		"./eslint/type-aware": {
+			"types": "./eslint/type-aware.d.ts",
+			"import": "./eslint/type-aware.js"
+		}
+	},
+	"files": ["typescript.json", "react.json", "next.json", "eslint"],
+	"devDependencies": {
+		"eslint": "^9.37.0",
+		"oxlint": "^1.19.0",
+		"oxlint-tsgolint": "^0.2.0",
+		"typescript": "^5.9.3"
+	},
+	"peerDependencies": {
+		"eslint": "^9.22.0",
+		"oxlint": "^1.19.0",
+		"oxlint-tsgolint": "^0.2.0"
+	},
+	"peerDependenciesMeta": {
+		"eslint": {
+			"optional": true
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

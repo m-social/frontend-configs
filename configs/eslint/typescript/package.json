@@ -1,0 +1,51 @@
+{
+	"name": "@m-social/eslint-config-typescript",
+	"version": "1.0.0-next.4",
+	"description": "Shared ESLint config for TypeScript used by M-Social projects",
+	"keywords": ["m-social", "eslint", "eslint-config", "typescript"],
+	"author": {
+		"name": "M-Social",
+		"url": "https://msocialproduction.com"
+	},
+	"contributors": [
+		{
+			"name": "Artem Pitikin",
+			"email": "a.pitikin@msocialproduction.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/m-social/frontend-configs.git",
+		"directory": "configs/eslint/typescript"
+	},
+	"license": "MIT",
+	"files": ["dist", "src"],
+	"type": "module",
+	"types": "./dist/index.d.ts",
+	"module": "./dist/index.js",
+	"main": "./dist/index.cjs",
+	"exports": {
+		".": {
+			"@m-social/frontend-configs": "./src/index.ts",
+			"types": {
+				"import": "./dist/index.d.ts",
+				"require": "./dist/index.d.cts"
+			},
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"scripts": {
+		"build": "tsdown"
+	},
+	"dependencies": {
+		"@eslint/js": "^9.22.0",
+		"typescript-eslint": "catalog:eslint"
+	},
+	"peerDependencies": {
+		"eslint": "catalog:eslint"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

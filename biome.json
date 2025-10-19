@@ -1,0 +1,24 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+	"extends": ["./configs/biome/base.jsonc"],
+	"files": {
+		"includes": ["**", "!.changeset"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/.vscode/**"],
+			"json": {
+				"parser": {
+					"allowComments": true,
+					"allowTrailingCommas": true
+				}
+			}
+		}
+	]
+}

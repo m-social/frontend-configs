@@ -1,0 +1,42 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+	"extends": ["./base.jsonc"],
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							"react",
+							["react-native", "next"],
+							":BLANK_LINE:",
+							":NODE:",
+							":BLANK_LINE:",
+							":PACKAGE:",
+							":BLANK_LINE:",
+							["$shared/**", "@/shared/**", "#shared/**"],
+							["$entities/**", "@/entities/**", "#entities/**"],
+							["$features/**", "@/features/**", "#features/**"],
+							["$widgets/**", "@/widgets/**", "#widgets/**"],
+							["$pages/**", "@/pages/**", "#pages/**"],
+							["$app/**", "@/app/**", "#app/**"],
+							":BLANK_LINE:",
+							":ALIAS:",
+							":BLANK_LINE:",
+							[
+								":PATH:",
+								"!./*.module.css",
+								"!./*.module.scss",
+								"!./*.css",
+								"!./*.css.ts"
+							],
+							":BLANK_LINE:",
+							["./*.module.css", "./*.module.scss", "./*.css", "./*.css.ts"]
+						]
+					}
+				}
+			}
+		}
+	}
+}

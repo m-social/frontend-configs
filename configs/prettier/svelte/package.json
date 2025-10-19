@@ -1,0 +1,55 @@
+{
+	"name": "@m-social/prettier-config-svelte",
+	"version": "1.0.0-next.5",
+	"description": "Shared Prettier config for Svelte projects used at M-Social",
+	"keywords": ["m-social", "prettier", "config", "prettier-config", "svelte"],
+	"author": {
+		"name": "M-Social",
+		"url": "https://msocialproduction.com"
+	},
+	"contributors": [
+		{
+			"name": "Artem Pitikin",
+			"email": "a.pitikin@msocialproduction.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/m-social/frontend-configs.git",
+		"directory": "configs/prettier/svelte"
+	},
+	"license": "MIT",
+	"files": ["dist", "src"],
+	"type": "module",
+	"types": "./dist/index.d.cts",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"exports": {
+		".": {
+			"@m-social/frontend-configs": "./src/index.ts",
+			"types": {
+				"import": "./dist/index.d.ts",
+				"require": "./dist/index.d.cts"
+			},
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"scripts": {
+		"build": "tsdown"
+	},
+	"dependencies": {
+		"@ianvs/prettier-plugin-sort-imports": "catalog:prettier",
+		"@m-social/prettier-config": "workspace:*",
+		"prettier-plugin-svelte": "^3.3.3"
+	},
+	"devDependencies": {
+		"@m-social/prettier-config-utils": "workspace:*"
+	},
+	"peerDependencies": {
+		"prettier": "catalog:prettier"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
