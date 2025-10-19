@@ -1,8 +1,13 @@
 {
 	"name": "@m-social/oxlint-config",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Shared oxlint configs for projects used at M-Social",
-	"keywords": ["m-social", "oxlint", "config", "oxlint-config"],
+	"keywords": [
+		"m-social",
+		"oxlint",
+		"config",
+		"oxlint-config"
+	],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -36,7 +41,12 @@
 			"import": "./eslint/type-aware.js"
 		}
 	},
-	"files": ["typescript.json", "react.json", "next.json", "eslint"],
+	"files": [
+		"typescript.json",
+		"react.json",
+		"next.json",
+		"eslint"
+	],
 	"devDependencies": {
 		"eslint": "^9.37.0",
 		"oxlint": "^1.19.0",
