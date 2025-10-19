@@ -1,0 +1,37 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+	"extends": ["./base.jsonc"],
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							"svelte",
+							"@sveltejs/**",
+							":BLANK_LINE:",
+							":NODE:",
+							":BLANK_LINE:",
+							":PACKAGE:",
+							":BLANK_LINE:",
+							["$*/**", "!$lib/**"],
+							"./$types",
+							":BLANK_LINE:",
+							["$lib/shared/**", "@/shared/**", "#shared/**"],
+							["$lib/entities/**", "@/entities/**", "#entities/**"],
+							["$lib/features/**", "@/features/**", "#features/**"],
+							["$lib/widgets/**", "@/widgets/**", "#widgets/**"],
+							["$lib/pages/**", "@/pages/**", "#pages/**"],
+							["$lib/app/**", "@/app/**", "#app/**"],
+							":BLANK_LINE:",
+							":ALIAS:",
+							":BLANK_LINE:",
+							":PATH:"
+						]
+					}
+				}
+			}
+		}
+	}
+}

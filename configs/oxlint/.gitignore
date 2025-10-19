@@ -1,0 +1,9 @@
+.DS_Store
+.idea
+.pnpm-store
+*.local
+*.log
+/.vscode/
+dist
+node_modules
+

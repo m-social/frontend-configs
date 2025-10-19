@@ -1,0 +1,50 @@
+{
+	"name": "@m-social/prettier-config",
+	"version": "1.0.0-next.4",
+	"description": "Base Prettier config used internally at M-Social",
+	"keywords": ["m-social", "prettier", "config", "prettier-config"],
+	"author": {
+		"name": "M-Social",
+		"url": "https://msocialproduction.com"
+	},
+	"contributors": [
+		{
+			"name": "Artem Pitikin",
+			"email": "a.pitikin@msocialproduction.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/m-social/frontend-configs.git",
+		"directory": "configs/prettier/base"
+	},
+	"license": "MIT",
+	"files": ["dist", "src"],
+	"type": "module",
+	"types": "./dist/index.d.cts",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"exports": {
+		".": {
+			"@m-social/frontend-configs": "./src/index.ts",
+			"types": {
+				"import": "./dist/index.d.ts",
+				"require": "./dist/index.d.cts"
+			},
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"scripts": {
+		"build": "tsdown"
+	},
+	"dependencies": {
+		"@prettier/plugin-oxc": "^0.0.4"
+	},
+	"peerDependencies": {
+		"prettier": "catalog:prettier"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
