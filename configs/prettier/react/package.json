@@ -1,8 +1,14 @@
 {
 	"name": "@m-social/prettier-config-react",
-	"version": "1.0.0-next.4",
+	"version": "1.0.0",
 	"description": "Shared Prettier config for React projects used at M-Social",
-	"keywords": ["m-social", "prettier", "config", "prettier-config", "react"],
+	"keywords": [
+		"m-social",
+		"prettier",
+		"config",
+		"prettier-config",
+		"react"
+	],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -19,7 +25,10 @@
 		"directory": "configs/prettier/react"
 	},
 	"license": "MIT",
-	"files": ["dist", "src"],
+	"files": [
+		"dist",
+		"src"
+	],
 	"type": "module",
 	"types": "./dist/index.d.cts",
 	"main": "./dist/index.cjs",

@@ -1,8 +1,13 @@
 {
 	"name": "@m-social/prettier-config",
-	"version": "1.0.0-next.4",
+	"version": "1.0.0",
 	"description": "Base Prettier config used internally at M-Social",
-	"keywords": ["m-social", "prettier", "config", "prettier-config"],
+	"keywords": [
+		"m-social",
+		"prettier",
+		"config",
+		"prettier-config"
+	],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -19,7 +24,10 @@
 		"directory": "configs/prettier/base"
 	},
 	"license": "MIT",
-	"files": ["dist", "src"],
+	"files": [
+		"dist",
+		"src"
+	],
 	"type": "module",
 	"types": "./dist/index.d.cts",
 	"main": "./dist/index.cjs",
