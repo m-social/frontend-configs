@@ -5,7 +5,6 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm -r build",
-		"release": "pnpm publish -r",
 		"lint": "biome check",
 		"format": "biome check --write && prettier --write **/*.md *.md"
 	},

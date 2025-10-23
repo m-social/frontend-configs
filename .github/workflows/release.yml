@@ -43,9 +43,8 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm release
-          commit: '🔖 release'
-          title: '[ci] release'
+          commit: '🔖 version packages'
+          title: '🔖 version packages'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
