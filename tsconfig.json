@@ -5,7 +5,6 @@
 		"lib": ["ESNext"],
 		"skipLibCheck": true,
 		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": false,
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
 		"moduleResolution": "bundler",
