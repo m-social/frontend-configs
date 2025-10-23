@@ -23,7 +23,6 @@ export default function typescriptConfig({
 }: TypescriptConfigSettings) {
 	return defineConfig(
 		eslint.configs.recommended,
-		// @ts-expect-error
 		tseslint.configs.recommendedTypeChecked,
 		{
 			name: "m-social/typescript",
