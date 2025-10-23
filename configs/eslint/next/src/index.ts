@@ -1,7 +1,6 @@
 import reactConfig, {
 	type ReactConfigSettings,
 } from "@m-social/eslint-config-react";
-// @ts-expect-error
 import next from "@next/eslint-plugin-next";
 import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
@@ -15,16 +14,8 @@ export default function nextConfig(settings: NextConfigSettings) {
 			"m-social/next/ignore"
 		),
 		reactConfig(settings),
-		{
-			name: "m-social/next/next",
-			plugins: {
-				"@next/next": next,
-			},
-			rules: {
-				...next.configs.recommended.rules,
-				...next.configs["core-web-vitals"].rules,
-			},
-		},
+		next.configs.recommended,
+		next.configs["core-web-vitals"],
 		{
 			name: "m-social/next",
 			languageOptions: {
