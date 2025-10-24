@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/eslint-config-next",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Shared ESLint config for Next.js used by M-Social projects",
 	"keywords": [
 		"m-social",
