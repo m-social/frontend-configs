@@ -5,6 +5,7 @@ import type { Config } from "prettier";
 const require = createRequire(import.meta.url);
 
 const baseConfig = {
+	printWidth: 100,
 	tabWidth: 2,
 	useTabs: true,
 	semi: true,
