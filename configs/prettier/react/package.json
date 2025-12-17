@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/prettier-config-react",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Shared Prettier config for React projects used at M-Social",
 	"keywords": [
 		"m-social",
