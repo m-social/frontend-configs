@@ -49,14 +49,14 @@
 	],
 	"devDependencies": {
 		"eslint": "^9.37.0",
-		"oxlint": "^1.19.0",
-		"oxlint-tsgolint": "^0.2.0",
+		"oxlint": "^1.33.0",
+		"oxlint-tsgolint": "^0.9.1",
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
 		"eslint": "^9.22.0",
-		"oxlint": "^1.19.0",
-		"oxlint-tsgolint": "^0.2.0"
+		"oxlint": "^1.33.0",
+		"oxlint-tsgolint": "^0.9.1"
 	},
 	"peerDependenciesMeta": {
 		"eslint": {
