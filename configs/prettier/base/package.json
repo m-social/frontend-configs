@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/prettier-config",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"description": "Base Prettier config used internally at M-Social",
 	"keywords": [
 		"m-social",

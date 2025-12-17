@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/oxlint-config",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Shared oxlint configs for projects used at M-Social",
 	"keywords": [
 		"m-social",

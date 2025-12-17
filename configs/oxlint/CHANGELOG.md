@@ -1,5 +1,13 @@
 # @m-social/oxlint-config
 
+## 0.3.1
+
+### Patch Changes
+
+- [#14](https://github.com/m-social/frontend-configs/pull/14) [`bc2a118`](https://github.com/m-social/frontend-configs/commit/bc2a118e59c234b902dbfa64eb84a7973f38866b) Thanks [@kasmacioma](https://github.com/kasmacioma)! - ✨ add new type-aware rules to eslint integration
+
+- [#14](https://github.com/m-social/frontend-configs/pull/14) [`bc2a118`](https://github.com/m-social/frontend-configs/commit/bc2a118e59c234b902dbfa64eb84a7973f38866b) Thanks [@kasmacioma](https://github.com/kasmacioma)! - ⬆️ upgrade oxlint & oxlint-tsgolint
+
 ## 0.3.0
 
 ### Minor Changes

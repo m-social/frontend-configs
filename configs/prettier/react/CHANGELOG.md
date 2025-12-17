@@ -1,5 +1,16 @@
 # @m-social/prettier-config-react
 
+## 2.0.0
+
+### Major Changes
+
+- [#12](https://github.com/m-social/frontend-configs/pull/12) [`79c31d3`](https://github.com/m-social/frontend-configs/commit/79c31d3f7c93140974bc7ee2308775677daaf0e8) Thanks [@kasmacioma](https://github.com/kasmacioma)! - 💥 increase printWidth to 100
+
+### Patch Changes
+
+- Updated dependencies [[`79c31d3`](https://github.com/m-social/frontend-configs/commit/79c31d3f7c93140974bc7ee2308775677daaf0e8)]:
+  - @m-social/prettier-config@2.0.0
+
 ## 1.0.1
 
 ### Patch Changes
