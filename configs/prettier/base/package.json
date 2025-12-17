@@ -47,7 +47,7 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@prettier/plugin-oxc": "^0.0.4"
+		"@prettier/plugin-oxc": "^0.1.3"
 	},
 	"peerDependencies": {
 		"prettier": "catalog:prettier"
