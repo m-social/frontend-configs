@@ -111,7 +111,8 @@
 		"getter-return": "error",
 		"no-misleading-character-class": "error",
 		"no-undef": "error",
-		"no-unreachable": "error"
+		"no-unreachable": "error",
+		"curly": "warn"
 	},
 	"overrides": [
 		{
