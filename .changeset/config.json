@@ -1,6 +1,6 @@
 {
 	"$schema": "https://cdn.jsdelivr.net/npm/@changesets/config@3.0.5/schema.json",
-	"changelog": ["@changesets/changelog-github", { "repo": "m-social/frontend-configs" }],
+	"changelog": ["@svitejs/changesets-changelog-github-compact", { "repo": "m-social/frontend-configs" }],
 	"commit": false,
 	"fixed": [],
 	"linked": [],
