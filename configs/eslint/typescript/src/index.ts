@@ -18,42 +18,37 @@ export interface TypescriptConfigSettings {
 	tsconfigRootDir: string;
 }
 
-export default function typescriptConfig({
-	tsconfigRootDir,
-}: TypescriptConfigSettings) {
-	return defineConfig(
-		eslint.configs.recommended,
-		tseslint.configs.recommendedTypeChecked,
-		{
-			name: "m-social/typescript",
-			languageOptions: {
-				ecmaVersion: "latest",
-				sourceType: "module",
-				parserOptions: {
-					projectService: true,
-					tsconfigRootDir,
-				},
+export default function typescriptConfig({ tsconfigRootDir }: TypescriptConfigSettings) {
+	return defineConfig(eslint.configs.recommended, tseslint.configs.recommendedTypeChecked, {
+		name: "m-social/typescript",
+		languageOptions: {
+			ecmaVersion: "latest",
+			sourceType: "module",
+			parserOptions: {
+				projectService: true,
+				tsconfigRootDir,
 			},
-			rules: {
-				"no-undef": "off",
+		},
+		rules: {
+			"no-undef": "off",
+			curly: "warn",
 
-				"@typescript-eslint/consistent-type-imports": [
-					"error",
-					{
-						prefer: "type-imports",
-						fixStyle: "inline-type-imports",
-					},
-				],
-				"@typescript-eslint/ban-ts-comment": "warn",
-				"@typescript-eslint/no-explicit-any": "warn",
-				"@typescript-eslint/no-unused-vars": [
-					"error",
-					{
-						argsIgnorePattern: "^_",
-						ignoreRestSiblings: true,
-					},
-				],
-			},
-		}
-	);
+			"@typescript-eslint/consistent-type-imports": [
+				"error",
+				{
+					prefer: "type-imports",
+					fixStyle: "inline-type-imports",
+				},
+			],
+			"@typescript-eslint/ban-ts-comment": "warn",
+			"@typescript-eslint/no-explicit-any": "warn",
+			"@typescript-eslint/no-unused-vars": [
+				"error",
+				{
+					argsIgnorePattern: "^_",
+					ignoreRestSiblings: true,
+				},
+			],
+		},
+	});
 }
