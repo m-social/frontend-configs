@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/eslint-config-typescript",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Shared ESLint config for TypeScript used by M-Social projects",
 	"keywords": [
 		"m-social",
