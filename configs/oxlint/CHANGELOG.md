@@ -1,5 +1,11 @@
 # @m-social/oxlint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- ✨ enable `curly` rule ([#16](https://github.com/m-social/frontend-configs/pull/16))
+
 ## 0.3.1
 
 ### Patch Changes

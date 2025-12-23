@@ -1,5 +1,11 @@
 # @m-social/eslint-config-typescript
 
+## 1.1.0
+
+### Minor Changes
+
+- ✨ enable `curly` rule ([#16](https://github.com/m-social/frontend-configs/pull/16))
+
 ## 1.0.0
 
 ### Major Changes
