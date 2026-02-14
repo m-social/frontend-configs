@@ -98,6 +98,21 @@ export default defineConfig(
 );
 ```
 
+### Type-aware linting
+
+When using type-aware linting (like `oxlint --type-aware`), pass `{ typeAware: true }` as the second argument to `buildFromOxlintConfigFile`. This tells `eslint-plugin-oxlint` to disable the corresponding `@typescript-eslint` rules that oxlint now handles natively:
+
+```js
+// eslint.config.js
+import { defineConfig } from "eslint/config";
+import oxlint from "eslint-plugin-oxlint";
+
+export default defineConfig(
+	// other plugins
+	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json", { typeAware: true })
+);
+```
+
 ### React and Next.js Projects
 
 For React or Next.js configurations, you also need to add rules from `@m-social/oxlint-config/react` to properly ignore rules from `@eslint-react` and `@stylistic` plugins, as oxlint doesn't support them yet:
@@ -112,23 +127,6 @@ export default defineConfig(
 	// other plugins
 	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json"),
 	oxlintReactRules
-);
-```
-
-### Type-aware linting
-
-When using type-aware linting (like `oxlint --type-aware`), you also need to add rules from `@m-social/oxlint-config/type-aware` to properly ignore rules from `@typescript-eslint` plugin, as oxlint doesn't support it yet:
-
-```js
-// eslint.config.js
-import { defineConfig } from "eslint/config";
-import oxlint from "eslint-plugin-oxlint";
-import oxlintTypeAwareRules from "@m-social/oxlint-config/type-aware";
-
-export default defineConfig(
-	// other plugins
-	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json"),
-	oxlintTypeAwareRules
 );
 ```
 
