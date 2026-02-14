@@ -22,14 +22,13 @@
 		"react/jsx-no-comment-textnodes": "error",
 		"react/no-danger": "error",
 		"react/button-has-type": "error",
+
 		"jsx-a11y/alt-text": "error",
 		"jsx-a11y/anchor-ambiguous-text": "off",
 		"jsx-a11y/anchor-has-content": "error",
 		"jsx-a11y/anchor-is-valid": "error",
 		"jsx-a11y/aria-activedescendant-has-tabindex": "error",
-		"jsx-a11y/aria-props": "warn",
 		"jsx-a11y/aria-role": "error",
-		"jsx-a11y/aria-unsupported-elements": "warn",
 		"jsx-a11y/autocomplete-valid": "error",
 		"jsx-a11y/click-events-have-key-events": "error",
 		"jsx-a11y/heading-has-content": "error",
@@ -51,9 +50,19 @@
 			}
 		],
 		"jsx-a11y/no-redundant-roles": "error",
-		"jsx-a11y/role-has-required-aria-props": "warn",
-		"jsx-a11y/role-supports-aria-props": "warn",
 		"jsx-a11y/scope": "error",
-		"jsx-a11y/tabindex-no-positive": "error"
+		"jsx-a11y/tabindex-no-positive": "error",
+
+		"@typescript-eslint/no-namespace": [
+			"error",
+			{
+				"allowDeclarations": true,
+				"allowDefinitionFiles": true
+			}
+		],
+		"jsx-a11y/aria-props": "warn",
+		"jsx-a11y/aria-unsupported-elements": "warn",
+		"jsx-a11y/role-has-required-aria-props": "warn",
+		"jsx-a11y/role-supports-aria-props": "warn"
 	}
 }

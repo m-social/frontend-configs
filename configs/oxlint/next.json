@@ -25,6 +25,14 @@
 		"nextjs/no-document-import-in-page": "error",
 		"nextjs/no-duplicate-head": "error",
 		"nextjs/no-head-import-in-document": "error",
-		"nextjs/no-script-component-in-head": "error"
+		"nextjs/no-script-component-in-head": "error",
+
+		"jsx-a11y/alt-text": [
+			"warn",
+			{
+				"elements": ["img"],
+				"img": ["Image"]
+			}
+		]
 	}
 }
