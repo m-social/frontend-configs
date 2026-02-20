@@ -1,46 +1,25 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
 	"plugins": ["react", "jsx-a11y"],
+	"categories": {
+		"correctness": "error"
+	},
 	"rules": {
-		"react/rules-of-hooks": "error",
+		// #region react-hooks
 		"react/exhaustive-deps": "warn",
-		"react/forward-ref-uses-ref": "error",
-		"react/jsx-key": "error",
-		"react/jsx-no-duplicate-props": "error",
-		"react/jsx-no-target-blank": "error",
-		"react/no-danger-with-children": "warn",
-		"react/no-direct-mutation-state": "warn",
-		"react/no-find-dom-node": "warn",
-		"react/no-render-return-value": "warn",
-		"react/no-string-refs": "warn",
-		"react/void-dom-elements-no-children": "warn",
-		"react/no-array-index-key": "error",
-		"react/require-render-return": "warn",
-		"react/self-closing-comp": "error",
-		"react/iframe-missing-sandbox": "error",
-		"react/no-script-url": "error",
-		"react/jsx-no-comment-textnodes": "error",
-		"react/no-danger": "error",
-		"react/button-has-type": "error",
+		"react/rules-of-hooks": "error",
+		// #endregion
 
-		"jsx-a11y/alt-text": "error",
-		"jsx-a11y/anchor-ambiguous-text": "off",
-		"jsx-a11y/anchor-has-content": "error",
-		"jsx-a11y/anchor-is-valid": "error",
-		"jsx-a11y/aria-activedescendant-has-tabindex": "error",
-		"jsx-a11y/aria-role": "error",
-		"jsx-a11y/autocomplete-valid": "error",
-		"jsx-a11y/click-events-have-key-events": "error",
-		"jsx-a11y/heading-has-content": "error",
-		"jsx-a11y/html-has-lang": "error",
-		"jsx-a11y/iframe-has-title": "error",
-		"jsx-a11y/img-redundant-alt": "error",
-		"jsx-a11y/label-has-associated-control": "error",
-		"jsx-a11y/media-has-caption": "error",
-		"jsx-a11y/mouse-events-have-key-events": "error",
-		"jsx-a11y/no-access-key": "error",
-		"jsx-a11y/no-autofocus": "error",
-		"jsx-a11y/no-distracting-elements": "error",
+		// #region @eslint-react
+		"react/jsx-no-comment-textnodes": "warn",
+		"react/jsx-no-script-url": "warn",
+		"react/no-array-index-key": "warn",
+		"react/no-danger": "warn",
+		"react/no-redundant-should-component-update": "error",
+		"react/no-unsafe": "warn",
+		// #endregion
+
+		// #region jsx-a11y
 		"jsx-a11y/no-noninteractive-tabindex": [
 			"error",
 			{
@@ -49,10 +28,9 @@
 				"allowExpressionValues": true
 			}
 		],
-		"jsx-a11y/no-redundant-roles": "error",
-		"jsx-a11y/scope": "error",
-		"jsx-a11y/tabindex-no-positive": "error",
+		// #endregion
 
+		// #region overrides
 		"@typescript-eslint/no-namespace": [
 			"error",
 			{
@@ -60,9 +38,11 @@
 				"allowDefinitionFiles": true
 			}
 		],
+		"react/self-closing-comp": "error",
 		"jsx-a11y/aria-props": "warn",
 		"jsx-a11y/aria-unsupported-elements": "warn",
 		"jsx-a11y/role-has-required-aria-props": "warn",
 		"jsx-a11y/role-supports-aria-props": "warn"
+		// #endregion
 	}
 }
