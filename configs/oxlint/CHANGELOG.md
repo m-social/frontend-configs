@@ -1,5 +1,23 @@
 # @m-social/oxlint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- Restructure configs and sync them with the eslint ones ([#22](https://github.com/m-social/frontend-configs/pull/22))
+
+- Remove the type-aware config in favor of the `typeAware` option of `eslint-plugin-oxlint` ([#22](https://github.com/m-social/frontend-configs/pull/22))
+
+- Sync config for eslint ([#22](https://github.com/m-social/frontend-configs/pull/22))
+
+- Enable `correctness` category in configs ([#22](https://github.com/m-social/frontend-configs/pull/22))
+
+- Use `jsonc` extension for configs ([#22](https://github.com/m-social/frontend-configs/pull/22))
+
+### Patch Changes
+
+- Correct the names of rules for eslint integration ([#22](https://github.com/m-social/frontend-configs/pull/22))
+
 ## 0.4.0
 
 ### Minor Changes
