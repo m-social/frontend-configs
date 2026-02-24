@@ -1,13 +1,3 @@
 {
-	"extends": "//",
-	"overrides": [
-		{
-			"includes": ["typescript.json", "react.json", "next.json"],
-			"json": {
-				"parser": {
-					"allowComments": true
-				}
-			}
-		}
-	]
+	"extends": "//"
 }

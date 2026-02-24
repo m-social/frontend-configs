@@ -29,18 +29,18 @@
 	},
 	"type": "module",
 	"exports": {
-		"./typescript.json": "./typescript.json",
-		"./react.json": "./react.json",
-		"./next.json": "./next.json",
+		"./typescript.jsonc": "./typescript.jsonc",
+		"./react.jsonc": "./react.jsonc",
+		"./next.jsonc": "./next.jsonc",
 		"./eslint/react": {
 			"types": "./eslint/react.d.ts",
 			"import": "./eslint/react.js"
 		}
 	},
 	"files": [
-		"typescript.json",
-		"react.json",
-		"next.json",
+		"typescript.jsonc",
+		"react.jsonc",
+		"next.jsonc",
 		"eslint"
 	],
 	"devDependencies": {

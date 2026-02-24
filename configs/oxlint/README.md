@@ -31,7 +31,7 @@ Create a `.oxlintrc.json` file in your project root and extend the appropriate c
 
 ```json
 {
-	"extends": ["./node_modules/@m-social/oxlint-config/typescript.json"],
+	"extends": ["./node_modules/@m-social/oxlint-config/typescript.jsonc"],
 	"env": {
 		"builtin": true,
 		"es2026": true
@@ -44,8 +44,8 @@ Create a `.oxlintrc.json` file in your project root and extend the appropriate c
 ```json
 {
 	"extends": [
-		"./node_modules/@m-social/oxlint-config/typescript.json",
-		"./node_modules/@m-social/oxlint-config/react.json"
+		"./node_modules/@m-social/oxlint-config/typescript.jsonc",
+		"./node_modules/@m-social/oxlint-config/react.jsonc"
 	],
 	"env": {
 		"builtin": true,
@@ -61,9 +61,9 @@ Create a `.oxlintrc.json` file in your project root and extend the appropriate c
 ```json
 {
 	"extends": [
-		"./node_modules/@m-social/oxlint-config/typescript.json",
-		"./node_modules/@m-social/oxlint-config/react.json",
-		"./node_modules/@m-social/oxlint-config/next.json"
+		"./node_modules/@m-social/oxlint-config/typescript.jsonc",
+		"./node_modules/@m-social/oxlint-config/react.jsonc",
+		"./node_modules/@m-social/oxlint-config/next.jsonc"
 	],
 	"env": {
 		"builtin": true,
