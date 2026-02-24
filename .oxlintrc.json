@@ -1,0 +1,9 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"extends": ["./configs/oxlint/typescript.jsonc"],
+	"env": {
+		"builtin": true,
+		"es2026": true,
+		"node": true
+	}
+}
