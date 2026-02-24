@@ -25,56 +25,47 @@ yarn add -D oxlint oxlint-tsgolint @m-social/oxlint-config
 
 ## 🚀 Usage
 
-Create a `.oxlintrc.json` file in your project root and extend the appropriate configuration:
+Create a `oxlint.config.ts` file in your project root and extend the appropriate configuration:
 
 ### Base Configuration
 
-```json
-{
-	"extends": ["./node_modules/@m-social/oxlint-config/typescript.jsonc"],
-	"env": {
-		"builtin": true,
-		"es2026": true
-	}
-}
+```typescript
+import { defineConfig } from "oxlint";
+import typescriptConfig from "@m-social/oxlint-config/typescript";
+
+export default typescriptConfig;
 ```
 
 ### React Configuration
 
-```json
-{
-	"extends": [
-		"./node_modules/@m-social/oxlint-config/typescript.jsonc",
-		"./node_modules/@m-social/oxlint-config/react.jsonc"
-	],
-	"env": {
-		"builtin": true,
-		"es2026": true,
-		"browser": true,
-		"shared-node-browser": true
-	}
-}
+```typescript
+import { defineConfig } from "oxlint";
+import reactConfig from "@m-social/oxlint-config/react";
+
+export default defineConfig({
+	...reactConfig,
+	settings: {
+		react: {
+			version: "19.2",
+		},
+	},
+});
 ```
 
 ### Next.js Configuration
 
-```json
-{
-	"extends": [
-		"./node_modules/@m-social/oxlint-config/typescript.jsonc",
-		"./node_modules/@m-social/oxlint-config/react.jsonc",
-		"./node_modules/@m-social/oxlint-config/next.jsonc"
-	],
-	"env": {
-		"builtin": true,
-		"es2026": true,
-		"browser": true,
-		"shared-node-browser": true,
-		"commonjs": true,
-		"node": true
+```typescript
+import { defineConfig } from "oxlint";
+import nextConfig from "@m-social/oxlint-config/next";
+
+export default defineConfig({
+	...nextConfig,
+	settings: {
+		react: {
+			version: "19.2",
+		},
 	},
-	"ignorePatterns": ["**/.next/", "**/out/", "**/build/", "**/next-env.d.ts"]
-}
+});
 ```
 
 ## 🔧 Using oxlint with ESLint
@@ -94,7 +85,7 @@ import oxlint from "eslint-plugin-oxlint";
 
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json")
+	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts")
 );
 ```
 
@@ -109,7 +100,7 @@ import oxlint from "eslint-plugin-oxlint";
 
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json", { typeAware: true })
+	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts", { typeAware: true })
 );
 ```
 
@@ -125,7 +116,7 @@ import oxlintReactRules from "@m-social/oxlint-config/react";
 
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json"),
+	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts"),
 	oxlintReactRules
 );
 ```

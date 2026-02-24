@@ -1,10 +1,17 @@
-{
-	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["nextjs"],
-	"categories": {
-		"correctness": "error"
+import { defineConfig } from "oxlint";
+
+import reactConfig from "./react";
+
+export default defineConfig({
+	...reactConfig,
+	plugins: [...reactConfig.plugins, "nextjs"],
+	env: {
+		...reactConfig.env,
+		node: true,
 	},
-	"rules": {
+	rules: {
+		...reactConfig.rules,
+
 		// #region nextjs
 		"nextjs/google-font-display": "warn",
 		"nextjs/google-font-preconnect": "warn",
@@ -23,10 +30,11 @@
 		"jsx-a11y/alt-text": [
 			"warn",
 			{
-				"elements": ["img"],
-				"img": ["Image"]
-			}
-		]
+				elements: ["img"],
+				img: ["Image"],
+			},
+		],
 		// #endregion
-	}
-}
+	},
+	ignorePatterns: ["**/.next/", "**/out/", "**/build/", "**/next-env.d.ts"],
+});

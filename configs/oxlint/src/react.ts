@@ -1,10 +1,17 @@
-{
-	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["react", "jsx-a11y"],
-	"categories": {
-		"correctness": "error"
+import { defineConfig } from "oxlint";
+
+import typescriptConfig from "./typescript";
+
+export default defineConfig({
+	...typescriptConfig,
+	plugins: [...typescriptConfig.plugins, "react", "jsx-a11y"],
+	env: {
+		...typescriptConfig.env,
+		browser: true,
 	},
-	"rules": {
+	rules: {
+		...typescriptConfig.rules,
+
 		// #region react-hooks
 		"react/exhaustive-deps": "warn",
 		"react/rules-of-hooks": "error",
@@ -23,10 +30,10 @@
 		"jsx-a11y/no-noninteractive-tabindex": [
 			"error",
 			{
-				"tags": [],
-				"roles": ["tabpanel"],
-				"allowExpressionValues": true
-			}
+				tags: [],
+				roles: ["tabpanel"],
+				allowExpressionValues: true,
+			},
 		],
 		// #endregion
 
@@ -34,15 +41,15 @@
 		"@typescript-eslint/no-namespace": [
 			"error",
 			{
-				"allowDeclarations": true,
-				"allowDefinitionFiles": true
-			}
+				allowDeclarations: true,
+				allowDefinitionFiles: true,
+			},
 		],
 		"react/self-closing-comp": "error",
 		"jsx-a11y/aria-props": "warn",
 		"jsx-a11y/aria-unsupported-elements": "warn",
 		"jsx-a11y/role-has-required-aria-props": "warn",
-		"jsx-a11y/role-supports-aria-props": "warn"
+		"jsx-a11y/role-supports-aria-props": "warn",
 		// #endregion
-	}
-}
+	},
+});

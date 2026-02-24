@@ -8,6 +8,9 @@ catalogs:
     eslint: ^9.22.0
     globals: ^16.0.0
     typescript-eslint: ^8.45.0
+  oxlint:
+    oxlint: ^1.50.0
+    oxlint-tsgolint: ^0.15.0
   prettier:
     '@ianvs/prettier-plugin-sort-imports': '^4.5.1'
     'prettier': '^3.6.0'
