@@ -5,15 +5,17 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm -r build",
-		"lint": "biome check",
+		"lint": "oxlint --type-aware",
 		"format": "biome check --write && prettier --write **/*.md *.md"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/core": "^0.18.2",
-		"@biomejs/biome": "^2.2.6",
+		"@biomejs/biome": "2.4.4",
 		"@changesets/cli": "^2.29.7",
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
 		"@types/node": "^22.13.10",
+		"oxlint": "^1.47.0",
+		"oxlint-tsgolint": "^0.12.2",
 		"prettier": "^3.6.2",
 		"publint": "^0.3.14",
 		"tsdown": "^0.15.9",

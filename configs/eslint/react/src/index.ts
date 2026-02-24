@@ -4,7 +4,7 @@ import typescriptConfig, {
 } from "@m-social/eslint-config-typescript";
 import stylistic from "@stylistic/eslint-plugin";
 import { defineConfig } from "eslint/config";
-// @ts-expect-error
+// @ts-expect-error `jsx-a11y` doesn't have typings
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
 import globals from "globals";
@@ -33,9 +33,8 @@ export default function reactConfig({
 	const base = defineConfig(
 		typescriptConfig(tsconfig),
 		react.configs["recommended-type-checked"] as never,
-		reactHooks.configs.flat[
-			reactHooksLatest ? "recommended-latest" : "recommended"
-		],
+		reactHooks.configs.flat[reactHooksLatest ? "recommended-latest" : "recommended"],
+		// oxlint-disable-next-line typescript/no-unsafe-argument, typescript/no-unsafe-member-access
 		jsxA11y.flatConfigs.recommended,
 		{
 			name: "m-social/react/stylistic-jsx",

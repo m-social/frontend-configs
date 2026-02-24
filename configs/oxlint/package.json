@@ -29,34 +29,30 @@
 	},
 	"type": "module",
 	"exports": {
-		"./typescript.json": "./typescript.json",
-		"./react.json": "./react.json",
-		"./next.json": "./next.json",
+		"./typescript.jsonc": "./typescript.jsonc",
+		"./react.jsonc": "./react.jsonc",
+		"./next.jsonc": "./next.jsonc",
 		"./eslint/react": {
 			"types": "./eslint/react.d.ts",
 			"import": "./eslint/react.js"
-		},
-		"./eslint/type-aware": {
-			"types": "./eslint/type-aware.d.ts",
-			"import": "./eslint/type-aware.js"
 		}
 	},
 	"files": [
-		"typescript.json",
-		"react.json",
-		"next.json",
+		"typescript.jsonc",
+		"react.jsonc",
+		"next.jsonc",
 		"eslint"
 	],
 	"devDependencies": {
 		"eslint": "^9.37.0",
-		"oxlint": "^1.33.0",
-		"oxlint-tsgolint": "^0.9.1",
+		"oxlint": "^1.47.0",
+		"oxlint-tsgolint": "^0.12.2",
 		"typescript": "^5.9.3"
 	},
 	"peerDependencies": {
 		"eslint": "^9.22.0",
-		"oxlint": "^1.33.0",
-		"oxlint-tsgolint": "^0.9.1"
+		"oxlint": "^1.47.0",
+		"oxlint-tsgolint": "^0.12.2"
 	},
 	"peerDependenciesMeta": {
 		"eslint": {
