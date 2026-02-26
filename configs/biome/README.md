@@ -1,7 +1,7 @@
 # @m-social/biome-config
 
-[![npm version](https://img.shields.io/npm/v/@m-social/biome-config)](https://www.npmjs.com/package/@m-social/biome-config)
-[![downloads](https://img.shields.io/npm/dm/@m-social/biome-config)](https://www.npmjs.com/package/@m-social/biome-config)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/biome-config)](https://npmx.dev/package/@m-social/biome-config)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/biome-config)](https://npmx.dev/package/@m-social/biome-config)
 
 > A shareable Biome configuration used at M-Social
 
@@ -11,12 +11,12 @@ This configuration currently supports **formatting only**. Linting rules may be 
 
 For linting, we currently recommend using our ESLint configurations:
 
-- [`@m-social/eslint-config-typescript`](https://www.npmjs.com/package/@m-social/eslint-config-typescript)
-- [`@m-social/eslint-config-react`](https://www.npmjs.com/package/@m-social/eslint-config-react)
-- [`@m-social/eslint-config-svelte`](https://www.npmjs.com/package/@m-social/eslint-config-svelte)
-- [`@m-social/eslint-config-next`](https://www.npmjs.com/package/@m-social/eslint-config-next)
+- [`@m-social/eslint-config-typescript`](https://npmx.dev/package/@m-social/eslint-config-typescript)
+- [`@m-social/eslint-config-react`](https://npmx.dev/package/@m-social/eslint-config-react)
+- [`@m-social/eslint-config-svelte`](https://npmx.dev/package/@m-social/eslint-config-svelte)
+- [`@m-social/eslint-config-next`](https://npmx.dev/package/@m-social/eslint-config-next)
 
-For improved performance, you can optionally use [`@m-social/oxlint-config`](https://www.npmjs.com/package/@m-social/oxlint-config) alongside ESLint.
+For improved performance, you can optionally use [`@m-social/oxlint-config`](https://npmx.dev/package/@m-social/oxlint-config) alongside ESLint.
 
 ## 📦 Installation
 

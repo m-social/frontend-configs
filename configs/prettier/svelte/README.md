@@ -1,7 +1,7 @@
 # @m-social/prettier-config-svelte
 
-[![npm version](https://img.shields.io/npm/v/@m-social/prettier-config-svelte)](https://www.npmjs.com/package/@m-social/prettier-config-svelte)
-[![downloads](https://img.shields.io/npm/dm/@m-social/prettier-config-svelte)](https://www.npmjs.com/package/@m-social/prettier-config-svelte)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/prettier-config-svelte)](https://npmx.dev/package/@m-social/prettier-config-svelte)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/prettier-config-svelte)](https://npmx.dev/package/@m-social/prettier-config-svelte)
 
 > A shareable Prettier configuration for Svelte projects used at [M-Social](https://msocialproduction.com)
 

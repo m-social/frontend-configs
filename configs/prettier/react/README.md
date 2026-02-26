@@ -1,7 +1,7 @@
 # @m-social/prettier-config-react
 
-[![npm version](https://img.shields.io/npm/v/@m-social/prettier-config-react)](https://www.npmjs.com/package/@m-social/prettier-config-react)
-[![downloads](https://img.shields.io/npm/dm/@m-social/prettier-config-react)](https://www.npmjs.com/package/@m-social/prettier-config-react)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/prettier-config-react)](https://npmx.dev/package/@m-social/prettier-config-react)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/prettier-config-react)](https://npmx.dev/package/@m-social/prettier-config-react)
 
 > A shareable Prettier configuration for React projects used at [M-Social](https://msocialproduction.com)
 

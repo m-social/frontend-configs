@@ -1,7 +1,7 @@
 # @m-social/eslint-config-next
 
-[![npm version](https://img.shields.io/npm/v/@m-social/eslint-config-next)](https://www.npmjs.com/package/@m-social/eslint-config-next)
-[![downloads](https://img.shields.io/npm/dm/@m-social/eslint-config-next)](https://www.npmjs.com/package/@m-social/eslint-config-next)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/eslint-config-next)](https://npmx.dev/package/@m-social/eslint-config-next)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/eslint-config-next)](https://npmx.dev/package/@m-social/eslint-config-next)
 
 > A shareable ESLint configuration for Next.js projects used at [M-Social](https://msocialproduction.com)
 

@@ -1,7 +1,7 @@
 # @m-social/oxlint-config
 
-[![npm version](https://img.shields.io/npm/v/@m-social/oxlint-config)](https://www.npmjs.com/package/@m-social/oxlint-config)
-[![downloads](https://img.shields.io/npm/dm/@m-social/oxlint-config)](https://www.npmjs.com/package/@m-social/oxlint-config)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/oxlint-config)](https://npmx.dev/package/@m-social/oxlint-config)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/oxlint-config)](https://npmx.dev/package/@m-social/oxlint-config)
 
 > A shareable oxlint configuration used at M-Social
 
