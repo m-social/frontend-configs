@@ -1,7 +1,7 @@
 # @m-social/cspell-config
 
-[![npm version](https://img.shields.io/npm/v/@m-social/cspell-config)](https://www.npmjs.com/package/@m-social/cspell-config)
-[![downloads](https://img.shields.io/npm/dm/@m-social/cspell-config)](https://www.npmjs.com/package/@m-social/cspell-config)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/cspell-config)](https://npmx.dev/package/@m-social/cspell-config)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/cspell-config)](https://npmx.dev/package/@m-social/cspell-config)
 
 > A shareable CSpell configuration for TypeScript projects used at [M-Social](https://msocialproduction.com)
 
@@ -29,7 +29,7 @@ Create a `cspell.config.yaml` file (or use [another supported format](https://cs
 
 ```yaml
 import:
-  - '@m-social/cspell-config'
+  - "@m-social/cspell-config"
 ```
 
 ## 📄 License

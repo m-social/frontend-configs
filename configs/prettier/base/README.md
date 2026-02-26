@@ -1,7 +1,7 @@
 # @m-social/prettier-config
 
-[![npm version](https://img.shields.io/npm/v/@m-social/prettier-config)](https://www.npmjs.com/package/@m-social/prettier-config)
-[![downloads](https://img.shields.io/npm/dm/@m-social/prettier-config)](https://www.npmjs.com/package/@m-social/prettier-config)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/prettier-config)](https://npmx.dev/package/@m-social/prettier-config)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/prettier-config)](https://npmx.dev/package/@m-social/prettier-config)
 
 > A shareable Prettier configuration used at [M-Social](https://msocialproduction.com)
 
@@ -27,8 +27,8 @@ yarn add -D prettier @m-social/prettier-config
 
 Often this config should not be used directly. Instead, more specific configs should be used:
 
-- [`@m-social/prettier-config-svelte`](https://www.npmjs.com/package/@m-social/prettier-config-svelte) for Svelte projects
-- [`@m-social/prettier-config-react`](https://www.npmjs.com/package/@m-social/prettier-config-react) for React projects
+- [`@m-social/prettier-config-svelte`](https://npmx.dev/package/@m-social/prettier-config-svelte) for Svelte projects
+- [`@m-social/prettier-config-react`](https://npmx.dev/package/@m-social/prettier-config-react) for React projects
 
 If you still need to use this config, there are three ways to do it:
 

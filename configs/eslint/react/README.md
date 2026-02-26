@@ -1,7 +1,7 @@
 # @m-social/eslint-config-react
 
-[![npm version](https://img.shields.io/npm/v/@m-social/eslint-config-react)](https://www.npmjs.com/package/@m-social/eslint-config-react)
-[![downloads](https://img.shields.io/npm/dm/@m-social/eslint-config-react)](https://www.npmjs.com/package/@m-social/eslint-config-react)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/eslint-config-react)](https://npmx.dev/package/@m-social/eslint-config-react)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/eslint-config-react)](https://npmx.dev/package/@m-social/eslint-config-react)
 
 > A shareable ESLint configuration for React projects used at [M-Social](https://msocialproduction.com)
 
