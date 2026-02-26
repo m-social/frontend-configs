@@ -1,8 +1,13 @@
 {
 	"name": "@m-social/cspell-config",
-	"version": "0.3.1",
+	"version": "0.4.0",
 	"description": "Shared CSpell config for projects used at M-Social",
-	"keywords": ["m-social", "cspell", "config", "cspell-config"],
+	"keywords": [
+		"m-social",
+		"cspell",
+		"config",
+		"cspell-config"
+	],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -31,7 +36,11 @@
 		"./cspell.json": "./cspell.json",
 		"./dictionaries/*": "./dictionaries/*"
 	},
-	"files": ["cspell.json", "cspell.config.js", "dictionaries"],
+	"files": [
+		"cspell.json",
+		"cspell.config.js",
+		"dictionaries"
+	],
 	"dependencies": {
 		"@cspell/cspell-bundled-dicts": "^9.7.0",
 		"@cspell/dict-ru_ru": "^2.3.2"
