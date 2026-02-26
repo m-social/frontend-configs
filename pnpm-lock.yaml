@@ -73,17 +73,17 @@ importers:
   configs/cspell:
     dependencies:
       '@cspell/cspell-bundled-dicts':
-        specifier: ^9.6.4
+        specifier: ^9.7.0
         version: 9.7.0
       '@cspell/dict-ru_ru':
         specifier: ^2.3.2
         version: 2.3.2
       cspell:
-        specifier: ^9.6.4
+        specifier: ^9.7.0
         version: 9.7.0
     devDependencies:
       '@cspell/cspell-types':
-        specifier: ^9.6.4
+        specifier: ^9.7.0
         version: 9.7.0
       prettier:
         specifier: ^3.8.1
