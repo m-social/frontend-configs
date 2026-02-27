@@ -1,8 +1,13 @@
 {
 	"name": "@m-social/stylelint-config",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Shared Stylelint config for projects used at M-Social",
-	"keywords": ["m-social", "stylelint", "config", "stylelint-config"],
+	"keywords": [
+		"m-social",
+		"stylelint",
+		"config",
+		"stylelint-config"
+	],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -29,7 +34,9 @@
 			"import": "./src/index.js"
 		}
 	},
-	"files": ["src"],
+	"files": [
+		"src"
+	],
 	"dependencies": {
 		"stylelint-config-recommended-scss": "^17.0.0",
 		"stylelint-order": "^7.0.1"
