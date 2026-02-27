@@ -4,6 +4,7 @@ packages:
   - configs/biome
   - configs/cspell
   - configs/oxlint
+  - configs/stylelint
 catalogs:
   eslint:
     eslint: ^9.22.0
