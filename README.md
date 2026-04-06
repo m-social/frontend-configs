@@ -35,6 +35,10 @@ A monorepo containing all frontend linting, formatting, and code quality configu
 
 - **[@m-social/cspell-config](./configs/cspell)** - Shareable CSpell configuration for spell checking TypeScript projects
 
+### Stylelint Configuration
+
+- **[@m-social/stylelint-config](./configs/stylelint)** - Shareable Stylelint configuration for style linting in TypeScript projects
+
 ## 🚀 Quick Start
 
 Choose the appropriate configuration for your project stack:
@@ -50,6 +54,14 @@ pnpm add -D cspell @m-social/cspell-config
 ```
 
 See [@m-social/cspell-config](./configs/cspell) for usage instructions.
+
+#### Style Linting
+
+```bash
+pnpm add -D stylelint @m-social/stylelint-config
+```
+
+See [@m-social/stylelint-config](./configs/stylelint) for usage instructions.
 
 ---
 
@@ -237,7 +249,8 @@ configs/
 │   └── utils/          # Shared utilities
 ├── biome/              # @m-social/biome-config
 ├── oxlint/             # @m-social/oxlint-config
-└── cspell/             # @m-social/cspell-config
+├── cspell/             # @m-social/cspell-config
+└── stylelint/          # @m-social/stylelint-config
 ```
 
 ## 🛠️ Development
