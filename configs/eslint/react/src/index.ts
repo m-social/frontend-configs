@@ -64,8 +64,7 @@ export default function reactConfig({
 				},
 			},
 			rules: {
-				"@eslint-react/no-unknown-property": "off",
-				"@eslint-react/no-useless-fragment": [
+				"@eslint-react/jsx-no-useless-fragment": [
 					"warn",
 					{
 						allowExpressions: false,

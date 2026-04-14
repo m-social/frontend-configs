@@ -30,25 +30,38 @@ export default {
 		"@eslint-react/no-unsafe-component-will-receive-props": "warn",
 		"@eslint-react/no-unsafe-component-will-update": "warn",
 
+		// @deprecated
 		// react/forward-ref-uses-ref
-		"@eslint-react/no-useless-forward-ref": "off",
+		"@eslint-react/no-forward-ref": "off",
 
 		// react/no-danger
+		"@eslint-react/dom-no-dangerously-set-innerhtml": "off",
+		// @deprecated
 		"@eslint-react/dom/no-dangerously-set-innerhtml": "off",
 
 		// react/no-danger-with-children
+		"@eslint-react/dom-no-dangerously-set-innerhtml-with-children": "off",
+		// @deprecated
 		"@eslint-react/dom/no-dangerously-set-innerhtml-with-children": "off",
 
 		// react/no-find-dom-node
+		"@eslint-react/dom-no-find-dom-node": "off",
+		// @deprecated
 		"@eslint-react/dom/no-find-dom-node": "off",
 
 		// react/no-render-return-value
+		"@eslint-react/dom-no-render-return-value": "off",
+		// @deprecated
 		"@eslint-react/dom/no-render-return-value": "off",
 
 		// react/no-script-url
+		"@eslint-react/dom-no-script-url": "off",
+		// @deprecated
 		"@eslint-react/dom/no-script-url": "off",
 
 		// react/void-dom-elements-no-children
+		"@eslint-react/dom-no-void-elements-with-children": "off",
+		// @deprecated
 		"@eslint-react/dom/no-void-elements-with-children": "off",
 
 		// react/self-closing-comp
