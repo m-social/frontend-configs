@@ -2,12 +2,7 @@
 	"name": "@m-social/eslint-config-react",
 	"version": "1.2.0",
 	"description": "Shared ESLint config for React used by M-Social projects",
-	"keywords": [
-		"m-social",
-		"eslint",
-		"eslint-config",
-		"react"
-	],
+	"keywords": ["m-social", "eslint", "eslint-config", "react"],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -24,10 +19,7 @@
 		"directory": "configs/eslint/react"
 	},
 	"license": "MIT",
-	"files": [
-		"dist",
-		"src"
-	],
+	"files": ["dist", "src"],
 	"type": "module",
 	"types": "./dist/index.d.cts",
 	"module": "./dist/index.mjs",
@@ -52,10 +44,13 @@
 		"@stylistic/eslint-plugin": "^5.10.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-react-hooks": "^7.0.1",
-		"globals": "catalog:eslint"
+		"globals": "catalog:production"
 	},
 	"peerDependencies": {
-		"eslint": "catalog:eslint"
+		"eslint": "catalog:production"
+	},
+	"devDependencies": {
+		"eslint": "catalog:development"
 	},
 	"publishConfig": {
 		"access": "public"

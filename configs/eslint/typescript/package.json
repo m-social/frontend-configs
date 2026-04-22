@@ -2,12 +2,7 @@
 	"name": "@m-social/eslint-config-typescript",
 	"version": "1.2.0",
 	"description": "Shared ESLint config for TypeScript used by M-Social projects",
-	"keywords": [
-		"m-social",
-		"eslint",
-		"eslint-config",
-		"typescript"
-	],
+	"keywords": ["m-social", "eslint", "eslint-config", "typescript"],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -24,10 +19,7 @@
 		"directory": "configs/eslint/typescript"
 	},
 	"license": "MIT",
-	"files": [
-		"dist",
-		"src"
-	],
+	"files": ["dist", "src"],
 	"type": "module",
 	"types": "./dist/index.d.cts",
 	"module": "./dist/index.mjs",
@@ -48,10 +40,13 @@
 	},
 	"dependencies": {
 		"@eslint/js": "^10.0.1",
-		"typescript-eslint": "catalog:eslint"
+		"typescript-eslint": "catalog:production"
 	},
 	"peerDependencies": {
-		"eslint": "catalog:eslint"
+		"eslint": "catalog:production"
+	},
+	"devDependencies": {
+		"eslint": "catalog:development"
 	},
 	"publishConfig": {
 		"access": "public"

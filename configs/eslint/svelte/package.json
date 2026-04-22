@@ -2,13 +2,7 @@
 	"name": "@m-social/eslint-config-svelte",
 	"version": "1.2.0",
 	"description": "Shared ESLint config for Svelte used by M-Social projects",
-	"keywords": [
-		"m-social",
-		"eslint",
-		"eslint-config",
-		"svelte",
-		"sveltekit"
-	],
+	"keywords": ["m-social", "eslint", "eslint-config", "svelte", "sveltekit"],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -25,10 +19,7 @@
 		"directory": "configs/eslint/svelte"
 	},
 	"license": "MIT",
-	"files": [
-		"dist",
-		"src"
-	],
+	"files": ["dist", "src"],
 	"type": "module",
 	"types": "./dist/index.d.cts",
 	"module": "./dist/index.mjs",
@@ -50,11 +41,14 @@
 	"dependencies": {
 		"@m-social/eslint-config-typescript": "workspace:*",
 		"eslint-plugin-svelte": "^3.17.0",
-		"globals": "catalog:eslint",
-		"typescript-eslint": "catalog:eslint"
+		"globals": "catalog:production",
+		"typescript-eslint": "catalog:production"
 	},
 	"peerDependencies": {
-		"eslint": "catalog:eslint"
+		"eslint": "catalog:production"
+	},
+	"devDependencies": {
+		"eslint": "catalog:development"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -48,14 +48,14 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@ianvs/prettier-plugin-sort-imports": "catalog:prettier",
+		"@ianvs/prettier-plugin-sort-imports": "catalog:production",
 		"@m-social/prettier-config": "workspace:*"
 	},
 	"devDependencies": {
 		"@m-social/prettier-config-utils": "workspace:*"
 	},
 	"peerDependencies": {
-		"prettier": "catalog:prettier"
+		"prettier": "catalog:production"
 	},
 	"publishConfig": {
 		"access": "public"

@@ -2,13 +2,7 @@
 	"name": "@m-social/eslint-config-next",
 	"version": "1.3.0",
 	"description": "Shared ESLint config for Next.js used by M-Social projects",
-	"keywords": [
-		"m-social",
-		"eslint",
-		"eslint-config",
-		"next",
-		"next.js"
-	],
+	"keywords": ["m-social", "eslint", "eslint-config", "next", "next.js"],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -25,10 +19,7 @@
 		"directory": "configs/eslint/next"
 	},
 	"license": "MIT",
-	"files": [
-		"dist",
-		"src"
-	],
+	"files": ["dist", "src"],
 	"type": "module",
 	"types": "./dist/index.d.cts",
 	"module": "./dist/index.mjs",
@@ -50,10 +41,13 @@
 	"dependencies": {
 		"@m-social/eslint-config-react": "workspace:*",
 		"@next/eslint-plugin-next": "^16.2.2",
-		"globals": "catalog:eslint"
+		"globals": "catalog:production"
 	},
 	"peerDependencies": {
-		"eslint": "catalog:eslint"
+		"eslint": "catalog:production"
+	},
+	"devDependencies": {
+		"eslint": "catalog:development"
 	},
 	"publishConfig": {
 		"access": "public"

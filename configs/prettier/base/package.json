@@ -50,7 +50,7 @@
 		"@prettier/plugin-oxc": "^0.1.3"
 	},
 	"peerDependencies": {
-		"prettier": "catalog:prettier"
+		"prettier": "catalog:production"
 	},
 	"publishConfig": {
 		"access": "public"
