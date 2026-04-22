@@ -1,5 +1,17 @@
 # @m-social/oxlint-config
 
+## 0.6.0
+
+### Minor Changes
+
+- Upgrade rule names for eslint react integration ([#31](https://github.com/m-social/frontend-configs/pull/31))
+
+### Patch Changes
+
+- ✨ activate the `enforceForJSX` option for the `no-unused-expressions` rule ([#32](https://github.com/m-social/frontend-configs/pull/32))
+
+- Upgrade deps ([#31](https://github.com/m-social/frontend-configs/pull/31))
+
 ## 0.5.0
 
 ### Minor Changes

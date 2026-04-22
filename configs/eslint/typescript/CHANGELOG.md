@@ -1,5 +1,13 @@
 # @m-social/eslint-config-typescript
 
+## 1.2.0
+
+### Minor Changes
+
+- Support ESLint v10 ([#31](https://github.com/m-social/frontend-configs/pull/31))
+
+- ✨ enable the `no-unused-expressions` rule ([#32](https://github.com/m-social/frontend-configs/pull/32))
+
 ## 1.1.0
 
 ### Minor Changes
