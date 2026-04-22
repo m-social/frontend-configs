@@ -39,7 +39,7 @@
 	],
 	"dependencies": {
 		"stylelint-config-recommended-scss": "^17.0.0",
-		"stylelint-order": "^7.0.1"
+		"stylelint-order": "^8.1.1"
 	},
 	"peerDependencies": {
 		"stylelint": "^17.4.0"
@@ -49,6 +49,5 @@
 	},
 	"publishConfig": {
 		"access": "public"
-	},
-	"packageManager": "pnpm@10.28.2"
+	}
 }

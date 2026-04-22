@@ -2,12 +2,7 @@
 	"name": "@m-social/oxlint-config",
 	"version": "0.5.0",
 	"description": "Shared oxlint configs for projects used at M-Social",
-	"keywords": [
-		"m-social",
-		"oxlint",
-		"config",
-		"oxlint-config"
-	],
+	"keywords": ["m-social", "oxlint", "config", "oxlint-config"],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -37,22 +32,14 @@
 			"import": "./eslint/react.js"
 		}
 	},
-	"files": [
-		"typescript.jsonc",
-		"react.jsonc",
-		"next.jsonc",
-		"eslint"
-	],
+	"files": ["typescript.jsonc", "react.jsonc", "next.jsonc", "eslint"],
 	"devDependencies": {
-		"eslint": "^9.37.0",
-		"oxlint": "^1.47.0",
-		"oxlint-tsgolint": "^0.12.2",
-		"typescript": "^5.9.3"
+		"eslint": "^10.2.0"
 	},
 	"peerDependencies": {
-		"eslint": "^9.22.0",
-		"oxlint": "^1.47.0",
-		"oxlint-tsgolint": "^0.12.2"
+		"eslint": "^9.22.0 || ^10.0.0",
+		"oxlint": "^1.61.0",
+		"oxlint-tsgolint": ">=0.18.0"
 	},
 	"peerDependenciesMeta": {
 		"eslint": {

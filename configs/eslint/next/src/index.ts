@@ -1,6 +1,4 @@
-import reactConfig, {
-	type ReactConfigSettings,
-} from "@m-social/eslint-config-react";
+import reactConfig, { type ReactConfigSettings } from "@m-social/eslint-config-react";
 import next from "@next/eslint-plugin-next";
 import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
@@ -9,10 +7,7 @@ export type NextConfigSettings = ReactConfigSettings;
 
 export default function nextConfig(settings: NextConfigSettings) {
 	return defineConfig(
-		globalIgnores(
-			["**/.next/", "**/out/", "**/build/", "**/next-env.d.ts"],
-			"m-social/next/ignore"
-		),
+		globalIgnores(["**/.next/", "**/out/", "**/build/", "**/next-env.d.ts"], "m-social/next/ignore"),
 		reactConfig(settings),
 		next.configs.recommended,
 		next.configs["core-web-vitals"],
@@ -23,7 +18,8 @@ export default function nextConfig(settings: NextConfigSettings) {
 				globals: globals.node,
 			},
 			rules: {
-				"@eslint-react/dom/no-unsafe-target-blank": "off",
+				"@eslint-react/dom-no-unsafe-target-blank": "off",
+
 				"jsx-a11y/alt-text": [
 					"warn",
 					{

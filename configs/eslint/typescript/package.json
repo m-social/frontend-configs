@@ -47,7 +47,7 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@eslint/js": "^9.22.0",
+		"@eslint/js": "^10.0.1",
 		"typescript-eslint": "catalog:eslint"
 	},
 	"peerDependencies": {
