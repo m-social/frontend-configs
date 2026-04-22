@@ -49,6 +49,7 @@ export default function typescriptConfig({ tsconfigRootDir }: TypescriptConfigSe
 					ignoreRestSiblings: true,
 				},
 			],
+			"@typescript-eslint/no-unused-expressions": "error",
 		},
 	});
 }
