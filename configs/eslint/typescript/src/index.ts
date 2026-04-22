@@ -41,7 +41,9 @@ export default function typescriptConfig({ tsconfigRootDir }: TypescriptConfigSe
 				},
 			],
 			"@typescript-eslint/ban-ts-comment": "warn",
+			"@typescript-eslint/no-empty-object-type": ["error", { allowInterfaces: "with-single-extends" }],
 			"@typescript-eslint/no-explicit-any": "warn",
+			"@typescript-eslint/no-namespace": ["error", { allowDeclarations: true }],
 			"@typescript-eslint/no-unused-vars": [
 				"error",
 				{
