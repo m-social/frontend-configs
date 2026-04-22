@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/eslint-config-svelte",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "Shared ESLint config for Svelte used by M-Social projects",
 	"keywords": [
 		"m-social",
