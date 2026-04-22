@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/eslint-config-react",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Shared ESLint config for React used by M-Social projects",
 	"keywords": [
 		"m-social",
@@ -29,17 +29,17 @@
 		"src"
 	],
 	"type": "module",
-	"types": "./dist/index.d.ts",
-	"module": "./dist/index.js",
+	"types": "./dist/index.d.cts",
+	"module": "./dist/index.mjs",
 	"main": "./dist/index.cjs",
 	"exports": {
 		".": {
 			"@m-social/frontend-configs": "./src/index.ts",
 			"types": {
-				"import": "./dist/index.d.ts",
+				"import": "./dist/index.d.mts",
 				"require": "./dist/index.d.cts"
 			},
-			"import": "./dist/index.js",
+			"import": "./dist/index.mjs",
 			"require": "./dist/index.cjs"
 		}
 	},
@@ -47,11 +47,11 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@eslint-react/eslint-plugin": "^2.0.6",
+		"@eslint-react/eslint-plugin": "^4.2.3",
 		"@m-social/eslint-config-typescript": "workspace:*",
-		"@stylistic/eslint-plugin": "^5.4.0",
+		"@stylistic/eslint-plugin": "^5.10.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
-		"eslint-plugin-react-hooks": "^7.0.0",
+		"eslint-plugin-react-hooks": "^7.0.1",
 		"globals": "catalog:eslint"
 	},
 	"peerDependencies": {

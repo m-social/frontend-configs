@@ -38,6 +38,12 @@ export default defineConfig({
 		// #endregion
 
 		// #region overrides
+		"no-unused-expressions": [
+			"error",
+			{
+				"enforceForJSX": true
+			}
+		],
 		"@typescript-eslint/no-namespace": [
 			"error",
 			{

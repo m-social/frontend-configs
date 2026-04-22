@@ -31,9 +31,39 @@ A monorepo containing all frontend linting, formatting, and code quality configu
 - **[@m-social/oxlint-config](./configs/oxlint)** - Oxlint configuration for high-performance linting
   - ⚠️ **Experimental** - Can be used alongside ESLint for improved performance
 
+### CSpell Configuration
+
+- **[@m-social/cspell-config](./configs/cspell)** - Shareable CSpell configuration for spell checking TypeScript projects
+
+### Stylelint Configuration
+
+- **[@m-social/stylelint-config](./configs/stylelint)** - Shareable Stylelint configuration for style linting in TypeScript projects
+
 ## 🚀 Quick Start
 
 Choose the appropriate configuration for your project stack:
+
+### Shared Configuration
+
+These configurations apply to all project stacks regardless of framework.
+
+#### Spell Checking
+
+```bash
+pnpm add -D cspell @m-social/cspell-config
+```
+
+See [@m-social/cspell-config](./configs/cspell) for usage instructions.
+
+#### Style Linting
+
+```bash
+pnpm add -D stylelint @m-social/stylelint-config
+```
+
+See [@m-social/stylelint-config](./configs/stylelint) for usage instructions.
+
+---
 
 ### TypeScript Project
 
@@ -218,7 +248,9 @@ configs/
 │   ├── svelte/         # @m-social/prettier-config-svelte
 │   └── utils/          # Shared utilities
 ├── biome/              # @m-social/biome-config
-└── oxlint/             # @m-social/oxlint-config
+├── oxlint/             # @m-social/oxlint-config
+├── cspell/             # @m-social/cspell-config
+└── stylelint/          # @m-social/stylelint-config
 ```
 
 ## 🛠️ Development

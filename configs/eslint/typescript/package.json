@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/eslint-config-typescript",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Shared ESLint config for TypeScript used by M-Social projects",
 	"keywords": [
 		"m-social",
@@ -29,17 +29,17 @@
 		"src"
 	],
 	"type": "module",
-	"types": "./dist/index.d.ts",
-	"module": "./dist/index.js",
+	"types": "./dist/index.d.cts",
+	"module": "./dist/index.mjs",
 	"main": "./dist/index.cjs",
 	"exports": {
 		".": {
 			"@m-social/frontend-configs": "./src/index.ts",
 			"types": {
-				"import": "./dist/index.d.ts",
+				"import": "./dist/index.d.mts",
 				"require": "./dist/index.d.cts"
 			},
-			"import": "./dist/index.js",
+			"import": "./dist/index.mjs",
 			"require": "./dist/index.cjs"
 		}
 	},
@@ -47,7 +47,7 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@eslint/js": "^9.22.0",
+		"@eslint/js": "^10.0.1",
 		"typescript-eslint": "catalog:eslint"
 	},
 	"peerDependencies": {

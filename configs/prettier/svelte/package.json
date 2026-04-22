@@ -32,15 +32,15 @@
 	"type": "module",
 	"types": "./dist/index.d.cts",
 	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"exports": {
 		".": {
 			"@m-social/frontend-configs": "./src/index.ts",
 			"types": {
-				"import": "./dist/index.d.ts",
+				"import": "./dist/index.d.mts",
 				"require": "./dist/index.d.cts"
 			},
-			"import": "./dist/index.js",
+			"import": "./dist/index.mjs",
 			"require": "./dist/index.cjs"
 		}
 	},
@@ -50,7 +50,7 @@
 	"dependencies": {
 		"@ianvs/prettier-plugin-sort-imports": "catalog:prettier",
 		"@m-social/prettier-config": "workspace:*",
-		"prettier-plugin-svelte": "^3.3.3"
+		"prettier-plugin-svelte": "^3.5.1"
 	},
 	"devDependencies": {
 		"@m-social/prettier-config-utils": "workspace:*"

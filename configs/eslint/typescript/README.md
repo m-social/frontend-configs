@@ -1,7 +1,7 @@
 # @m-social/eslint-config-typescript
 
-[![npm version](https://img.shields.io/npm/v/@m-social/eslint-config-typescript)](https://www.npmjs.com/package/@m-social/eslint-config-typescript)
-[![downloads](https://img.shields.io/npm/dm/@m-social/eslint-config-typescript)](https://www.npmjs.com/package/@m-social/eslint-config-typescript)
+[![npm version](https://npmx.dev/api/registry/badge/version/@m-social/eslint-config-typescript)](https://npmx.dev/package/@m-social/eslint-config-typescript)
+[![downloads](https://npmx.dev/api/registry/badge/downloads/@m-social/eslint-config-typescript)](https://npmx.dev/package/@m-social/eslint-config-typescript)
 
 > A shareable ESLint configuration for TypeScript projects used at [M-Social](https://msocialproduction.com)
 

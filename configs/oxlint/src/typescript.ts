@@ -27,9 +27,7 @@ export default defineConfig({
 		// #endregion
 
 		// #region typescript-eslint
-		"@typescript-eslint/no-empty-object-type": "error",
 		"@typescript-eslint/no-misused-promises": "error",
-		"@typescript-eslint/no-namespace": "error",
 		"@typescript-eslint/no-require-imports": "error",
 		"@typescript-eslint/no-unnecessary-type-assertion": "error",
 		"@typescript-eslint/no-unnecessary-type-constraint": "error",
@@ -63,7 +61,9 @@ export default defineConfig({
 				fixStyle: "inline-type-imports",
 			},
 		],
+		"@typescript-eslint/no-empty-object-type": ["error", { allowInterfaces: "with-single-extends" }],
 		"@typescript-eslint/no-explicit-any": "warn",
+		"@typescript-eslint/no-namespace": ["error", { allowDeclarations: true }],
 		// #endregion
 	},
 	overrides: [
