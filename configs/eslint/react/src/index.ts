@@ -83,6 +83,12 @@ export default function reactConfig({
 						allowDefinitionFiles: true,
 					},
 				],
+				"@typescript-eslint/no-unused-expressions": [
+					"error",
+					{
+						enforceForJSX: true,
+					},
+				],
 			},
 		}
 	);
