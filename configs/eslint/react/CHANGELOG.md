@@ -1,5 +1,20 @@
 # @m-social/eslint-config-react
 
+## 1.2.0
+
+### Minor Changes
+
+- Upgrade eslint-react plugin to v4 ([#31](https://github.com/m-social/frontend-configs/pull/31))
+
+- Support ESLint v10 ([#31](https://github.com/m-social/frontend-configs/pull/31))
+
+- ✨ activate the `enforceForJSX` option for the `no-unused-expressions` rule ([#32](https://github.com/m-social/frontend-configs/pull/32))
+
+### Patch Changes
+
+- Updated dependencies [[`4889c84`](https://github.com/m-social/frontend-configs/commit/4889c84f091bedb275b4b1d2812e35ffea594d76), [`16cc3a5`](https://github.com/m-social/frontend-configs/commit/16cc3a55b7d23391ad9d398d38f771fe3b0a4582)]:
+  - @m-social/eslint-config-typescript@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes

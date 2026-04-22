@@ -1,5 +1,16 @@
 # @m-social/eslint-config-svelte
 
+## 1.2.0
+
+### Minor Changes
+
+- Support ESLint v10 ([#31](https://github.com/m-social/frontend-configs/pull/31))
+
+### Patch Changes
+
+- Updated dependencies [[`4889c84`](https://github.com/m-social/frontend-configs/commit/4889c84f091bedb275b4b1d2812e35ffea594d76), [`16cc3a5`](https://github.com/m-social/frontend-configs/commit/16cc3a55b7d23391ad9d398d38f771fe3b0a4582)]:
+  - @m-social/eslint-config-typescript@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes
