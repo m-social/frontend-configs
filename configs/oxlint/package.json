@@ -41,9 +41,9 @@
 			"types": "./dist/next.d.ts",
 			"import": "./dist/next.js"
 		},
-		"./config": {
-			"types": "./dist/config.d.ts",
-			"import": "./dist/config.js"
+		"./utils": {
+			"types": "./dist/utils.d.ts",
+			"import": "./dist/utils.js"
 		},
 		"./eslint/react": {
 			"types": "./dist/eslint/react.d.ts",

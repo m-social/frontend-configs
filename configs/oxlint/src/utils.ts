@@ -34,6 +34,10 @@ function dedupeJsPlugins(jsPlugins: OxlintConfig["jsPlugins"]) {
 	});
 }
 
+// Deprecate this utility when these issues are resolved:
+// https://github.com/oxc-project/oxc/issues/10223
+// https://github.com/oxc-project/oxc/issues/20087
+// https://github.com/oxc-project/oxc/issues/20863
 export function mergeConfigs(configs: OxlintConfig[]): OxlintConfig {
 	if (configs.length === 0) {
 		throw new Error("At least one config must be provided");

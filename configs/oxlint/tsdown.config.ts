@@ -5,7 +5,7 @@ export default defineConfig({
 		"src/typescript.ts",
 		"src/react.ts",
 		"src/next.ts",
-		"src/config.ts",
+		"src/utils.ts",
 		"src/eslint/react.ts",
 	],
 	format: ["esm"],

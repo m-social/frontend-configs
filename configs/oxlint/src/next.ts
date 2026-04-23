@@ -1,5 +1,5 @@
-import { mergeConfigs } from "./config";
 import reactConfig from "./react";
+import { mergeConfigs } from "./utils";
 
 export default mergeConfigs([
 	reactConfig,
