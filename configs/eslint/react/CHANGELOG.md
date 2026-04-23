@@ -1,5 +1,12 @@
 # @m-social/eslint-config-react
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [[`4aa8b62`](https://github.com/m-social/frontend-configs/commit/4aa8b62d68f5b6252084be685eb68fca09d6b1c6)]:
+  - @m-social/eslint-config-typescript@1.2.1
+
 ## 1.2.0
 
 ### Minor Changes

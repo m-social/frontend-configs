@@ -1,5 +1,11 @@
 # @m-social/oxlint-config
 
+## 0.6.1
+
+### Patch Changes
+
+- ✨ customize some rules to allow frequently used behavior ([#34](https://github.com/m-social/frontend-configs/pull/34))
+
 ## 0.6.0
 
 ### Minor Changes

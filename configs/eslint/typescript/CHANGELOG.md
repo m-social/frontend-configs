@@ -1,5 +1,11 @@
 # @m-social/eslint-config-typescript
 
+## 1.2.1
+
+### Patch Changes
+
+- ✨ customize some rules to allow frequently used behavior ([#34](https://github.com/m-social/frontend-configs/pull/34))
+
 ## 1.2.0
 
 ### Minor Changes
