@@ -2,7 +2,12 @@
 	"name": "@m-social/oxlint-config",
 	"version": "0.6.0",
 	"description": "Shared oxlint configs for projects used at M-Social",
-	"keywords": ["m-social", "oxlint", "config", "oxlint-config"],
+	"keywords": [
+		"m-social",
+		"oxlint",
+		"config",
+		"oxlint-config"
+	],
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -36,12 +41,19 @@
 			"types": "./dist/next.d.ts",
 			"import": "./dist/next.js"
 		},
+		"./config": {
+			"types": "./dist/config.d.ts",
+			"import": "./dist/config.js"
+		},
 		"./eslint/react": {
 			"types": "./dist/eslint/react.d.ts",
 			"import": "./dist/eslint/react.js"
 		}
 	},
-	"files": ["src", "dist"],
+	"files": [
+		"src",
+		"dist"
+	],
 	"peerDependencies": {
 		"eslint": "catalog:production",
 		"oxlint": "^1.61.0",
@@ -55,5 +67,8 @@
 	"sideEffects": false,
 	"publishConfig": {
 		"access": "public"
+	},
+	"dependencies": {
+		"@fastify/deepmerge": "^3.2.1"
 	}
 }

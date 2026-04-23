@@ -13,9 +13,6 @@ catalogs:
     '@ianvs/prettier-plugin-sort-imports':
       specifier: ^4.7.1
       version: 4.7.1
-    eslint:
-      specifier: ^9.22.0 || ^10.0.0
-      version: 10.2.0
     globals:
       specifier: ^17.4.0
       version: 17.5.0
@@ -164,6 +161,9 @@ importers:
 
   configs/oxlint:
     dependencies:
+      '@fastify/deepmerge':
+        specifier: ^3.2.1
+        version: 3.2.1
       eslint:
         specifier: catalog:production
         version: 10.2.0(jiti@2.6.1)
@@ -893,6 +893,9 @@ packages:
   '@eslint/plugin-kit@0.7.1':
     resolution: {integrity: sha512-rZAP3aVgB9ds9KOeUSL+zZ21hPmo8dh6fnIFwRQj5EAZl9gzR7wxYbYXYysAM8CTqGmUGyp2S4kUdV17MnGuWQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
+
+  '@fastify/deepmerge@3.2.1':
+    resolution: {integrity: sha512-N5Oqvltoa2r9z1tbx4xjky0oRR60v+T47Ic4J1ukoVQcptLOrIdRnCSdTGmOmajZuHVKlTnfcmrjyqsGEW1ztA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -4154,6 +4157,8 @@ snapshots:
     dependencies:
       '@eslint/core': 1.2.1
       levn: 0.4.1
+
+  '@fastify/deepmerge@3.2.1': {}
 
   '@humanfs/core@0.19.1': {}
 
