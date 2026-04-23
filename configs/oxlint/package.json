@@ -30,24 +30,24 @@
 	"type": "module",
 	"exports": {
 		"./typescript": {
-			"types": "./dist/typescript.d.ts",
-			"import": "./dist/typescript.js"
+			"types": "./dist/typescript.d.mts",
+			"import": "./dist/typescript.mjs"
 		},
 		"./react": {
-			"types": "./dist/react.d.ts",
-			"import": "./dist/react.js"
+			"types": "./dist/react.d.mts",
+			"import": "./dist/react.mjs"
 		},
 		"./next": {
-			"types": "./dist/next.d.ts",
-			"import": "./dist/next.js"
+			"types": "./dist/next.d.mts",
+			"import": "./dist/next.mjs"
 		},
 		"./utils": {
-			"types": "./dist/utils.d.ts",
-			"import": "./dist/utils.js"
+			"types": "./dist/utils.d.mts",
+			"import": "./dist/utils.mjs"
 		},
 		"./eslint/react": {
-			"types": "./dist/eslint/react.d.ts",
-			"import": "./dist/eslint/react.js"
+			"types": "./dist/eslint/react.d.mts",
+			"import": "./dist/eslint/react.mjs"
 		}
 	},
 	"files": [
