@@ -1,10 +1,15 @@
-{
-	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["typescript"],
-	"categories": {
-		"correctness": "error"
+import { defineConfig } from "oxlint";
+
+export default defineConfig({
+	plugins: ["typescript"],
+	categories: {
+		correctness: "error",
 	},
-	"rules": {
+	env: {
+		builtin: true,
+		es2026: true,
+	},
+	rules: {
 		// #region eslint
 		"no-case-declarations": "error",
 		"no-empty": "error",
@@ -40,34 +45,31 @@
 		// #endregion
 
 		// #region overrides
-		"curly": "warn",
+		curly: "warn",
 		"no-unused-vars": [
 			"error",
 			{
-				"argsIgnorePattern": "^_",
-				"ignoreRestSiblings": true
-			}
+				argsIgnorePattern: "^_",
+				ignoreRestSiblings: true,
+			},
 		],
 		"@typescript-eslint/ban-ts-comment": "warn",
 		"@typescript-eslint/consistent-type-imports": [
 			"error",
 			{
-				"prefer": "type-imports",
-				"fixStyle": "inline-type-imports"
-			}
+				prefer: "type-imports",
+				fixStyle: "inline-type-imports",
+			},
 		],
-		"@typescript-eslint/no-empty-object-type": [
-			"error",
-			{ "allowInterfaces": "with-single-extends" }
-		],
+		"@typescript-eslint/no-empty-object-type": ["error", { allowInterfaces: "with-single-extends" }],
 		"@typescript-eslint/no-explicit-any": "warn",
-		"@typescript-eslint/no-namespace": ["error", { "allowDeclarations": true }]
+		"@typescript-eslint/no-namespace": ["error", { allowDeclarations: true }],
 		// #endregion
 	},
-	"overrides": [
+	overrides: [
 		{
-			"files": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
-			"rules": {
+			files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+			rules: {
 				// #region typescript-eslint
 				"no-class-assign": "off",
 				"no-const-assign": "off",
@@ -84,9 +86,9 @@
 				"no-var": "error",
 				"no-with": "off",
 				"prefer-rest-params": "error",
-				"prefer-spread": "error"
+				"prefer-spread": "error",
 				// #endregion
-			}
-		}
-	]
-}
+			},
+		},
+	],
+});

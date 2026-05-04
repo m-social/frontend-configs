@@ -25,56 +25,89 @@ yarn add -D oxlint oxlint-tsgolint @m-social/oxlint-config
 
 ## 🚀 Usage
 
-Create a `.oxlintrc.json` file in your project root and extend the appropriate configuration:
+Create a `oxlint.config.ts` file in your project root and extend the appropriate configuration:
 
 ### Base Configuration
 
-```json
-{
-	"extends": ["./node_modules/@m-social/oxlint-config/typescript.jsonc"],
-	"env": {
-		"builtin": true,
-		"es2026": true
-	}
-}
+```typescript
+import typescriptConfig from "@m-social/oxlint-config/typescript";
+
+export default typescriptConfig;
 ```
 
 ### React Configuration
 
-```json
-{
-	"extends": [
-		"./node_modules/@m-social/oxlint-config/typescript.jsonc",
-		"./node_modules/@m-social/oxlint-config/react.jsonc"
-	],
-	"env": {
-		"builtin": true,
-		"es2026": true,
-		"browser": true,
-		"shared-node-browser": true
-	}
-}
+```typescript
+import reactConfig from "@m-social/oxlint-config/react";
+import { mergeConfigs } from "@m-social/oxlint-config/utils";
+
+export default mergeConfigs([
+	reactConfig,
+	{
+		settings: {
+			react: {
+				version: "19.2",
+			},
+		},
+	},
+]);
 ```
 
 ### Next.js Configuration
 
-```json
-{
-	"extends": [
-		"./node_modules/@m-social/oxlint-config/typescript.jsonc",
-		"./node_modules/@m-social/oxlint-config/react.jsonc",
-		"./node_modules/@m-social/oxlint-config/next.jsonc"
-	],
-	"env": {
-		"builtin": true,
-		"es2026": true,
-		"browser": true,
-		"shared-node-browser": true,
-		"commonjs": true,
-		"node": true
+```typescript
+import nextConfig from "@m-social/oxlint-config/next";
+import { mergeConfigs } from "@m-social/oxlint-config/utils";
+
+export default mergeConfigs([
+	nextConfig,
+	{
+		settings: {
+			react: {
+				version: "19.2",
+			},
+		},
 	},
-	"ignorePatterns": ["**/.next/", "**/out/", "**/build/", "**/next-env.d.ts"]
-}
+]);
+```
+
+## 🧩 Extending the Config
+
+To customize any of the provided configurations, use the `mergeConfigs` utility from `@m-social/oxlint-config/utils`. It deep-merges an array of config objects, so your overrides are applied on top of the base config without losing any of its defaults.
+
+```typescript
+import typescriptConfig from "@m-social/oxlint-config/typescript";
+import { mergeConfigs } from "@m-social/oxlint-config/utils";
+
+export default mergeConfigs([
+	typescriptConfig,
+	{
+		rules: {
+			// override or add rules here
+			"no-console": "warn",
+		},
+	},
+]);
+```
+
+The same pattern works with any of the provided configs (`/typescript`, `/react`, `/next`). Simply pass your partial config object as the last element of the array and it will be merged with the base.
+
+## 🔍 Type-aware Linting
+
+To enable type-aware linting, set `options: { typeAware: true }` in your `oxlint.config.ts` via `mergeConfigs`:
+
+```typescript
+import typescriptConfig from "@m-social/oxlint-config/typescript";
+import { mergeConfigs } from "@m-social/oxlint-config/utils";
+
+export default mergeConfigs([
+	typescriptConfig,
+	{
+		options: {
+			typeAware: true,
+		},
+	},
+]);
 ```
 
 ## 🔧 Using oxlint with ESLint
@@ -94,38 +127,27 @@ import oxlint from "eslint-plugin-oxlint";
 
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json")
+	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts")
 );
 ```
 
 ### Type-aware linting
 
-When using type-aware linting (like `oxlint --type-aware`), pass `{ typeAware: true }` as the second argument to `buildFromOxlintConfigFile`. This tells `eslint-plugin-oxlint` to disable the corresponding `@typescript-eslint` rules that oxlint now handles natively:
-
-```js
-// eslint.config.js
-import { defineConfig } from "eslint/config";
-import oxlint from "eslint-plugin-oxlint";
-
-export default defineConfig(
-	// other plugins
-	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json", { typeAware: true })
-);
-```
+When `typeAware: true` is set in your `oxlint.config.ts` (see [Type-aware Linting](#-type-aware-linting)), `eslint-plugin-oxlint` will automatically detect it and disable the corresponding `@typescript-eslint` type-aware rules. No additional configuration in `eslint.config.js` is needed.
 
 ### React and Next.js Projects
 
-For React or Next.js configurations, you also need to add rules from `@m-social/oxlint-config/react` to properly ignore rules from `@eslint-react` and `@stylistic` plugins, as oxlint doesn't support them yet:
+For React or Next.js configurations, you also need to add rules from `@m-social/oxlint-config/eslint/react` to properly ignore rules from `@eslint-react` and `@stylistic` plugins, as oxlint doesn't support them yet:
 
 ```js
 // eslint.config.js
 import { defineConfig } from "eslint/config";
 import oxlint from "eslint-plugin-oxlint";
-import oxlintReactRules from "@m-social/oxlint-config/react";
+import oxlintReactRules from "@m-social/oxlint-config/eslint/react";
 
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./.oxlintrc.json"),
+	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts"),
 	oxlintReactRules
 );
 ```

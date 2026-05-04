@@ -19,7 +19,7 @@
 		}
 	],
 	"scripts": {
-		"release": "pnpm publish"
+		"build": "tsdown"
 	},
 	"license": "MIT",
 	"repository": {
@@ -29,25 +29,33 @@
 	},
 	"type": "module",
 	"exports": {
-		"./typescript.jsonc": "./typescript.jsonc",
-		"./react.jsonc": "./react.jsonc",
-		"./next.jsonc": "./next.jsonc",
+		"./typescript": {
+			"types": "./dist/typescript.d.mts",
+			"import": "./dist/typescript.mjs"
+		},
+		"./react": {
+			"types": "./dist/react.d.mts",
+			"import": "./dist/react.mjs"
+		},
+		"./next": {
+			"types": "./dist/next.d.mts",
+			"import": "./dist/next.mjs"
+		},
+		"./utils": {
+			"types": "./dist/utils.d.mts",
+			"import": "./dist/utils.mjs"
+		},
 		"./eslint/react": {
-			"types": "./eslint/react.d.ts",
-			"import": "./eslint/react.js"
+			"types": "./dist/eslint/react.d.mts",
+			"import": "./dist/eslint/react.mjs"
 		}
 	},
 	"files": [
-		"typescript.jsonc",
-		"react.jsonc",
-		"next.jsonc",
-		"eslint"
+		"src",
+		"dist"
 	],
-	"devDependencies": {
-		"eslint": "^10.2.0"
-	},
 	"peerDependencies": {
-		"eslint": "^9.22.0 || ^10.0.0",
+		"eslint": "catalog:production",
 		"oxlint": "^1.61.0",
 		"oxlint-tsgolint": ">=0.18.0"
 	},
@@ -56,7 +64,11 @@
 			"optional": true
 		}
 	},
+	"sideEffects": false,
 	"publishConfig": {
 		"access": "public"
+	},
+	"dependencies": {
+		"@fastify/deepmerge": "^3.2.1"
 	}
 }

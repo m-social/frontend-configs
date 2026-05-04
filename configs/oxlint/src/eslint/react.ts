@@ -1,7 +1,6 @@
-/**
- * @type import("eslint").Linter.Config
- */
-export default {
+import { defineConfig } from "eslint/config";
+
+export default defineConfig({
 	name: "m-social/oxlint-config-react",
 	rules: {
 		// react/jsx-no-comment-textnodes
@@ -67,4 +66,4 @@ export default {
 		// react/self-closing-comp
 		"@stylistic/jsx-self-closing-comp": "off",
 	},
-};
+});
