@@ -1,18 +1,14 @@
 packages:
   - configs/eslint/*
   - configs/prettier/*
-  - configs/biome
-  - configs/cspell
-  - configs/oxlint
-  - configs/oxfmt
-  - configs/stylelint
+  - configs/*
 
 catalogs:
   development:
     eslint: ^10.2.0
     prettier: ^3.6.0
   production:
-    '@ianvs/prettier-plugin-sort-imports': ^4.7.1
+    "@ianvs/prettier-plugin-sort-imports": ^4.7.1
     eslint: ^9.22.0 || ^10.0.0
     globals: ^17.4.0
     prettier: ^3.6.0
