@@ -1,12 +1,12 @@
 import { defineConfig } from "oxfmt";
 
+import baseConfig from "./base.ts";
 import { BUILTIN_EXTERNAL_GROUPS, FSD_GROUPS, INTERNAL_RELATIVE_GROUPS } from "./import-groups.ts";
-import typescriptConfig from "./typescript.ts";
 
 export default defineConfig({
-	...typescriptConfig,
+	...baseConfig,
 	sortImports: {
-		...typescriptConfig.sortImports,
+		...baseConfig.sortImports,
 		groups: [
 			"svelte",
 			...BUILTIN_EXTERNAL_GROUPS,

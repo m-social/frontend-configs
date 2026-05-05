@@ -31,9 +31,9 @@
 	"type": "module",
 	"sideEffects": false,
 	"exports": {
-		"./typescript": {
-			"types": "./dist/typescript.d.mts",
-			"import": "./dist/typescript.mjs"
+		".": {
+			"types": "./dist/base.d.mts",
+			"import": "./dist/base.mjs"
 		},
 		"./react": {
 			"types": "./dist/react.d.mts",

@@ -30,16 +30,15 @@ Create a `oxfmt.config.ts` file in your project root and extend the appropriate 
 ### Base Configuration
 
 ```typescript
-import typescriptConfig from "@m-social/oxfmt-config/typescript";
+import baseConfig from "@m-social/oxfmt-config";
 
-export default typescriptConfig;
+export default baseConfig;
 ```
 
 ### React Configuration
 
 ```typescript
 import reactConfig from "@m-social/oxfmt-config/react";
-import { mergeConfigs } from "@m-social/oxfmt-config/utils";
 
 export default reactConfig;
 ```
@@ -48,7 +47,6 @@ export default reactConfig;
 
 ```typescript
 import svelteConfig from "@m-social/oxfmt-config/svelte";
-import { mergeConfigs } from "@m-social/oxfmt-config/utils";
 
 export default svelteConfig;
 ```
@@ -59,10 +57,10 @@ To customize the configuration for your project, import `defineConfig` from `oxf
 
 ```typescript
 import { defineConfig } from "oxfmt";
-import typescriptConfig from "@m-social/oxfmt-config/typescript";
+import baseConfig from "@m-social/oxfmt-config";
 
 export default defineConfig({
-	...typescriptConfig,
+	...baseConfig,
 	// ... your override options
 });
 ```
