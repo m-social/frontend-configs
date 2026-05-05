@@ -1,7 +1,3 @@
-/// <reference types="@ianvs/prettier-plugin-sort-imports" />
-
-import { createRequire } from "node:module";
-
 import baseConfig from "@m-social/prettier-config";
 import {
 	fsdImportSorters,
@@ -14,11 +10,8 @@ const SUPPORTED_ALIASES = ["$", "@/", "#"];
 
 const linkedStyle = "/[^/]+[.]s?css([?].*)?$";
 
-const require = createRequire(import.meta.url);
-
 const reactConfig = {
 	...baseConfig,
-	plugins: [...baseConfig.plugins, require.resolve("@ianvs/prettier-plugin-sort-imports")],
 	importOrder: [
 		// #region react & frameworks
 		packageSorter("react"),
@@ -40,7 +33,6 @@ const reactConfig = {
 		`^[.]${linkedStyle}`, // linked style
 		"",
 	],
-	importOrderTypeScriptVersion: "5.0.0",
 } satisfies Config;
 
 export default reactConfig;
