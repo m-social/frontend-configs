@@ -61,7 +61,10 @@ export default defineConfig({
 				fixStyle: "inline-type-imports",
 			},
 		],
-		"@typescript-eslint/no-empty-object-type": ["error", { allowInterfaces: "with-single-extends" }],
+		"@typescript-eslint/no-empty-object-type": [
+			"error",
+			{ allowInterfaces: "with-single-extends" },
+		],
 		"@typescript-eslint/no-explicit-any": "warn",
 		"@typescript-eslint/no-namespace": ["error", { allowDeclarations: true }],
 		// #endregion

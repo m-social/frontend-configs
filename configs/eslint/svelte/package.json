@@ -2,7 +2,14 @@
 	"name": "@m-social/eslint-config-svelte",
 	"version": "1.2.1",
 	"description": "Shared ESLint config for Svelte used by M-Social projects",
-	"keywords": ["m-social", "eslint", "eslint-config", "svelte", "sveltekit"],
+	"keywords": [
+		"eslint",
+		"eslint-config",
+		"m-social",
+		"svelte",
+		"sveltekit"
+	],
+	"license": "MIT",
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -18,12 +25,14 @@
 		"url": "git+https://github.com/m-social/frontend-configs.git",
 		"directory": "configs/eslint/svelte"
 	},
-	"license": "MIT",
-	"files": ["dist", "src"],
+	"files": [
+		"dist",
+		"src"
+	],
 	"type": "module",
-	"types": "./dist/index.d.cts",
-	"module": "./dist/index.mjs",
 	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
 	"exports": {
 		".": {
 			"@m-social/frontend-configs": "./src/index.ts",
@@ -35,6 +44,9 @@
 			"require": "./dist/index.cjs"
 		}
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"build": "tsdown"
 	},
@@ -44,13 +56,10 @@
 		"globals": "catalog:production",
 		"typescript-eslint": "catalog:production"
 	},
-	"peerDependencies": {
-		"eslint": "catalog:production"
-	},
 	"devDependencies": {
 		"eslint": "catalog:development"
 	},
-	"publishConfig": {
-		"access": "public"
+	"peerDependencies": {
+		"eslint": "catalog:production"
 	}
 }

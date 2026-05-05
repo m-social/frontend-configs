@@ -1,3 +1,10 @@
-import typescriptConfig from "./configs/oxlint/src/next.ts";
+import { defineConfig } from "oxlint";
 
-export default typescriptConfig;
+import typescriptConfig from "./configs/oxlint/src/typescript.ts";
+
+export default defineConfig({
+	...typescriptConfig,
+	options: {
+		typeAware: true,
+	},
+});

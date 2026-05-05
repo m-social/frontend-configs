@@ -127,7 +127,7 @@ import oxlint from "eslint-plugin-oxlint";
 
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts")
+	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts"),
 );
 ```
 
@@ -148,7 +148,7 @@ import oxlintReactRules from "@m-social/oxlint-config/eslint/react";
 export default defineConfig(
 	// other plugins
 	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts"),
-	oxlintReactRules
+	oxlintReactRules,
 );
 ```
 

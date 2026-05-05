@@ -1,8 +1,8 @@
 import typescriptConfig, {
 	type TypescriptConfigSettings,
 } from "@m-social/eslint-config-typescript";
-import { defineConfig, globalIgnores } from "eslint/config";
 import svelte from "eslint-plugin-svelte";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import ts from "typescript-eslint";
 
@@ -23,10 +23,7 @@ export interface SvelteConfigSettings extends TypescriptConfigSettings {
 	svelteConfig: unknown;
 }
 
-export default function svelteConfig({
-	svelteConfig,
-	...tsconfig
-}: SvelteConfigSettings) {
+export default function svelteConfig({ svelteConfig, ...tsconfig }: SvelteConfigSettings) {
 	return defineConfig(
 		globalIgnores(["**/.svelte-kit/**", "**/build/**"], "m-social/svelte/ignore"),
 		typescriptConfig(tsconfig),
@@ -50,6 +47,6 @@ export default function svelteConfig({
 					svelteConfig,
 				},
 			},
-		}
+		},
 	);
 }

@@ -3,10 +3,10 @@ import typescriptConfig, {
 	type TypescriptConfigSettings,
 } from "@m-social/eslint-config-typescript";
 import stylistic from "@stylistic/eslint-plugin";
-import { defineConfig } from "eslint/config";
 // @ts-expect-error `jsx-a11y` doesn't have typings
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
 
 export interface ReactConfigSettings extends TypescriptConfigSettings {
@@ -90,7 +90,7 @@ export default function reactConfig({
 					},
 				],
 			},
-		}
+		},
 	);
 
 	if (!reactCompiler) {

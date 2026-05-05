@@ -3,11 +3,12 @@
 	"version": "0.3.0",
 	"description": "Shared biome configs for projects used at M-Social",
 	"keywords": [
-		"m-social",
 		"biome",
+		"biome-config",
 		"config",
-		"biome-config"
+		"m-social"
 	],
+	"license": "MIT",
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -18,27 +19,26 @@
 			"email": "a.pitikin@msocialproduction.com"
 		}
 	],
-	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/m-social/frontend-configs.git",
 		"directory": "configs/biome"
-	},
-	"type": "module",
-	"exports": {
-		".": "./base.jsonc",
-		"./react": "./react.jsonc",
-		"./svelte": "./svelte.jsonc"
 	},
 	"files": [
 		"base.jsonc",
 		"react.jsonc",
 		"svelte.jsonc"
 	],
-	"peerDependencies": {
-		"@biomejs/biome": "^2.2.0"
+	"type": "module",
+	"exports": {
+		".": "./base.jsonc",
+		"./react": "./react.jsonc",
+		"./svelte": "./svelte.jsonc"
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"peerDependencies": {
+		"@biomejs/biome": "^2.2.0"
 	}
 }
