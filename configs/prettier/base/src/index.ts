@@ -17,7 +17,7 @@ const baseConfig = {
 	singleQuote: false,
 	quoteProps: "as-needed",
 	jsxSingleQuote: false,
-	trailingComma: "es5",
+	trailingComma: "all",
 	bracketSpacing: true,
 	bracketSameLine: false,
 	arrowParens: "always",
@@ -42,6 +42,14 @@ const baseConfig = {
 		"",
 	],
 	importOrderTypeScriptVersion: "5.0.0",
+	overrides: [
+		{
+			files: ["*.json", "*.jsonc"],
+			options: {
+				trailingComma: "none",
+			},
+		},
+	],
 } satisfies Config;
 
 export default baseConfig;

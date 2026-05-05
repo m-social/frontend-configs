@@ -34,4 +34,12 @@ export default defineConfig({
 		internalPattern: ["#/", "$/", "@/"],
 		newlinesBetween: false,
 	},
+	overrides: [
+		{
+			files: ["*.json", "*.jsonc"],
+			options: {
+				trailingComma: "none",
+			},
+		},
+	],
 });
