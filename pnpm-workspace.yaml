@@ -16,3 +16,4 @@ catalogs:
 
 onlyBuiltDependencies:
   - esbuild
+  - lefthook

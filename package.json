@@ -15,6 +15,7 @@
 		"@types/node": "^22.13.10",
 		"@typescript/native-preview": "7.0.0-dev.20260505.1",
 		"cspell": "^10.0.0",
+		"lefthook": "^2.1.6",
 		"oxfmt": "^0.47.0",
 		"oxlint": "^1.61.0",
 		"oxlint-tsgolint": "^0.21.1",
