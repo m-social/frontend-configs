@@ -1,5 +1,13 @@
 # @m-social/oxlint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- ✨ use js configs instead of json ones ([#36](https://github.com/m-social/frontend-configs/pull/36))
+
+- ✨ add `mergeConfigs` utility for enhanced configs merging ([#36](https://github.com/m-social/frontend-configs/pull/36))
+
 ## 0.6.1
 
 ### Patch Changes
