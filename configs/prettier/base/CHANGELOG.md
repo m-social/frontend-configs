@@ -1,5 +1,13 @@
 # @m-social/prettier-config
 
+## 2.1.0
+
+### Minor Changes
+
+- 🏗️ always print trailing commas (expect for json files) ([#43](https://github.com/m-social/frontend-configs/pull/43))
+
+- 🏗️ add import sorting to the base config ([#40](https://github.com/m-social/frontend-configs/pull/40))
+
 ## 2.0.0
 
 ### Major Changes

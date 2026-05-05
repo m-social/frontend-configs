@@ -1,5 +1,11 @@
 # @m-social/biome-config
 
+## 0.4.0
+
+### Minor Changes
+
+- 🏗️ always print trailing commas (expect for json files) ([#43](https://github.com/m-social/frontend-configs/pull/43))
+
 ## 0.3.0
 
 ### Minor Changes
