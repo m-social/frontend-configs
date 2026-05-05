@@ -1,4 +1,3 @@
-/// <reference types="@ianvs/prettier-plugin-sort-imports" />
 import { createRequire } from "node:module";
 
 import baseConfig from "@m-social/prettier-config";
@@ -15,11 +14,7 @@ const require = createRequire(import.meta.url);
 
 const svelteConfig = {
 	...baseConfig,
-	plugins: [
-		...baseConfig.plugins,
-		require.resolve("prettier-plugin-svelte"),
-		require.resolve("@ianvs/prettier-plugin-sort-imports"),
-	],
+	plugins: [...baseConfig.plugins, require.resolve("prettier-plugin-svelte")],
 	importOrder: [
 		packageSorter("svelte"),
 		"",
@@ -39,7 +34,6 @@ const svelteConfig = {
 		"^[.]", // relative imports
 		"",
 	],
-	importOrderTypeScriptVersion: "5.0.0",
 	overrides: [{ files: "*.svelte", options: { parser: "svelte" } }],
 } satisfies Config;
 

@@ -51,7 +51,6 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@ianvs/prettier-plugin-sort-imports": "catalog:production",
 		"@m-social/prettier-config": "workspace:*",
 		"prettier-plugin-svelte": "^3.5.1"
 	},
