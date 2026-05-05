@@ -4,6 +4,7 @@ packages:
   - configs/biome
   - configs/cspell
   - configs/oxlint
+  - configs/oxfmt
   - configs/stylelint
 
 catalogs:

@@ -1,0 +1,56 @@
+{
+	"name": "@m-social/oxfmt-config",
+	"version": "0.0.0",
+	"description": "Shared oxfmt configs for projects used at M-Social",
+	"keywords": [
+		"config",
+		"m-social",
+		"oxfmt",
+		"oxfmt-config"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "M-Social",
+		"url": "https://msocialproduction.com"
+	},
+	"contributors": [
+		{
+			"name": "Artem Pitikin",
+			"email": "a.pitikin@msocialproduction.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/m-social/frontend-configs.git",
+		"directory": "configs/oxfmt"
+	},
+	"files": [
+		"src",
+		"dist"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"exports": {
+		"./typescript": {
+			"types": "./dist/typescript.d.mts",
+			"import": "./dist/typescript.mjs"
+		},
+		"./react": {
+			"types": "./dist/react.d.mts",
+			"import": "./dist/react.mjs"
+		},
+		"./svelte": {
+			"types": "./dist/svelte.d.mts",
+			"import": "./dist/svelte.mjs"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsdown"
+	},
+	"peerDependencies": {
+		"oxfmt": "^0.47.0"
+	}
+}

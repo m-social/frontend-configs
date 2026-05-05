@@ -21,6 +21,11 @@ A monorepo containing all frontend linting, formatting, and code quality configu
 - **[@m-social/prettier-config-react](./configs/prettier/react)** - Prettier configuration for React projects
 - **[@m-social/prettier-config-svelte](./configs/prettier/svelte)** - Prettier configuration for Svelte projects
 
+### Oxfmt Configuration
+
+- **[@m-social/oxfmt-config](./configs/oxfmt)** - Oxfmt configuration for high-performance formatting (with React and Svelte variants)
+  - ⚠️ **Experimental** - Oxfmt is in beta for now
+
 ### Biome Configuration
 
 - **[@m-social/biome-config](./configs/biome)** - Biome configuration for fast formatting (with React and Svelte variants)
@@ -77,7 +82,15 @@ pnpm add -D prettier @m-social/prettier-config
 
 See [@m-social/prettier-config](./configs/prettier/base) for usage instructions.
 
-**Option 2: Biome (Experimental)**
+**Option 2: Oxfmt (Experimental)**
+
+```bash
+pnpm add -D oxfmt @m-social/oxfmt-config
+```
+
+See [@m-social/oxfmt-config](./configs/oxfmt) for usage instructions.
+
+**Option 3: Biome (Experimental)**
 
 ```bash
 pnpm add -D @biomejs/biome @m-social/biome-config
@@ -119,7 +132,17 @@ pnpm add -D prettier @m-social/prettier-config-svelte
 
 See [@m-social/prettier-config-svelte](./configs/prettier/svelte) for usage instructions.
 
-**Option 2: Biome (Experimental)**
+**Option 2: Oxfmt (Experimental)**
+
+```bash
+pnpm add -D oxfmt @m-social/oxfmt-config
+```
+
+See [@m-social/oxfmt-config](./configs/oxfmt) for usage instructions.
+
+> ⚠️ **Note:** oxfmt does not currently support `.svelte` files. This config can be used for `.svelte.ts` and `.svelte.js` files. For `.svelte` files, use Prettier (Option 1).
+
+**Option 3: Biome (Experimental)**
 
 ```bash
 pnpm add -D @biomejs/biome @m-social/biome-config
@@ -161,7 +184,15 @@ pnpm add -D prettier @m-social/prettier-config-react
 
 See [@m-social/prettier-config-react](./configs/prettier/react) for usage instructions.
 
-**Option 2: Biome (Experimental)**
+**Option 2: Oxfmt (Experimental)**
+
+```bash
+pnpm add -D oxfmt @m-social/oxfmt-config
+```
+
+See [@m-social/oxfmt-config](./configs/oxfmt) for usage instructions.
+
+**Option 3: Biome (Experimental)**
 
 ```bash
 pnpm add -D @biomejs/biome @m-social/biome-config
@@ -203,7 +234,15 @@ pnpm add -D prettier @m-social/prettier-config-react
 
 See [@m-social/prettier-config-react](./configs/prettier/react) for usage instructions.
 
-**Option 2: Biome (Experimental)**
+**Option 2: Oxfmt (Experimental)**
+
+```bash
+pnpm add -D oxfmt @m-social/oxfmt-config
+```
+
+See [@m-social/oxfmt-config](./configs/oxfmt) for usage instructions.
+
+**Option 3: Biome (Experimental)**
 
 ```bash
 pnpm add -D @biomejs/biome @m-social/biome-config
@@ -247,6 +286,7 @@ configs/
 │   ├── react/          # @m-social/prettier-config-react
 │   ├── svelte/         # @m-social/prettier-config-svelte
 │   └── utils/          # Shared utilities
+├── oxfmt/              # @m-social/oxfmt-config
 ├── biome/              # @m-social/biome-config
 ├── oxlint/             # @m-social/oxlint-config
 ├── cspell/             # @m-social/cspell-config
@@ -298,7 +338,3 @@ Contributions are welcome! Please read our contributing guidelines before submit
 ## 📄 License
 
 MIT © M-Social
-
----
-
-**Note:** Biome and Oxlint configurations are currently experimental. Biome supports formatting only, with linting rules planned for future releases. Oxlint can be used alongside ESLint for improved performance but requires additional integration setup.
