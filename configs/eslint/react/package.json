@@ -54,7 +54,7 @@
 		"@m-social/eslint-config-typescript": "workspace:*",
 		"@stylistic/eslint-plugin": "^5.10.0",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
-		"eslint-plugin-react-hooks": "^7.0.1",
+		"eslint-plugin-react-hooks": "^7.1.1",
 		"globals": "catalog:production"
 	},
 	"devDependencies": {
