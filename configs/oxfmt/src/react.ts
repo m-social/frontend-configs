@@ -1,5 +1,6 @@
 import { defineConfig } from "oxfmt";
 
+import baseConfig from "./base.ts";
 import {
 	BUILTIN_EXTERNAL_GROUPS,
 	FSD_DEFINITION,
@@ -8,12 +9,11 @@ import {
 	STYLE_DEFINITION,
 	STYLE_GROUPS,
 } from "./import-groups.ts";
-import typescriptConfig from "./typescript.ts";
 
 export default defineConfig({
-	...typescriptConfig,
+	...baseConfig,
 	sortImports: {
-		...typescriptConfig.sortImports,
+		...baseConfig.sortImports,
 		groups: [
 			"react",
 			"react-meta",
