@@ -10,7 +10,7 @@ import {
 } from "@m-social/prettier-config-utils";
 import type { Config } from "prettier";
 
-const SUPPORTED_ALIASES = ["$", "@/", "#"] as const;
+const SUPPORTED_ALIASES = ["$", "@/", "#"];
 
 const linkedStyle = "/[^/]+[.]s?css([?].*)?$";
 

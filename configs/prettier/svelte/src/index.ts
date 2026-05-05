@@ -9,7 +9,7 @@ import {
 } from "@m-social/prettier-config-utils";
 import type { Config } from "prettier";
 
-const SUPPORTED_ALIASES = ["$lib/", "@/", "#"] as const;
+const SUPPORTED_ALIASES = ["$lib/", "@/", "#"];
 
 const require = createRequire(import.meta.url);
 
