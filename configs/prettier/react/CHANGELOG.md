@@ -1,5 +1,16 @@
 # @m-social/prettier-config-react
 
+## 2.1.0
+
+### Minor Changes
+
+- 🏗️ add import sorting to the base config ([#40](https://github.com/m-social/frontend-configs/pull/40))
+
+### Patch Changes
+
+- Updated dependencies [[`388f456`](https://github.com/m-social/frontend-configs/commit/388f456dc9f2b5f3a6e1210f1c926acfd1c9c5e2), [`34a9d24`](https://github.com/m-social/frontend-configs/commit/34a9d2466bacc08b51a05ac2180073537ed0aa25)]:
+  - @m-social/prettier-config@2.1.0
+
 ## 2.0.0
 
 ### Major Changes
