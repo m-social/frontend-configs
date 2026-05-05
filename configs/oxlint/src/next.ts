@@ -1,5 +1,5 @@
-import reactConfig from "./react";
-import { mergeConfigs } from "./utils";
+import reactConfig from "./react.ts";
+import { mergeConfigs } from "./utils.ts";
 
 export default mergeConfigs([
 	reactConfig,

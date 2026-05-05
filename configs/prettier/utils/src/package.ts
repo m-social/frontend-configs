@@ -1,6 +1,6 @@
-import { escapeRegex } from "./escape";
-import type { Packages } from "./types";
-import { union } from "./union";
+import { escapeRegex } from "./escape.ts";
+import type { Packages } from "./types.ts";
+import { union } from "./union.ts";
 
 export const packageSorter = /* @__NO_SIDE_EFFECTS__ */ (packages: Packages) => {
 	const packagesArray = Array.isArray(packages) ? packages : [packages];

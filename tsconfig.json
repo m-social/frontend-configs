@@ -8,12 +8,14 @@
 		"esModuleInterop": true,
 		"strict": true,
 		"forceConsistentCasingInFileNames": true,
-		"moduleResolution": "bundler",
-		"module": "preserve",
+		"module": "NodeNext",
+		"moduleResolution": "nodenext",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
 		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": true,
+		"erasableSyntaxOnly": true,
 		"customConditions": ["@m-social/frontend-configs"]
 	}
 }

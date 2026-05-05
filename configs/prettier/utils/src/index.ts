@@ -1,3 +1,3 @@
-export { fsdImportSorters } from "./fsd";
-export { internalImportSorter } from "./internal";
-export { packageSorter } from "./package";
+export { fsdImportSorters } from "./fsd.ts";
+export { internalImportSorter } from "./internal.ts";
+export { packageSorter } from "./package.ts";

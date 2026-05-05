@@ -1,6 +1,6 @@
-import { escapeRegex } from "./escape";
-import type { Aliases } from "./types";
-import { union } from "./union";
+import { escapeRegex } from "./escape.ts";
+import type { Aliases } from "./types.ts";
+import { union } from "./union.ts";
 
 type FsdLayer = "app" | "pages" | "widgets" | "features" | "entities" | "shared";
 

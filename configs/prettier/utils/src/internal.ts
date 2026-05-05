@@ -1,6 +1,6 @@
-import { escapeRegex } from "./escape";
-import type { Aliases } from "./types";
-import { union } from "./union";
+import { escapeRegex } from "./escape.ts";
+import type { Aliases } from "./types.ts";
+import { union } from "./union.ts";
 
 const trimTrailingSlash = /* @__NO_SIDE_EFFECTS__ */ (str: string) => str.replace(/\/+$/, "");
 

@@ -1,5 +1,5 @@
-import typescriptConfig from "./typescript";
-import { mergeConfigs } from "./utils";
+import typescriptConfig from "./typescript.ts";
+import { mergeConfigs } from "./utils.ts";
 
 export default mergeConfigs([
 	typescriptConfig,
