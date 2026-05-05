@@ -3,11 +3,12 @@
 	"version": "0.6.1",
 	"description": "Shared oxlint configs for projects used at M-Social",
 	"keywords": [
+		"config",
 		"m-social",
 		"oxlint",
-		"config",
 		"oxlint-config"
 	],
+	"license": "MIT",
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -18,16 +19,17 @@
 			"email": "a.pitikin@msocialproduction.com"
 		}
 	],
-	"scripts": {
-		"build": "tsdown"
-	},
-	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/m-social/frontend-configs.git",
 		"directory": "configs/oxlint"
 	},
+	"files": [
+		"src",
+		"dist"
+	],
 	"type": "module",
+	"sideEffects": false,
 	"exports": {
 		"./typescript": {
 			"types": "./dist/typescript.d.mts",
@@ -50,10 +52,15 @@
 			"import": "./dist/eslint/react.mjs"
 		}
 	},
-	"files": [
-		"src",
-		"dist"
-	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsdown"
+	},
+	"dependencies": {
+		"@fastify/deepmerge": "^3.2.1"
+	},
 	"peerDependencies": {
 		"eslint": "catalog:production",
 		"oxlint": "^1.61.0",
@@ -63,12 +70,5 @@
 		"eslint": {
 			"optional": true
 		}
-	},
-	"sideEffects": false,
-	"publishConfig": {
-		"access": "public"
-	},
-	"dependencies": {
-		"@fastify/deepmerge": "^3.2.1"
 	}
 }

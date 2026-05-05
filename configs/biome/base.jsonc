@@ -3,10 +3,10 @@
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
-		"useIgnoreFile": true
+		"useIgnoreFile": true,
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
 	},
 	"formatter": {
 		"enabled": true,
@@ -19,10 +19,10 @@
 		"bracketSameLine": false,
 		"bracketSpacing": true,
 		"expand": "auto",
-		"useEditorconfig": true
+		"useEditorconfig": true,
 	},
 	"linter": {
-		"enabled": false
+		"enabled": false,
 	},
 	"javascript": {
 		"formatter": {
@@ -34,13 +34,13 @@
 			"bracketSameLine": false,
 			"quoteStyle": "double",
 			"attributePosition": "auto",
-			"bracketSpacing": true
-		}
+			"bracketSpacing": true,
+		},
 	},
 	"html": {
 		"formatter": {
-			"selfCloseVoidElements": "always"
-		}
+			"selfCloseVoidElements": "always",
+		},
 	},
 	"assist": {
 		"enabled": true,
@@ -63,11 +63,11 @@
 							":BLANK_LINE:",
 							":ALIAS:",
 							":BLANK_LINE:",
-							":PATH:"
-						]
-					}
-				}
-			}
-		}
-	}
+							":PATH:",
+						],
+					},
+				},
+			},
+		},
+	},
 }

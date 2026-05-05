@@ -3,11 +3,12 @@
 	"version": "0.1.0",
 	"description": "Shared Stylelint config for projects used at M-Social",
 	"keywords": [
+		"config",
 		"m-social",
 		"stylelint",
-		"config",
 		"stylelint-config"
 	],
+	"license": "MIT",
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -18,15 +19,14 @@
 			"email": "a.pitikin@msocialproduction.com"
 		}
 	],
-	"scripts": {
-		"build": "publint"
-	},
-	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/m-social/frontend-configs.git",
 		"directory": "configs/stylelint"
 	},
+	"files": [
+		"src"
+	],
 	"type": "module",
 	"exports": {
 		".": {
@@ -34,20 +34,20 @@
 			"import": "./src/index.js"
 		}
 	},
-	"files": [
-		"src"
-	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "publint"
+	},
 	"dependencies": {
 		"stylelint-config-recommended-scss": "^17.0.0",
 		"stylelint-order": "^8.1.1"
 	},
-	"peerDependencies": {
-		"stylelint": "^17.4.0"
-	},
 	"devDependencies": {
 		"stylelint": "^17.4.0"
 	},
-	"publishConfig": {
-		"access": "public"
+	"peerDependencies": {
+		"stylelint": "^17.4.0"
 	}
 }

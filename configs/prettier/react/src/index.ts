@@ -18,10 +18,7 @@ const require = createRequire(import.meta.url);
 
 const reactConfig = {
 	...baseConfig,
-	plugins: [
-		...baseConfig.plugins,
-		require.resolve("@ianvs/prettier-plugin-sort-imports"),
-	],
+	plugins: [...baseConfig.plugins, require.resolve("@ianvs/prettier-plugin-sort-imports")],
 	importOrder: [
 		// #region react & frameworks
 		packageSorter("react"),

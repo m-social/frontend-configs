@@ -7,7 +7,10 @@ export type NextConfigSettings = ReactConfigSettings;
 
 export default function nextConfig(settings: NextConfigSettings) {
 	return defineConfig(
-		globalIgnores(["**/.next/", "**/out/", "**/build/", "**/next-env.d.ts"], "m-social/next/ignore"),
+		globalIgnores(
+			["**/.next/", "**/out/", "**/build/", "**/next-env.d.ts"],
+			"m-social/next/ignore",
+		),
 		reactConfig(settings),
 		next.configs.recommended,
 		next.configs["core-web-vitals"],
@@ -28,6 +31,6 @@ export default function nextConfig(settings: NextConfigSettings) {
 					},
 				],
 			},
-		}
+		},
 	);
 }

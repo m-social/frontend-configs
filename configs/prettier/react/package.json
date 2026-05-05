@@ -3,12 +3,13 @@
 	"version": "2.0.0",
 	"description": "Shared Prettier config for React projects used at M-Social",
 	"keywords": [
+		"config",
 		"m-social",
 		"prettier",
-		"config",
 		"prettier-config",
 		"react"
 	],
+	"license": "MIT",
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -24,15 +25,14 @@
 		"url": "git+https://github.com/m-social/frontend-configs.git",
 		"directory": "configs/prettier/react"
 	},
-	"license": "MIT",
 	"files": [
 		"dist",
 		"src"
 	],
 	"type": "module",
-	"types": "./dist/index.d.cts",
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
 	"exports": {
 		".": {
 			"@m-social/frontend-configs": "./src/index.ts",
@@ -43,6 +43,9 @@
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.cjs"
 		}
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"scripts": {
 		"build": "tsdown"
@@ -56,8 +59,5 @@
 	},
 	"peerDependencies": {
 		"prettier": "catalog:production"
-	},
-	"publishConfig": {
-		"access": "public"
 	}
 }

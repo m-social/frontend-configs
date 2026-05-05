@@ -24,19 +24,13 @@
 							":BLANK_LINE:",
 							":ALIAS:",
 							":BLANK_LINE:",
-							[
-								":PATH:",
-								"!./*.module.css",
-								"!./*.module.scss",
-								"!./*.css",
-								"!./*.css.ts"
-							],
+							[":PATH:", "!./*.module.css", "!./*.module.scss", "!./*.css", "!./*.css.ts"],
 							":BLANK_LINE:",
-							["./*.module.css", "./*.module.scss", "./*.css", "./*.css.ts"]
-						]
-					}
-				}
-			}
-		}
-	}
+							["./*.module.css", "./*.module.scss", "./*.css", "./*.css.ts"],
+						],
+					},
+				},
+			},
+		},
+	},
 }

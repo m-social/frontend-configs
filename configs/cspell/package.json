@@ -3,11 +3,12 @@
 	"version": "0.4.1",
 	"description": "Shared CSpell config for projects used at M-Social",
 	"keywords": [
-		"m-social",
-		"cspell",
 		"config",
-		"cspell-config"
+		"cspell",
+		"cspell-config",
+		"m-social"
 	],
+	"license": "MIT",
 	"author": {
 		"name": "M-Social",
 		"url": "https://msocialproduction.com"
@@ -18,15 +19,16 @@
 			"email": "a.pitikin@msocialproduction.com"
 		}
 	],
-	"scripts": {
-		"build": "publint"
-	},
-	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/m-social/frontend-configs.git",
 		"directory": "configs/cspell"
 	},
+	"files": [
+		"cspell.json",
+		"cspell.config.js",
+		"dictionaries"
+	],
 	"type": "module",
 	"sideEffects": false,
 	"main": "cspell.json",
@@ -36,22 +38,20 @@
 		"./cspell.json": "./cspell.json",
 		"./dictionaries/*": "./dictionaries/*"
 	},
-	"files": [
-		"cspell.json",
-		"cspell.config.js",
-		"dictionaries"
-	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "publint"
+	},
 	"dependencies": {
 		"@cspell/cspell-bundled-dicts": "^10.0.0",
 		"@cspell/dict-ru_ru": "^2.3.2"
 	},
-	"peerDependencies": {
-		"cspell": "^9.7.0 || ^10.0.0"
-	},
 	"devDependencies": {
 		"@cspell/cspell-types": "^10.0.0"
 	},
-	"publishConfig": {
-		"access": "public"
+	"peerDependencies": {
+		"cspell": "^9.7.0 || ^10.0.0"
 	}
 }
