@@ -12,8 +12,6 @@ import globals from "globals";
 export interface ReactConfigSettings extends TypescriptConfigSettings {
 	/**
 	 * Whether you are using React Compiler in your project or not
-	 *
-	 * @default true
 	 */
 	reactCompiler: boolean;
 
@@ -26,7 +24,7 @@ export interface ReactConfigSettings extends TypescriptConfigSettings {
 }
 
 export default function reactConfig({
-	reactCompiler = true,
+	reactCompiler,
 	reactHooksLatest = false,
 	...tsconfig
 }: ReactConfigSettings) {
