@@ -125,9 +125,11 @@ Then configure ESLint to automatically disable rules that oxlint handles:
 import { defineConfig } from "eslint/config";
 import oxlint from "eslint-plugin-oxlint";
 
+import oxlintConfig from "./oxlint.config.ts";
+
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts"),
+	oxlint.buildFromOxlintConfig(oxlintConfig),
 );
 ```
 
@@ -145,9 +147,11 @@ import { defineConfig } from "eslint/config";
 import oxlint from "eslint-plugin-oxlint";
 import oxlintReactRules from "@m-social/oxlint-config/eslint/react";
 
+import oxlintConfig from "./oxlint.config.ts";
+
 export default defineConfig(
 	// other plugins
-	oxlint.buildFromOxlintConfigFile("./oxlint.config.ts"),
+	oxlint.buildFromOxlintConfig(oxlintConfig),
 	oxlintReactRules,
 );
 ```
