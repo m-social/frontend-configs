@@ -51,7 +51,7 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@m-social/eslint-config-typescript": "workspace:*",
+		"@eslint/js": "^10.0.1",
 		"eslint-plugin-svelte": "^3.17.0",
 		"globals": "catalog:production",
 		"typescript-eslint": "catalog:production"

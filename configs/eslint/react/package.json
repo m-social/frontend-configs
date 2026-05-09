@@ -50,14 +50,13 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@eslint-react/eslint-plugin": "^4.2.3",
-		"@m-social/eslint-config-typescript": "workspace:*",
-		"@stylistic/eslint-plugin": "^5.10.0",
-		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"@eslint-react/eslint-plugin": "^5.7.0",
+		"@typescript-eslint/parser": "catalog:production",
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"globals": "catalog:production"
 	},
 	"devDependencies": {
+		"@typescript-eslint/utils": "^8.59.3",
 		"eslint": "catalog:development"
 	},
 	"peerDependencies": {

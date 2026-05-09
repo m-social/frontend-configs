@@ -5,6 +5,8 @@
 
 > A shareable ESLint configuration for React projects used at [M-Social](https://msocialproduction.com)
 
+> **Note:** This configuration is designed to be used alongside [@m-social/oxlint-config](https://npmx.dev/package/@m-social/oxlint-config). ESLint handles rules not yet supported by oxlint, while oxlint handles the rest for improved linting performance.
+
 ## 📦 Installation
 
 Install the package using pnpm (recommended):

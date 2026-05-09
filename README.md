@@ -8,12 +8,16 @@ A monorepo containing all frontend linting, formatting, and code quality configu
 
 ## 📦 Packages
 
+### Oxlint Configuration
+
+- **[@m-social/oxlint-config](./configs/oxlint)** - Oxlint configuration for high-performance linting
+
 ### ESLint Configurations
 
-- **[@m-social/eslint-config-typescript](./configs/eslint/typescript)** - ESLint configuration for TypeScript projects
+> **Note:** ESLint configurations are designed to be used alongside [@m-social/oxlint-config](./configs/oxlint). ESLint handles rules not yet supported by oxlint, while oxlint handles the rest for improved linting performance.
+
 - **[@m-social/eslint-config-react](./configs/eslint/react)** - ESLint configuration for React projects
 - **[@m-social/eslint-config-svelte](./configs/eslint/svelte)** - ESLint configuration for Svelte projects
-- **[@m-social/eslint-config-next](./configs/eslint/next)** - ESLint configuration for Next.js projects
 
 ### Prettier Configurations
 
@@ -30,11 +34,6 @@ A monorepo containing all frontend linting, formatting, and code quality configu
 
 - **[@m-social/biome-config](./configs/biome)** - Biome configuration for fast formatting (with React and Svelte variants)
   - ⚠️ **Experimental** - Currently supports formatting only
-
-### Oxlint Configuration
-
-- **[@m-social/oxlint-config](./configs/oxlint)** - Oxlint configuration for high-performance linting
-  - ⚠️ **Experimental** - Can be used alongside ESLint for improved performance
 
 ### CSpell Configuration
 
@@ -100,23 +99,13 @@ See [@m-social/biome-config](./configs/biome) for usage instructions.
 
 #### Linting
 
-**ESLint (Recommended)**
+**Oxlint**
 
 ```bash
-pnpm add -D eslint @m-social/eslint-config-typescript
+pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config
 ```
 
-See [@m-social/eslint-config-typescript](./configs/eslint/typescript) for usage instructions.
-
-**Optional: Add Oxlint for improved performance (Experimental)**
-
-Oxlint can be used alongside ESLint for faster linting on larger codebases.
-
-```bash
-pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config eslint-plugin-oxlint
-```
-
-See [@m-social/oxlint-config](./configs/oxlint) for usage instructions and ESLint integration setup.
+See [@m-social/oxlint-config](./configs/oxlint) for usage instructions.
 
 ---
 
@@ -152,23 +141,13 @@ See [@m-social/biome-config](./configs/biome) for usage instructions.
 
 #### Linting
 
-**ESLint (Recommended)**
+**Oxlint + ESLint**
 
 ```bash
-pnpm add -D eslint @m-social/eslint-config-svelte
+pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config eslint @m-social/eslint-config-svelte
 ```
 
-See [@m-social/eslint-config-svelte](./configs/eslint/svelte) for usage instructions.
-
-**Optional: Add Oxlint for improved performance (Experimental)**
-
-Oxlint can be used alongside ESLint for faster linting on larger codebases.
-
-```bash
-pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config eslint-plugin-oxlint
-```
-
-See [@m-social/oxlint-config](./configs/oxlint) for usage instructions and ESLint integration setup.
+See [@m-social/oxlint-config](./configs/oxlint) and [@m-social/eslint-config-svelte](./configs/eslint/svelte) for usage instructions.
 
 ---
 
@@ -202,23 +181,13 @@ See [@m-social/biome-config](./configs/biome) for usage instructions.
 
 #### Linting
 
-**ESLint (Recommended)**
+**Oxlint + ESLint**
 
 ```bash
-pnpm add -D eslint @m-social/eslint-config-react
+pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config eslint @m-social/eslint-config-react
 ```
 
-See [@m-social/eslint-config-react](./configs/eslint/react) for usage instructions.
-
-**Optional: Add Oxlint for improved performance (Experimental)**
-
-Oxlint can be used alongside ESLint for faster linting on larger codebases.
-
-```bash
-pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config eslint-plugin-oxlint
-```
-
-See [@m-social/oxlint-config](./configs/oxlint) for usage instructions and ESLint integration setup.
+See [@m-social/oxlint-config](./configs/oxlint) and [@m-social/eslint-config-react](./configs/eslint/react) for usage instructions.
 
 ---
 
@@ -252,23 +221,13 @@ See [@m-social/biome-config](./configs/biome) for usage instructions.
 
 #### Linting
 
-**ESLint (Recommended)**
+**Oxlint + ESLint**
 
 ```bash
-pnpm add -D eslint @m-social/eslint-config-next
+pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config eslint @m-social/eslint-config-react
 ```
 
-See [@m-social/eslint-config-next](./configs/eslint/next) for usage instructions.
-
-**Optional: Add Oxlint for improved performance (Experimental)**
-
-Oxlint can be used alongside ESLint for faster linting on larger codebases.
-
-```bash
-pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config eslint-plugin-oxlint
-```
-
-See [@m-social/oxlint-config](./configs/oxlint) for usage instructions and ESLint integration setup.
+See [@m-social/oxlint-config](./configs/oxlint) and [@m-social/eslint-config-react](./configs/eslint/react) for usage instructions.
 
 ---
 
@@ -277,10 +236,8 @@ See [@m-social/oxlint-config](./configs/oxlint) for usage instructions and ESLin
 ```
 configs/
 ├── eslint/
-│   ├── typescript/     # @m-social/eslint-config-typescript
 │   ├── react/          # @m-social/eslint-config-react
-│   ├── svelte/         # @m-social/eslint-config-svelte
-│   └── next/           # @m-social/eslint-config-next
+│   └── svelte/         # @m-social/eslint-config-svelte
 ├── prettier/
 │   ├── base/           # @m-social/prettier-config
 │   ├── react/          # @m-social/prettier-config-react
