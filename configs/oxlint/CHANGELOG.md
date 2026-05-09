@@ -1,5 +1,11 @@
 # @m-social/oxlint-config
 
+## 0.7.1
+
+### Patch Changes
+
+- 📝 update docs on using js configs with eslint ([#44](https://github.com/m-social/frontend-configs/pull/44))
+
 ## 0.7.0
 
 ### Minor Changes
