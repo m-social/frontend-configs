@@ -110,52 +110,6 @@ export default mergeConfigs([
 ]);
 ```
 
-## 🔧 Using oxlint with ESLint
-
-To integrate oxlint with ESLint and avoid duplicate rules, install `eslint-plugin-oxlint`:
-
-```bash
-pnpm add -D eslint-plugin-oxlint
-```
-
-Then configure ESLint to automatically disable rules that oxlint handles:
-
-```js
-// eslint.config.js
-import { defineConfig } from "eslint/config";
-import oxlint from "eslint-plugin-oxlint";
-
-import oxlintConfig from "./oxlint.config.ts";
-
-export default defineConfig(
-	// other plugins
-	oxlint.buildFromOxlintConfig(oxlintConfig),
-);
-```
-
-### Type-aware linting
-
-When `typeAware: true` is set in your `oxlint.config.ts` (see [Type-aware Linting](#-type-aware-linting)), `eslint-plugin-oxlint` will automatically detect it and disable the corresponding `@typescript-eslint` type-aware rules. No additional configuration in `eslint.config.js` is needed.
-
-### React and Next.js Projects
-
-For React or Next.js configurations, you also need to add rules from `@m-social/oxlint-config/eslint/react` to properly ignore rules from `@eslint-react` and `@stylistic` plugins, as oxlint doesn't support them yet:
-
-```js
-// eslint.config.js
-import { defineConfig } from "eslint/config";
-import oxlint from "eslint-plugin-oxlint";
-import oxlintReactRules from "@m-social/oxlint-config/eslint/react";
-
-import oxlintConfig from "./oxlint.config.ts";
-
-export default defineConfig(
-	// other plugins
-	oxlint.buildFromOxlintConfig(oxlintConfig),
-	oxlintReactRules,
-);
-```
-
 ## 📄 License
 
 MIT © M-Social

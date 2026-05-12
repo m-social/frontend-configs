@@ -46,10 +46,6 @@
 		"./utils": {
 			"types": "./dist/utils.d.mts",
 			"import": "./dist/utils.mjs"
-		},
-		"./eslint/react": {
-			"types": "./dist/eslint/react.d.mts",
-			"import": "./dist/eslint/react.mjs"
 		}
 	},
 	"publishConfig": {

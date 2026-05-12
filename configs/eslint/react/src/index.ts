@@ -1,15 +1,31 @@
 import react from "@eslint-react/eslint-plugin";
-import typescriptConfig, {
-	type TypescriptConfigSettings,
-} from "@m-social/eslint-config-typescript";
-import stylistic from "@stylistic/eslint-plugin";
-// @ts-expect-error `jsx-a11y` doesn't have typings
-import jsxA11y from "eslint-plugin-jsx-a11y";
+import * as parserBase from "@typescript-eslint/parser";
+import type { TSESLint } from "@typescript-eslint/utils";
 import reactHooks from "eslint-plugin-react-hooks";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 
-export interface ReactConfigSettings extends TypescriptConfigSettings {
+// https://github.com/typescript-eslint/typescript-eslint/blob/48e13c0261e3cb1bf4f4dfaa462cdb3a56ef7383/packages/eslint-plugin/src/raw-plugin.ts#L34
+const parser: TSESLint.FlatConfig.Parser = {
+	meta: parserBase.meta,
+	parseForESLint: parserBase.parseForESLint,
+};
+
+export interface ReactConfigSettings {
+	/**
+	 * The `tsconfigRootDir` option is used by the typescript-eslint plugin
+	 *
+	 * @see https://typescript-eslint.io/packages/parser#tsconfigrootdir
+	 *
+	 * @example
+	 * import config from '@m-social/eslint-config-react';
+	 *
+	 * export default config({
+	 * 	tsconfigRootDir: import.meta.dirname
+	 * })
+	 */
+	tsconfigRootDir: string;
+
 	/**
 	 * Whether you are using React Compiler in your project or not
 	 */
@@ -24,23 +40,84 @@ export interface ReactConfigSettings extends TypescriptConfigSettings {
 }
 
 export default function reactConfig({
-	reactCompiler,
+	tsconfigRootDir,
 	reactHooksLatest = false,
-	...tsconfig
 }: ReactConfigSettings) {
-	const base = defineConfig(
-		typescriptConfig(tsconfig),
-		react.configs["recommended-type-checked"] as never,
-		reactHooks.configs.flat[reactHooksLatest ? "recommended-latest" : "recommended"],
-		// oxlint-disable-next-line typescript/no-unsafe-argument, typescript/no-unsafe-member-access
-		jsxA11y.flatConfigs.recommended,
+	return defineConfig(
 		{
-			name: "m-social/react/stylistic-jsx",
-			plugins: {
-				"@stylistic": stylistic,
-			},
+			files: ["**/*.ts", "**/*.tsx", "**/*.cts", "**/*.mts", "**/*.jsx"],
+		},
+		react.configs["recommended-type-checked"] as never,
+		{
+			name: "m-social/react/disable-conflicting-eslint-react-rules",
 			rules: {
-				"@stylistic/jsx-self-closing-comp": "error",
+				"@eslint-react/exhaustive-deps": "off",
+				"@eslint-react/rules-of-hooks": "off",
+				"@eslint-react/error-boundaries": "off",
+				"@eslint-react/globals": "off",
+				"@eslint-react/immutability": "off",
+				"@eslint-react/purity": "off",
+				"@eslint-react/refs": "off",
+				"@eslint-react/set-state-in-effect": "off",
+				"@eslint-react/set-state-in-render": "off",
+				"@eslint-react/unsupported-syntax": "off",
+				"@eslint-react/use-memo": "off",
+			},
+		},
+		reactHooks.configs.flat[reactHooksLatest ? "recommended-latest" : "recommended"],
+		{
+			name: "m-social/react/handled-by-oxlint",
+			rules: {
+				// #region react-hooks
+				// react/exhaustive-deps
+				"react-hooks/exhaustive-deps": "off",
+
+				// react/rules-of-hooks
+				"react-hooks/rules-of-hooks": "off",
+				// #endregion
+
+				// #region @eslint-react
+				// react/jsx-no-comment-textnodes
+				"@eslint-react/jsx-no-comment-textnodes": "off",
+
+				// react/no-array-index-key
+				"@eslint-react/no-array-index-key": "off",
+
+				// react/no-direct-mutation-state
+				"@eslint-react/no-direct-mutation-state": "off",
+
+				// react/no-did-mount-set-state
+				"@eslint-react/no-set-state-in-component-did-mount": "off",
+
+				// react/jsx-key
+				"@eslint-react/no-missing-key": "off",
+
+				// react/no-unsafe
+				"@eslint-react/no-unsafe-component-will-mount": "warn",
+				"@eslint-react/no-unsafe-component-will-receive-props": "warn",
+				"@eslint-react/no-unsafe-component-will-update": "warn",
+
+				// react/forward-ref-uses-ref
+				"@eslint-react/no-forward-ref": "off",
+
+				// react/no-danger
+				"@eslint-react/dom-no-dangerously-set-innerhtml": "off",
+
+				// react/no-danger-with-children
+				"@eslint-react/dom-no-dangerously-set-innerhtml-with-children": "off",
+
+				// react/no-find-dom-node
+				"@eslint-react/dom-no-find-dom-node": "off",
+
+				// react/no-render-return-value
+				"@eslint-react/dom-no-render-return-value": "off",
+
+				// react/no-script-url
+				"@eslint-react/dom-no-script-url": "off",
+
+				// react/void-dom-elements-no-children
+				"@eslint-react/dom-no-void-elements-with-children": "off",
+				// #endregion
 			},
 		},
 		{
@@ -50,7 +127,12 @@ export default function reactConfig({
 					...globals.es2022,
 					...globals.browser,
 				},
+				ecmaVersion: "latest",
+				sourceType: "module",
+				parser,
 				parserOptions: {
+					projectService: true,
+					tsconfigRootDir,
 					ecmaFeatures: {
 						jsx: true,
 					},
@@ -68,37 +150,7 @@ export default function reactConfig({
 						allowExpressions: false,
 					},
 				],
-
-				"jsx-a11y/aria-props": "warn",
-				"jsx-a11y/aria-unsupported-elements": "warn",
-				"jsx-a11y/role-has-required-aria-props": "warn",
-				"jsx-a11y/role-supports-aria-props": "warn",
-
-				"@typescript-eslint/no-namespace": [
-					"error",
-					{
-						allowDeclarations: true,
-						allowDefinitionFiles: true,
-					},
-				],
-				"@typescript-eslint/no-unused-expressions": [
-					"error",
-					{
-						enforceForJSX: true,
-					},
-				],
 			},
 		},
 	);
-
-	if (!reactCompiler) {
-		return base;
-	}
-
-	return defineConfig(base, {
-		name: "m-social/react/compiler",
-		rules: {
-			"@eslint-react/no-unstable-context-value": "off",
-		},
-	});
 }

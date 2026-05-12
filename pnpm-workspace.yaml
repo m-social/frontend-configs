@@ -5,13 +5,14 @@ packages:
 
 catalogs:
   development:
-    eslint: ^10.2.0
+    eslint: ^10.3.0
     prettier: ^3.6.0
   production:
-    eslint: ^9.22.0 || ^10.0.0
+    eslint: ^10.3.0
     globals: ^17.4.0
     prettier: ^3.6.0
     typescript-eslint: ^8.58.0
+    "@typescript-eslint/parser": ^8.58.0
 
 onlyBuiltDependencies:
   - esbuild
