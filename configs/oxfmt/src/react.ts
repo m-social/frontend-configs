@@ -17,6 +17,7 @@ export default defineConfig({
 		groups: [
 			"react",
 			"react-meta",
+			{ newlinesBetween: true },
 			...BUILTIN_EXTERNAL_GROUPS,
 			{ newlinesBetween: true },
 			...FSD_GROUPS,
