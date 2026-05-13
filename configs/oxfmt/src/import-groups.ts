@@ -42,10 +42,12 @@ export const FSD_DEFINITION = [
 	},
 ] satisfies CustomGroupItemConfig[];
 
+export const RELATIVE_GROUP = ["parent", "sibling", "index"] satisfies SortGroupItemConfig;
+
 export const INTERNAL_RELATIVE_GROUPS = [
 	"internal",
 	{ newlinesBetween: true },
-	["parent", "sibling", "index"],
+	RELATIVE_GROUP,
 ] satisfies SortGroupItemConfig[];
 
 export const STYLE_GROUPS = [
