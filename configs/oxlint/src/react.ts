@@ -19,6 +19,7 @@ export default mergeConfigs([
 			"react/jsx-no-script-url": "warn",
 			"react/no-array-index-key": "warn",
 			"react/no-danger": "warn",
+			"react/no-namespace": "error",
 			"react/no-unsafe": "warn",
 			// #endregion
 
