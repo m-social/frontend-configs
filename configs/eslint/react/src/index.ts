@@ -80,6 +80,12 @@ export default function reactConfig({
 				// react/jsx-no-comment-textnodes
 				"@eslint-react/jsx-no-comment-textnodes": "off",
 
+				// react/no-children-prop
+				"@eslint-react/jsx-no-children-prop": "off",
+
+				// react/no-namespace
+				"@eslint-react/jsx-no-namespace": "off",
+
 				// react/no-array-index-key
 				"@eslint-react/no-array-index-key": "off",
 
