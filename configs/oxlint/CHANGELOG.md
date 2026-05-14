@@ -1,5 +1,15 @@
 # @m-social/oxlint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- 👽️ remove `react/no-redundant-should-component-update` rule from the react config ([#46](https://github.com/m-social/frontend-configs/pull/46))
+
+- 👽️ remove the integration configs for eslint ([#46](https://github.com/m-social/frontend-configs/pull/46))
+
+- 👽 (react): enable the `react/no-namespace` rule to sync with the eslint-react config ([#50](https://github.com/m-social/frontend-configs/pull/50))
+
 ## 0.7.1
 
 ### Patch Changes

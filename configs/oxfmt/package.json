@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/oxfmt-config",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Shared oxfmt configs for projects used at M-Social",
 	"keywords": [
 		"config",

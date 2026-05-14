@@ -1,5 +1,11 @@
 # @m-social/eslint-config-svelte
 
+## 2.0.0
+
+### Major Changes
+
+- 🏗️ hybrid mode for configs ([#46](https://github.com/m-social/frontend-configs/pull/46))
+
 ## 1.2.1
 
 ### Patch Changes
