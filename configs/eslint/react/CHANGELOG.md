@@ -1,5 +1,19 @@
 # @m-social/eslint-config-react
 
+## 2.0.0
+
+### Major Changes
+
+- 🏗️ hybrid mode for configs ([#46](https://github.com/m-social/frontend-configs/pull/46))
+
+### Minor Changes
+
+- ⬆️ upgrade eslint-react package to v5 ([#46](https://github.com/m-social/frontend-configs/pull/46))
+
+### Patch Changes
+
+- 👽 ignore new eslint-react rules that can be handled by oxlint ([#50](https://github.com/m-social/frontend-configs/pull/50))
+
 ## 1.2.1
 
 ### Patch Changes
