@@ -31,8 +31,13 @@ const config = {
 			path: "./dictionaries/terms.txt",
 			addWords: false,
 		},
+		{
+			name: "m-social:ru",
+			path: "./dictionaries/ru.txt",
+			addWords: false,
+		},
 	],
-	dictionaries: ["m-social:packages", "m-social:internal", "m-social:terms"],
+	dictionaries: ["m-social:packages", "m-social:internal", "m-social:terms", "m-social:ru"],
 	overrides: [
 		{
 			filename: "**/*.svg",
