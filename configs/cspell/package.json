@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/cspell-config",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "Shared CSpell config for projects used at M-Social",
 	"keywords": [
 		"config",
