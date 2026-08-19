@@ -58,13 +58,7 @@
 		"@fastify/deepmerge": "^3.2.1"
 	},
 	"peerDependencies": {
-		"eslint": "catalog:production",
-		"oxlint": "^1.61.0",
-		"oxlint-tsgolint": ">=0.18.0"
-	},
-	"peerDependenciesMeta": {
-		"eslint": {
-			"optional": true
-		}
+		"oxlint": "^1.79.0",
+		"oxlint-tsgolint": "^7.0.2001"
 	}
 }
