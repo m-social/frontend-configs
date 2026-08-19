@@ -52,7 +52,7 @@
 	},
 	"dependencies": {
 		"@m-social/prettier-config": "workspace:*",
-		"prettier-plugin-svelte": "^3.5.1"
+		"prettier-plugin-svelte": "^4.1.1"
 	},
 	"devDependencies": {
 		"@m-social/prettier-config-utils": "workspace:*"
