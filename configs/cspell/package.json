@@ -45,11 +45,11 @@
 		"build": "publint"
 	},
 	"dependencies": {
-		"@cspell/cspell-bundled-dicts": "^10.0.0",
+		"@cspell/cspell-bundled-dicts": "^10.0.1",
 		"@cspell/dict-ru_ru": "^2.3.2"
 	},
 	"devDependencies": {
-		"@cspell/cspell-types": "^10.0.0"
+		"@cspell/cspell-types": "^10.0.1"
 	},
 	"peerDependencies": {
 		"cspell": "^9.7.0 || ^10.0.0"

@@ -1,11 +1,15 @@
 {
-	"$schema": "https://cdn.jsdelivr.net/npm/@changesets/config@3.0.5/schema.json",
-	"changelog": ["@svitejs/changesets-changelog-github-compact", { "repo": "m-social/frontend-configs" }],
+	"$schema": "https://cdn.jsdelivr.net/npm/@changesets/config@4.0.0/schema.json",
+	"changelog": [
+		"@changesets/changelog-github",
+		{ "repo": "m-social/frontend-configs", "disableThanks": true }
+	],
 	"commit": false,
 	"fixed": [],
 	"linked": [],
 	"access": "public",
 	"baseBranch": "main",
 	"updateInternalDependencies": "patch",
-	"ignore": []
+	"ignore": [],
+	"format": "oxfmt"
 }

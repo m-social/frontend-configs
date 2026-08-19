@@ -4,5 +4,5 @@ import typescriptConfig from "./configs/oxfmt/src/base.ts";
 
 export default defineConfig({
 	...typescriptConfig,
-	ignorePatterns: [".changeset/*.json", "**/pnpm-lock.yaml"],
+	ignorePatterns: ["**/pnpm-lock.yaml"],
 });
