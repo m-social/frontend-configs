@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/stylelint-config",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Shared Stylelint config for projects used at M-Social",
 	"keywords": [
 		"config",

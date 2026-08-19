@@ -1,5 +1,15 @@
 # @m-social/oxlint-config
 
+## 0.9.0
+
+### Minor Changes
+
+- [#55](https://github.com/m-social/frontend-configs/pull/55) [`6e5feff`](https://github.com/m-social/frontend-configs/commit/6e5feffa50505565e55242be51474922da8f26b4) - ⬆️ increase minimum versions of oxlint and tsgolint
+
+### Patch Changes
+
+- [#55](https://github.com/m-social/frontend-configs/pull/55) [`6e5feff`](https://github.com/m-social/frontend-configs/commit/6e5feffa50505565e55242be51474922da8f26b4) - ➖ remove unnecessary `eslint` peer dependency
+
 ## 0.8.0
 
 ### Minor Changes
