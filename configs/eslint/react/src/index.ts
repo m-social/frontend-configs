@@ -1,7 +1,6 @@
 import react from "@eslint-react/eslint-plugin";
 import * as parserBase from "@typescript-eslint/parser";
 import type { TSESLint } from "@typescript-eslint/utils";
-import reactHooks from "eslint-plugin-react-hooks";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 
@@ -25,29 +24,14 @@ export interface ReactConfigSettings {
 	 * })
 	 */
 	tsconfigRootDir: string;
-
-	/**
-	 * Whether you are using React Compiler in your project or not
-	 */
-	reactCompiler: boolean;
-
-	/**
-	 * Uses `recommended-latest` config for `eslint-plugin-react-hooks` instead of `recommended`
-	 *
-	 * @default false
-	 */
-	reactHooksLatest?: boolean;
 }
 
-export default function reactConfig({
-	tsconfigRootDir,
-	reactHooksLatest = false,
-}: ReactConfigSettings) {
+export default function reactConfig({ tsconfigRootDir }: ReactConfigSettings) {
 	return defineConfig(
 		{
 			files: ["**/*.ts", "**/*.tsx", "**/*.cts", "**/*.mts", "**/*.jsx"],
 		},
-		react.configs["recommended-type-checked"] as never,
+		react.configs["recommended-type-checked"],
 		{
 			name: "m-social/react/disable-conflicting-eslint-react-rules",
 			rules: {
@@ -64,18 +48,9 @@ export default function reactConfig({
 				"@eslint-react/use-memo": "off",
 			},
 		},
-		reactHooks.configs.flat[reactHooksLatest ? "recommended-latest" : "recommended"],
 		{
 			name: "m-social/react/handled-by-oxlint",
 			rules: {
-				// #region react-hooks
-				// react/exhaustive-deps
-				"react-hooks/exhaustive-deps": "off",
-
-				// react/rules-of-hooks
-				"react-hooks/rules-of-hooks": "off",
-				// #endregion
-
 				// #region @eslint-react
 				// react/jsx-no-comment-textnodes
 				"@eslint-react/jsx-no-comment-textnodes": "off",

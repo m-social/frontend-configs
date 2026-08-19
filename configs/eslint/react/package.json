@@ -52,7 +52,6 @@
 	"dependencies": {
 		"@eslint-react/eslint-plugin": "^5.7.0",
 		"@typescript-eslint/parser": "catalog:production",
-		"eslint-plugin-react-hooks": "^7.1.1",
 		"globals": "catalog:production"
 	},
 	"devDependencies": {
