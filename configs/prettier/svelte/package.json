@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/prettier-config-svelte",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Shared Prettier config for Svelte projects used at M-Social",
 	"keywords": [
 		"config",

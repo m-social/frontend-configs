@@ -1,5 +1,15 @@
 # @m-social/eslint-config-react
 
+## 3.0.0
+
+### Major Changes
+
+- [#55](https://github.com/m-social/frontend-configs/pull/55) [`6e5feff`](https://github.com/m-social/frontend-configs/commit/6e5feffa50505565e55242be51474922da8f26b4) - ➖ remove `eslint-plugin-react-hooks` from the config
+
+### Patch Changes
+
+- [#57](https://github.com/m-social/frontend-configs/pull/57) [`5738528`](https://github.com/m-social/frontend-configs/commit/57385281a55a3583c56f167f4b0419082ea8d155) - ⬆️ upgrade deps
+
 ## 2.0.0
 
 ### Major Changes
