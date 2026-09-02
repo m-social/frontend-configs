@@ -1,5 +1,11 @@
 # @m-social/oxfmt-config
 
+## 0.4.0
+
+### Minor Changes
+
+- [#58](https://github.com/m-social/frontend-configs/pull/58) [`6389a9d`](https://github.com/m-social/frontend-configs/commit/6389a9df70e5aa0a5a7c10d198b9b5ebd2882a1b) - ✨ (svelte): support subpath imports
+
 ## 0.3.0
 
 ### Minor Changes
