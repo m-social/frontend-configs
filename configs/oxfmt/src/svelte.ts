@@ -19,7 +19,7 @@ export default defineConfig({
 			{ newlinesBetween: true },
 			...FSD_GROUPS,
 			{ newlinesBetween: true },
-			"sveltekit-lib",
+			["internal", "subpath", "sveltekit-lib"],
 			{ newlinesBetween: true },
 			RELATIVE_GROUP,
 		],
@@ -34,27 +34,27 @@ export default defineConfig({
 			},
 			{
 				groupName: "fsd-shared",
-				elementNamePattern: ["$lib/shared/**"],
+				elementNamePattern: ["#shared/**", "$lib/shared/**"],
 			},
 			{
 				groupName: "fsd-entities",
-				elementNamePattern: ["$lib/entities/**"],
+				elementNamePattern: ["#entities/**", "$lib/entities/**"],
 			},
 			{
 				groupName: "fsd-features",
-				elementNamePattern: ["$lib/features/**"],
+				elementNamePattern: ["#features/**", "$lib/features/**"],
 			},
 			{
 				groupName: "fsd-widgets",
-				elementNamePattern: ["$lib/widgets/**"],
+				elementNamePattern: ["#widgets/**", "$lib/widgets/**"],
 			},
 			{
 				groupName: "fsd-pages",
-				elementNamePattern: ["$lib/pages/**"],
+				elementNamePattern: ["#pages/**", "$lib/pages/**"],
 			},
 			{
 				groupName: "fsd-app",
-				elementNamePattern: ["$lib/app/**"],
+				elementNamePattern: ["#app/**", "$lib/app/**"],
 			},
 			// NOTE: `sveltekit-lib` group must appear before `sveltekit-aliases` to prevent the $lib alias from being included in the `sveltekit-aliases` group
 			{
@@ -70,6 +70,6 @@ export default defineConfig({
 				elementNamePattern: ["./$types"],
 			},
 		],
-		internalPattern: ["$lib/**"],
+		internalPattern: ["#", "$lib/"],
 	},
 });
