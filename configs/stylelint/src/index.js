@@ -45,6 +45,11 @@ export default {
 				{ type: "at-rule", name: "include", hasBlock: true },
 				{
 					type: "rule",
+					selector: /^&:[\w-]+/,
+					hasBlock: true,
+				},
+				{
+					type: "rule",
 					selector: /^&::[\w-]+/,
 					hasBlock: true,
 				},
