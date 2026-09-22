@@ -1,5 +1,11 @@
 # @m-social/stylelint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- [#60](https://github.com/m-social/frontend-configs/pull/60) [`1e3abfc`](https://github.com/m-social/frontend-configs/commit/1e3abfc9e9c511079593a2df9de707ac28c3d920) - 🐛 place pseudo-class selectors before pseudo-element ones
+
 ## 0.1.1
 
 ### Patch Changes
