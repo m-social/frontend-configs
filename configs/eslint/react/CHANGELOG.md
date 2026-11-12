@@ -1,5 +1,11 @@
 # @m-social/eslint-config-react
 
+## 3.0.1
+
+### Patch Changes
+
+- [`96d2989`](https://github.com/m-social/frontend-configs/commit/96d29892c4ca30d6e5382dc59e229a8b1cf94531) - 📝 remove the non-existent `reactCompiler` option from the example config
+
 ## 3.0.0
 
 ### Major Changes
