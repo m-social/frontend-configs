@@ -25,6 +25,7 @@
 		"directory": "configs/stylelint"
 	},
 	"files": [
+		"docs",
 		"src"
 	],
 	"type": "module",
@@ -32,6 +33,10 @@
 		".": {
 			"types": "./src/index.d.ts",
 			"import": "./src/index.js"
+		},
+		"./agents": {
+			"types": "./src/agents/index.d.ts",
+			"import": "./src/agents/index.js"
 		}
 	},
 	"publishConfig": {
