@@ -4,7 +4,7 @@ Disallows hardcoded values in the JSX `style` prop.
 
 A value that is known before the code runs belongs in a stylesheet, where it can use the project's variables, breakpoints and interaction states. The `style` prop stays for values computed at runtime.
 
-The rule reports string and number literals, negative numbers and template literals without `${}` placeholders. It does not look inside a style object passed by reference.
+The rule reports string and number literals, negative numbers and template literals without `${}` placeholders, also when the object is written with `as` / `satisfies` or sits in a branch of `? :` or `&&`. `null` is not reported. It does not look inside a style object passed by reference.
 
 ## ❌ Incorrect
 

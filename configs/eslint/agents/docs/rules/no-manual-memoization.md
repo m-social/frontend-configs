@@ -4,6 +4,8 @@ Disallows `useMemo`, `useCallback` and `memo` from `react`.
 
 Part of the `recommended` config of `@m-social/eslint-plugin-agents/react`, because M-Social React projects are built with [React Compiler](https://react.dev/learn/react-compiler). The compiler memoizes values, callbacks and components on its own, so manual memoization only adds noise and dependency arrays that can go stale.
 
+A file that starts with the `"use no memo"` directive is skipped: the compiler does not process it, so memoizing by hand is right there.
+
 ## ❌ Incorrect
 
 ```tsx

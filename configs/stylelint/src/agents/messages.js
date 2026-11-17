@@ -5,7 +5,7 @@ import packageJson from "../../package.json" with { type: "json" };
 
 // The tag of the installed version, so the link shows the conventions as they were published
 // rather than whatever `main` has moved on to.
-const DOCS_URL = `https://github.com/m-social/frontend-configs/blob/${packageJson.name}@${packageJson.version}/configs/stylelint/docs/agents.md`;
+export const DOCS_URL = `https://github.com/m-social/frontend-configs/blob/${packageJson.name}@${packageJson.version}/configs/stylelint/docs/agents.md`;
 
 /**
  * @param {string} anchor

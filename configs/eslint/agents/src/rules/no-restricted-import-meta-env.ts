@@ -28,6 +28,37 @@ function isImportMetaEnv(value: unknown): boolean {
 	);
 }
 
+interface NamedRead {
+	name: string;
+	node: Rule.Node;
+}
+
+/**
+ * The names read by `const { DEV, MODE } = import.meta.env`. `undefined` when the pattern takes
+ * more than a fixed list of names: a rest element or a computed key.
+ */
+function destructuredNames(parent: Rule.Node, env: Rule.Node): NamedRead[] | undefined {
+	if (
+		parent.type !== "VariableDeclarator" ||
+		parent.init !== env ||
+		parent.id.type !== "ObjectPattern"
+	) {
+		return undefined;
+	}
+
+	const names: NamedRead[] = [];
+
+	for (const property of parent.id.properties) {
+		if (property.type !== "Property" || property.computed || property.key.type !== "Identifier") {
+			return undefined;
+		}
+
+		names.push({ name: property.key.name, node: property as Rule.Node });
+	}
+
+	return names;
+}
+
 export const noRestrictedImportMetaEnv: Rule.RuleModule = {
 	meta: {
 		type: "problem",
@@ -69,8 +100,23 @@ export const noRestrictedImportMetaEnv: Rule.RuleModule = {
 				}
 
 				const parent = node.parent;
+				const destructured = destructuredNames(parent, node);
 
-				// `import.meta.env` passed around, destructured or indexed with a computed key.
+				if (destructured !== undefined) {
+					for (const read of destructured) {
+						if (!allow.has(read.name)) {
+							context.report({
+								node: read.node,
+								messageId: "restrictedVariable",
+								data: { name: read.name, allowed },
+							});
+						}
+					}
+
+					return;
+				}
+
+				// `import.meta.env` passed around, spread or indexed with a computed key.
 				if (parent.type !== "MemberExpression" || parent.object !== node || parent.computed) {
 					context.report({ node, messageId: "wholeObject", data: { allowed } });
 

@@ -1,17 +1,36 @@
 import type { Rule } from "eslint";
 
-import { asNodeLike, asReportNode, childNodes, docsUrl } from "../utils.ts";
+import { asNodeLike, asReportNode, childNodes, docsUrl, type NodeLike } from "../utils.ts";
+
+const TYPE_WRAPPERS = new Set([
+	"TSAsExpression",
+	"TSNonNullExpression",
+	"TSSatisfiesExpression",
+	"TSTypeAssertion",
+]);
+
+/** `value as T`, `value satisfies T`, `value!` → `value`: type syntax does not change what is written. */
+function withoutTypeSyntax(value: unknown): NodeLike | undefined {
+	let node = asNodeLike(value);
+
+	while (node !== undefined && TYPE_WRAPPERS.has(node.type)) {
+		node = asNodeLike(node["expression"]);
+	}
+
+	return node;
+}
 
 /** A value known before the code runs: `8`, `"red"`, `-1` or a template without `${}`. */
 function isStaticValue(value: unknown): boolean {
-	const node = asNodeLike(value);
+	const node = withoutTypeSyntax(value);
 
 	if (node === undefined) {
 		return false;
 	}
 
 	if (node.type === "Literal") {
-		return true;
+		// `null` switches a property off, it is not a value to move to a stylesheet
+		return node["raw"] !== "null";
 	}
 
 	if (node.type === "TemplateLiteral") {
@@ -23,6 +42,32 @@ function isStaticValue(value: unknown): boolean {
 	}
 
 	return false;
+}
+
+/**
+ * Object literals the `style` prop can evaluate to: the object itself or the branches of
+ * `a ? {…} : {…}` and `a && {…}`.
+ */
+function styleObjects(value: unknown): NodeLike[] {
+	const node = withoutTypeSyntax(value);
+
+	if (node === undefined) {
+		return [];
+	}
+
+	if (node.type === "ObjectExpression") {
+		return [node];
+	}
+
+	if (node.type === "ConditionalExpression") {
+		return [...styleObjects(node["consequent"]), ...styleObjects(node["alternate"])];
+	}
+
+	if (node.type === "LogicalExpression") {
+		return [...styleObjects(node["left"]), ...styleObjects(node["right"])];
+	}
+
+	return [];
 }
 
 export const noLiteralInlineStyle: Rule.RuleModule = {
@@ -40,20 +85,14 @@ export const noLiteralInlineStyle: Rule.RuleModule = {
 	},
 	create(context) {
 		return {
-			"JSXAttribute[name.name='style'] > JSXExpressionContainer > ObjectExpression"(
-				node: Rule.Node,
-			) {
-				const object = asNodeLike(node);
+			"JSXAttribute[name.name='style'] > JSXExpressionContainer"(node: Rule.Node) {
+				for (const object of styleObjects(asNodeLike(node)?.["expression"])) {
+					for (const property of childNodes(object, "properties")) {
+						const value = asNodeLike(property["value"]);
 
-				if (object === undefined) {
-					return;
-				}
-
-				for (const property of childNodes(object, "properties")) {
-					const value = asNodeLike(property["value"]);
-
-					if (property.type === "Property" && value !== undefined && isStaticValue(value)) {
-						context.report({ node: asReportNode(value), messageId: "literalStyle" });
+						if (property.type === "Property" && value !== undefined && isStaticValue(value)) {
+							context.report({ node: asReportNode(value), messageId: "literalStyle" });
+						}
 					}
 				}
 			},

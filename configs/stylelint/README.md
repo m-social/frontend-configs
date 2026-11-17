@@ -39,7 +39,7 @@ export default {
 The config sets `reportDescriptionlessDisables`, `reportNeedlessDisables` and `reportUnscopedDisables`: a `stylelint-disable` comment has to name the rules it disables and say why after `--`, and it is reported once it no longer suppresses anything.
 
 ```scss
-/* stylelint-disable-next-line selector-max-id -- the id comes from a third-party widget */
+/* stylelint-disable-next-line no-descending-specificity -- the order follows the markup */
 ```
 
 ## 🤖 Rules for AI agents
@@ -62,7 +62,7 @@ export default {
 };
 ```
 
-The four options are the files that _define_ what the conventions point to, so the rules are relaxed there. They are globs relative to your config file and depend on the project layout — for example `src/_app/styles/**` in a Next.js project.
+The four options are the files that _define_ what the conventions point to, so the rules are relaxed there. Each one is optional: leave out what the project does not have. They are globs relative to your config file and depend on the project layout — for example `src/_app/styles/**` in a Next.js project.
 
 The sample has no `@type {import('stylelint').Config}` annotation on purpose: Stylelint accepts a config object in `extends`, but its typings describe that only since v18, so on v17 a type-checked config reports an error there.
 

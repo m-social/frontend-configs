@@ -22,7 +22,14 @@ function atRuleParamsRule(ruleName, atRuleName, pattern, message, url) {
 
 		root.walkAtRules(atRuleName, (node) => {
 			if (pattern.test(node.params)) {
-				stylelint.utils.report({ ruleName, result, node, message: messages.rejected });
+				// Only the parameters are underlined: the node of an at-rule includes its whole block
+				stylelint.utils.report({
+					ruleName,
+					result,
+					node,
+					word: node.params,
+					message: messages.rejected,
+				});
 			}
 		});
 	};
@@ -42,7 +49,9 @@ export default [
 	atRuleParamsRule(
 		NO_WIDTH_MEDIA_QUERY,
 		"media",
-		/\bwidth\b/,
+		// `width` as a media feature — `(min-width: …)`, `(width >= …)`, `(… <= width)` — and not as
+		// a part of a variable name such as `$header-width`
+		/[(\s<>=](?:(?:min|max)-)?(?:device-)?width\s*[:<>=)]/i,
 		WIDTH_MEDIA_QUERY,
 		docsUrl("breakpoints"),
 	),

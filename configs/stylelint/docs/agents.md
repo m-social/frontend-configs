@@ -10,7 +10,7 @@ The files that define those shared answers are exempt, see [Where the rules are 
 
 Rules: `color-no-hex`, `color-named`, `function-disallowed-list`, `declaration-property-value-disallowed-list`.
 
-No hex colors, named colors, `rgb()` / `hsl()` or `var(--color-*)` in component styles. Take the color from the shared colors module.
+No hex colors, named colors, color functions (`rgb()`, `hsl()`, `oklch()` and the like) or `var(--color-*)` in component styles. Take the color from the shared colors module.
 
 ```scss
 // ❌
@@ -227,9 +227,9 @@ A `stylelint-disable` comment has to name its rules and say why after `--`, and 
 
 The shared modules have to contain what the conventions forbid elsewhere. Their locations differ between projects, so they are passed to `agentsConfig()`:
 
-| Option         | Files                                         | Allowed there                                                                 |
-| -------------- | --------------------------------------------- | ----------------------------------------------------------------------------- |
-| `globalStyles` | global styles and resets                      | tags, fonts, transitions, raw colors, numeric `z-index`, states, `!important` |
-| `sharedStyles` | mixins and variables the conventions point to | fonts, transitions, states, width media queries                               |
-| `colorTokens`  | variables that wrap color custom properties   | `var(--color-*)`                                                              |
-| `typography`   | styles of the typography system               | font properties                                                               |
+| Option         | Files                                         | Allowed there                                                                                       |
+| -------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `globalStyles` | global styles and resets                      | tags, fonts, transitions, raw colors, numeric `z-index`, states, `!important`, class names with `_` |
+| `sharedStyles` | mixins and variables the conventions point to | fonts, transitions, states, width media queries                                                     |
+| `colorTokens`  | variables that wrap color custom properties   | `var(--color-*)`                                                                                    |
+| `typography`   | styles of the typography system               | font properties                                                                                     |

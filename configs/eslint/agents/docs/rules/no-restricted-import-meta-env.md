@@ -30,7 +30,8 @@ if (import.meta.env.DEV) {
 
 ```ts
 {
-	// Names that may be read from `import.meta.env`.
+	// Names that may be read from `import.meta.env`. The list replaces the default one,
+	// so repeat the built-ins you still need.
 	// Default: the Vite built-ins.
 	allow: ["BASE_URL", "DEV", "MODE", "PROD", "SSR"];
 }

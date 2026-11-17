@@ -1,4 +1,5 @@
 import {
+	DOCS_URL,
 	docsUrl,
 	FLAT_MODIFIER,
 	FONT_PROPERTY,
@@ -49,26 +50,32 @@ function valueMessage(property) {
  * breakpoints from shared modules. The files that _define_ those things have to be exempt, and
  * where they live differs between projects, so their locations are passed in.
  *
- * @param {import('./index.d.ts').AgentsConfigOptions} options
+ * @param {import('./index.d.ts').AgentsConfigOptions} [options]
  * @returns {import('stylelint').Config}
  */
-export function agentsConfig({ globalStyles, sharedStyles, colorTokens, typography }) {
+export function agentsConfig({
+	globalStyles = [],
+	sharedStyles = [],
+	colorTokens = [],
+	typography = [],
+} = {}) {
 	return {
 		plugins,
 		rules: {
 			"color-no-hex": [true, { message: RAW_COLOR, url: docsUrl("colors") }],
 			"color-named": ["never", { message: RAW_COLOR, url: docsUrl("colors") }],
 			"function-disallowed-list": [
-				["rgb", "rgba", "hsl", "hsla"],
+				["rgb", "rgba", "hsl", "hsla", "hwb", "lab", "lch", "oklab", "oklch", "color"],
 				{ message: RAW_COLOR, url: docsUrl("colors") },
 			],
 			"declaration-property-value-disallowed-list": [
 				{ "/.*/": ["/var\\(--color-/"], "z-index": ["/^-?\\d+$/"] },
-				{ message: valueMessage },
+				// One rule carries two conventions, so the link goes to the page, not to a section
+				{ message: valueMessage, url: DOCS_URL },
 			],
 			"property-disallowed-list": [
 				[...FONT_PROPERTIES, ...TRANSITION_PROPERTIES],
-				{ message: propertyMessage },
+				{ message: propertyMessage, url: DOCS_URL },
 			],
 			"selector-max-type": [0, { message: TAG_SELECTOR, url: docsUrl("selectors") }],
 			"selector-pseudo-class-disallowed-list": [
@@ -81,9 +88,10 @@ export function agentsConfig({ globalStyles, sharedStyles, colorTokens, typograp
 				{ message: FLAT_MODIFIER, resolveNestedSelectors: false, url: docsUrl("modifiers") },
 			],
 			"declaration-no-important": [true, { message: IMPORTANT, url: docsUrl("important") }],
-			[NO_USE_ALIAS]: true,
-			[NO_WIDTH_MEDIA_QUERY]: true,
+			[NO_USE_ALIAS]: [true, { url: docsUrl("use-imports") }],
+			[NO_WIDTH_MEDIA_QUERY]: [true, { url: docsUrl("breakpoints") }],
 		},
+		// Stylelint rejects an override without files, so an option that was not passed adds none
 		overrides: [
 			{
 				// Global styles and resets: tags, fonts and raw colors are their job.
@@ -95,6 +103,8 @@ export function agentsConfig({ globalStyles, sharedStyles, colorTokens, typograp
 					"declaration-property-value-disallowed-list": null,
 					"property-disallowed-list": null,
 					"selector-max-type": null,
+					// Third-party class names are styled here, and they are not ours to rename
+					"selector-class-pattern": null,
 					"declaration-no-important": null,
 					"selector-pseudo-class-disallowed-list": null,
 				},
@@ -112,16 +122,22 @@ export function agentsConfig({ globalStyles, sharedStyles, colorTokens, typograp
 				// Variables that wrap the color custom properties.
 				files: colorTokens,
 				rules: {
-					"declaration-property-value-disallowed-list": null,
+					"declaration-property-value-disallowed-list": [
+						{ "z-index": ["/^-?\\d+$/"] },
+						{ message: Z_INDEX, url: docsUrl("layers") },
+					],
 				},
 			},
 			{
 				// The typography system is where font styles are defined.
 				files: typography,
 				rules: {
-					"property-disallowed-list": [TRANSITION_PROPERTIES, { message: TRANSITION_PROPERTY }],
+					"property-disallowed-list": [
+						TRANSITION_PROPERTIES,
+						{ message: TRANSITION_PROPERTY, url: docsUrl("transitions") },
+					],
 				},
 			},
-		],
+		].filter(({ files }) => files.length > 0),
 	};
 }
