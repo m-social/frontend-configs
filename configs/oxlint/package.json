@@ -55,7 +55,8 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
-		"@fastify/deepmerge": "^3.2.1"
+		"@fastify/deepmerge": "^3.2.1",
+		"oxlint-plugin-directive-comments": "0.1.0"
 	},
 	"peerDependencies": {
 		"oxlint": "^1.79.0",

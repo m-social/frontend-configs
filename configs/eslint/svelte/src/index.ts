@@ -1,3 +1,4 @@
+import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import eslint from "@eslint/js";
 import svelte from "eslint-plugin-svelte";
 import { defineConfig, globalIgnores } from "eslint/config";
@@ -38,6 +39,16 @@ export interface SvelteConfigSettings {
 export default function svelteConfig({ tsconfigRootDir, svelteConfig }: SvelteConfigSettings) {
 	return defineConfig(
 		globalIgnores(["**/.svelte-kit/**", "**/build/**"], "m-social/svelte/ignore"),
+		{
+			name: "m-social/comments",
+			plugins: {
+				"@eslint-community/eslint-comments": comments,
+			},
+			rules: {
+				"@eslint-community/eslint-comments/no-unlimited-disable": "error",
+				"@eslint-community/eslint-comments/require-description": "error",
+			},
+		},
 		{
 			name: "m-social/svelte/rules",
 			files: ["**/*.svelte"],

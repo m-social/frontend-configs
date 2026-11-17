@@ -51,6 +51,7 @@
 		"build": "tsdown"
 	},
 	"dependencies": {
+		"@eslint-community/eslint-plugin-eslint-comments": "^4.8.1",
 		"@eslint/js": "^10.0.1",
 		"eslint-plugin-svelte": "^3.23.0",
 		"globals": "catalog:production",
