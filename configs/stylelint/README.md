@@ -49,7 +49,6 @@ The base config covers syntax, ordering and empty lines. `agentsConfig()` adds t
 ```js
 import { agentsConfig } from "@m-social/stylelint-config/agents";
 
-/** @type {import('stylelint').Config} */
 export default {
 	extends: [
 		"@m-social/stylelint-config",
@@ -64,6 +63,8 @@ export default {
 ```
 
 The four options are the files that _define_ what the conventions point to, so the rules are relaxed there. They are globs relative to your config file and depend on the project layout — for example `src/_app/styles/**` in a Next.js project.
+
+The sample has no `@type {import('stylelint').Config}` annotation on purpose: Stylelint accepts a config object in `extends`, but its typings describe that only since v18, so on v17 a type-checked config reports an error there.
 
 `agentsConfig()` returns a config object with `plugins`, `rules` and `overrides`. Your own `rules` and `overrides` go next to `extends` as usual and are applied on top of it.
 

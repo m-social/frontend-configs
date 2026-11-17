@@ -7,6 +7,22 @@ import { PACKAGE_NAME, PACKAGE_VERSION } from "./utils.ts";
 
 const NAMESPACE = "@m-social/agents-react";
 
+type Configs = {
+	/**
+	 * Conventions of M-Social React projects. They are built with React Compiler, so manual
+	 * memoization is reported too; a project without the compiler switches that rule off.
+	 */
+	recommended: Linter.Config;
+};
+
+/**
+ * Rules for React projects.
+ *
+ * @example
+ * import agentsReact from "@m-social/eslint-plugin-agents/react";
+ *
+ * export default [agentsReact.configs.recommended];
+ */
 const plugin = {
 	meta: {
 		name: `${PACKAGE_NAME}/react`,
@@ -17,32 +33,17 @@ const plugin = {
 		"no-manual-memoization": noManualMemoization,
 		"no-template-literal-class-name": noTemplateLiteralClassName,
 	},
+	configs: {} as Configs,
 } satisfies ESLint.Plugin;
 
-const plugins = { [NAMESPACE]: plugin };
-
-/**
- * Rules for React projects.
- *
- * @example
- * import agentsReact from "@m-social/eslint-plugin-agents/react";
- *
- * export default [agentsReact.configs.recommended];
- */
-const configs = {
-	/**
-	 * Conventions of M-Social React projects. They are built with React Compiler, so manual
-	 * memoization is reported too; a project without the compiler switches that rule off.
-	 */
-	recommended: {
-		name: "m-social/agents/react/recommended",
-		plugins,
-		rules: {
-			[`${NAMESPACE}/no-literal-inline-style`]: "error",
-			[`${NAMESPACE}/no-manual-memoization`]: "error",
-			[`${NAMESPACE}/no-template-literal-class-name`]: "error",
-		},
+plugin.configs.recommended = {
+	name: "m-social/agents/react/recommended",
+	plugins: { [NAMESPACE]: plugin },
+	rules: {
+		[`${NAMESPACE}/no-literal-inline-style`]: "error",
+		[`${NAMESPACE}/no-manual-memoization`]: "error",
+		[`${NAMESPACE}/no-template-literal-class-name`]: "error",
 	},
-} satisfies Record<string, Linter.Config>;
+};
 
-export default { ...plugin, configs };
+export default plugin;

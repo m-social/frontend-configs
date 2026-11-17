@@ -104,6 +104,13 @@ export default function svelteConfig({ tsconfigRootDir, svelteConfig }: SvelteCo
 			},
 		},
 		{
+			name: "m-social/svelte/template-directive-comments",
+			files: ["**/*.svelte"],
+			rules: {
+				"svelte/comment-directive": ["error", { reportUnusedDisableDirectives: true }],
+			},
+		},
+		{
 			name: "m-social/svelte/ts",
 			files: ["**/*.svelte", "**/*.svelte.ts", "**/*.svelte.js"],
 			languageOptions: {

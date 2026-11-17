@@ -238,6 +238,7 @@ See [@m-social/oxlint-config](./configs/oxlint) and [@m-social/eslint-config-rea
 ```
 configs/
 ├── eslint/
+│   ├── agents/         # @m-social/eslint-plugin-agents
 │   ├── react/          # @m-social/eslint-config-react
 │   └── svelte/         # @m-social/eslint-config-svelte
 ├── prettier/

@@ -48,12 +48,12 @@ export default defineConfig({
 
 ## 📏 Rules
 
-| Rule                                                                               | What it reports                                  | Config              |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------- |
-| [`no-literal-inline-style`](./docs/rules/no-literal-inline-style.md)               | hardcoded values in the JSX `style` prop         | `react.recommended` |
-| [`no-template-literal-class-name`](./docs/rules/no-template-literal-class-name.md) | `className` built with a template literal        | `react.recommended` |
-| [`no-manual-memoization`](./docs/rules/no-manual-memoization.md)                   | `useMemo`, `useCallback` and `memo` from `react` | `react.recommended` |
-| [`no-restricted-import-meta-env`](./docs/rules/no-restricted-import-meta-env.md)   | project variables read from `import.meta.env`    | `vite`              |
+| Rule                                                                               | What it reports                                  | Config                   |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------ |
+| [`no-literal-inline-style`](./docs/rules/no-literal-inline-style.md)               | hardcoded values in the JSX `style` prop         | `recommended` (`/react`) |
+| [`no-template-literal-class-name`](./docs/rules/no-template-literal-class-name.md) | `className` built with a template literal        | `recommended` (`/react`) |
+| [`no-manual-memoization`](./docs/rules/no-manual-memoization.md)                   | `useMemo`, `useCallback` and `memo` from `react` | `recommended` (`/react`) |
+| [`no-restricted-import-meta-env`](./docs/rules/no-restricted-import-meta-env.md)   | project variables read from `import.meta.env`    | `vite`                   |
 
 The React rules are prefixed with `@m-social/agents-react/`, the rest with `@m-social/agents/` — for example `@m-social/agents-react/no-manual-memoization` and `@m-social/agents/no-restricted-import-meta-env`.
 
