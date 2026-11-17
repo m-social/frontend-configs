@@ -1,5 +1,11 @@
 # @m-social/oxlint-config
 
+## 0.10.0
+
+### Minor Changes
+
+- [#64](https://github.com/m-social/frontend-configs/pull/64) [`fe82d54`](https://github.com/m-social/frontend-configs/commit/fe82d54c18f94e8f384f4a0b140880371e216b6c) - ✨ require descriptions for Oxlint disable comments and disallow unlimited disables in the TypeScript config
+
 ## 0.9.0
 
 ### Minor Changes
