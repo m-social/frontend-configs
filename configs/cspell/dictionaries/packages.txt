@@ -1,15 +1,18 @@
 auditjs
 bprogress
+dbaeumer
 defu
 embla
 glitchtip
 gsap
+ianvs
 lefthook
 lightningcss
 lingui
 maskito
 neodrag
 neodx
+oxfmt
 oxlint
 oxlintrc
 pandacss
@@ -28,4 +31,5 @@ vali
 varlock
 vaul
 virtua
+vite
 xior
