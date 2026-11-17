@@ -1,5 +1,11 @@
 # @m-social/stylelint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- [#64](https://github.com/m-social/frontend-configs/pull/64) [`fe82d54`](https://github.com/m-social/frontend-configs/commit/fe82d54c18f94e8f384f4a0b140880371e216b6c) - ✨ report descriptionless, needless, and unscoped Stylelint disable comments
+
 ## 0.2.0
 
 ### Minor Changes
