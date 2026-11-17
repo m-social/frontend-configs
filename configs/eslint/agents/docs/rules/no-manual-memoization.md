@@ -1,8 +1,8 @@
-# `@m-social/agents/no-manual-memoization`
+# `@m-social/agents-react/no-manual-memoization`
 
 Disallows `useMemo`, `useCallback` and `memo` from `react`.
 
-Part of the `reactCompiler` config. Enable it only in projects built with [React Compiler](https://react.dev/learn/react-compiler): the compiler memoizes values, callbacks and components on its own, so manual memoization only adds noise and dependency arrays that can go stale.
+Part of the `recommended` config of `@m-social/eslint-plugin-agents/react`, because M-Social React projects are built with [React Compiler](https://react.dev/learn/react-compiler). The compiler memoizes values, callbacks and components on its own, so manual memoization only adds noise and dependency arrays that can go stale.
 
 ## ❌ Incorrect
 
@@ -27,4 +27,8 @@ function Card({ title }: Card.Props) {
 
 ## When not to use it
 
-In a project that does not use React Compiler.
+In a project that does not use React Compiler. Switch the rule off after the config:
+
+```js
+{ rules: { "@m-social/agents-react/no-manual-memoization": "off" } }
+```

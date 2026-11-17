@@ -1,3 +1,4 @@
+import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import eslint from "@eslint/js";
 import svelte from "eslint-plugin-svelte";
 import { defineConfig, globalIgnores } from "eslint/config";
@@ -82,6 +83,24 @@ export default function svelteConfig({ tsconfigRootDir, svelteConfig }: SvelteCo
 					projectService: true,
 					tsconfigRootDir,
 				},
+			},
+		},
+		{
+			// Keeps `eslint-disable` comments honest: each one names its rules, says why it is there
+			// and is reported once it no longer suppresses anything
+			name: "m-social/svelte/directive-comments",
+			plugins: {
+				"@eslint-community/eslint-comments": comments,
+			},
+			linterOptions: {
+				reportUnusedDisableDirectives: "error",
+			},
+			rules: {
+				"@eslint-community/eslint-comments/no-unlimited-disable": "error",
+				"@eslint-community/eslint-comments/require-description": [
+					"error",
+					{ ignore: ["eslint-enable"] },
+				],
 			},
 		},
 		{

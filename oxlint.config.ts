@@ -5,6 +5,7 @@ import typescriptConfig from "./configs/oxlint/src/typescript.ts";
 export default defineConfig({
 	...typescriptConfig,
 	options: {
+		...typescriptConfig.options,
 		typeAware: true,
 	},
 });

@@ -1,7 +1,13 @@
 import type { Rule } from "eslint";
 
-const DOCS_BASE_URL =
-	"https://github.com/m-social/frontend-configs/blob/main/configs/eslint/agents/docs/rules";
+import packageJson from "../package.json" with { type: "json" };
+
+export const PACKAGE_NAME = packageJson.name;
+export const PACKAGE_VERSION = packageJson.version;
+
+// The tag of the installed version, so the link shows the docs of the rule as it was published
+// rather than whatever `main` has moved on to.
+const DOCS_BASE_URL = `https://github.com/m-social/frontend-configs/blob/${PACKAGE_NAME}@${PACKAGE_VERSION}/configs/eslint/agents/docs/rules`;
 
 /** Link shown by editors next to a reported problem. */
 export function docsUrl(ruleName: string): string {

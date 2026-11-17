@@ -1,8 +1,11 @@
 // Messages of the convention rules. Each one says what to do instead, so the fix does not need
 // a trip to the docs; the `url` of the rule points at the full explanation.
 
-const DOCS_URL =
-	"https://github.com/m-social/frontend-configs/blob/main/configs/stylelint/docs/agents.md";
+import packageJson from "../../package.json" with { type: "json" };
+
+// The tag of the installed version, so the link shows the conventions as they were published
+// rather than whatever `main` has moved on to.
+const DOCS_URL = `https://github.com/m-social/frontend-configs/blob/${packageJson.name}@${packageJson.version}/configs/stylelint/docs/agents.md`;
 
 /**
  * @param {string} anchor

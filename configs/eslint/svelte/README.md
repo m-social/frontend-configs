@@ -39,6 +39,18 @@ export default config({
 });
 ```
 
+## 💬 Directive comments
+
+The config uses [`@eslint-community/eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/) and ESLint's own options to require that every `eslint-disable` comment:
+
+- names the rules it disables — no bare `eslint-disable`;
+- says why, after `--`;
+- is removed once it no longer suppresses anything.
+
+```ts
+// eslint-disable-next-line svelte/no-at-html-tags -- the markup comes from our own CMS and is sanitized on the server
+```
+
 ## 📄 License
 
 MIT © M-Social

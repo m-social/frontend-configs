@@ -30,7 +30,7 @@ export interface AgentsConfigOptions {
 }
 
 /**
- * M-Social style conventions as Stylelint rules. Spread the result into the config next to
- * `extends: ["@m-social/stylelint-config"]`.
+ * M-Social style conventions as Stylelint rules. List the result in `extends` after
+ * `"@m-social/stylelint-config"`: the globs are resolved against the config that extends it.
  */
 export declare function agentsConfig(options: AgentsConfigOptions): Config;

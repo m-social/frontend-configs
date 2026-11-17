@@ -1,4 +1,4 @@
-# `@m-social/agents/no-template-literal-class-name`
+# `@m-social/agents-react/no-template-literal-class-name`
 
 Disallows building the `className` prop with a template literal that has `${}` placeholders.
 

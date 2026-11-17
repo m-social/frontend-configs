@@ -55,9 +55,6 @@ function valueMessage(property) {
 export function agentsConfig({ globalStyles, sharedStyles, colorTokens, typography }) {
 	return {
 		plugins,
-		// A `stylelint-disable` comment has to say why, and is reported once it is no longer needed.
-		reportDescriptionlessDisables: true,
-		reportNeedlessDisables: true,
 		rules: {
 			"color-no-hex": [true, { message: RAW_COLOR, url: docsUrl("colors") }],
 			"color-named": ["never", { message: RAW_COLOR, url: docsUrl("colors") }],

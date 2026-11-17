@@ -211,9 +211,9 @@ No `as` in `@use`, including `as *`. With the default namespace `colors` is alwa
 
 ## Disable comments
 
-Options: `reportDescriptionlessDisables`, `reportNeedlessDisables`.
+Not part of `agentsConfig()`: the main config, `@m-social/stylelint-config`, sets `reportDescriptionlessDisables` and `reportNeedlessDisables` for everyone.
 
-A `stylelint-disable` comment has to name its rule and say why after `--`, and it is reported once it no longer suppresses anything. A rule that can be switched off silently does not hold.
+A `stylelint-disable` comment has to say why after `--`, and it is reported once it no longer suppresses anything. A rule that can be switched off silently does not hold.
 
 ```scss
 // ❌

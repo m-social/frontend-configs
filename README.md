@@ -43,7 +43,7 @@ A monorepo containing all frontend linting, formatting, and code quality configu
 ### Stylelint Configuration
 
 - **[@m-social/stylelint-config](./configs/stylelint)** - Shareable Stylelint configuration for style linting in TypeScript projects
-  - `@m-social/stylelint-config/agents` - style conventions as lint rules for AI coding agents
+  - [`@m-social/stylelint-config/agents`](./configs/stylelint/docs/agents.md) - style conventions as lint rules for AI coding agents
 
 ## 🚀 Quick Start
 

@@ -9,6 +9,10 @@ export default defineConfig({
 		builtin: true,
 		es2026: true,
 	},
+	options: {
+		// A disable comment that no longer suppresses anything is an error, so stale ones do not pile up
+		reportUnusedDisableDirectives: "error",
+	},
 	rules: {
 		// #region eslint
 		"no-case-declarations": "error",

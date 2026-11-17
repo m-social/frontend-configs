@@ -1,4 +1,4 @@
-# `@m-social/agents/no-literal-inline-style`
+# `@m-social/agents-react/no-literal-inline-style`
 
 Disallows hardcoded values in the JSX `style` prop.
 

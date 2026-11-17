@@ -110,6 +110,10 @@ export default mergeConfigs([
 ]);
 ```
 
+## 💬 Disable comments
+
+The configs set `options.reportUnusedDisableDirectives` to `"error"`: an `oxlint-disable` or `eslint-disable` comment that no longer suppresses anything is reported. oxlint reads `options` only from the root config file, so keep them when you build your config — `mergeConfigs` does, a plain object spread with its own `options` does not.
+
 ## 📄 License
 
 MIT © M-Social

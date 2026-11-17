@@ -39,6 +39,15 @@
 			},
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.cjs"
+		},
+		"./react": {
+			"@m-social/frontend-configs": "./src/react.ts",
+			"types": {
+				"import": "./dist/react.d.mts",
+				"require": "./dist/react.d.cts"
+			},
+			"import": "./dist/react.mjs",
+			"require": "./dist/react.cjs"
 		}
 	},
 	"publishConfig": {
@@ -46,9 +55,6 @@
 	},
 	"scripts": {
 		"build": "tsdown"
-	},
-	"dependencies": {
-		"@eslint-community/eslint-plugin-eslint-comments": "^4.8.1"
 	},
 	"devDependencies": {
 		"eslint": "catalog:development"

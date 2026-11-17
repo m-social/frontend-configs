@@ -5,7 +5,7 @@
 
 > ESLint rules that keep AI coding agents within the code conventions used at [M-Social](https://msocialproduction.com)
 
-An agent can skip a convention that lives only in project documentation; it cannot skip a failing lint check. This plugin turns such conventions into rules. Each message says what to do instead, so the agent can fix the code without reading the docs, and the `directiveComments` config keeps it from switching a rule off silently.
+An agent can skip a convention that lives only in project documentation; it cannot skip a failing lint check. This plugin turns such conventions into rules. Each message says what to do instead, so the agent can fix the code without reading the docs.
 
 The rules are meant for agents, but they hold for code written by people just as well.
 
@@ -17,52 +17,52 @@ pnpm add -D eslint @m-social/eslint-plugin-agents
 
 ## 🚀 Usage
 
-Add the configs you need to `eslint.config.js`, after [`@m-social/eslint-config-react`](../react):
+The package has two entry points: the root one holds the rules that do not depend on a UI framework, `/react` holds the React ones. Add the configs you need to `eslint.config.js`, after [`@m-social/eslint-config-react`](../react):
 
 ```js
 import reactConfig from "@m-social/eslint-config-react";
 import agents from "@m-social/eslint-plugin-agents";
+import agentsReact from "@m-social/eslint-plugin-agents/react";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
 	reactConfig({ tsconfigRootDir: import.meta.dirname }),
-	agents.configs.recommended,
-	agents.configs.reactCompiler,
+	agentsReact.configs.recommended,
 	agents.configs.vite,
-	agents.configs.directiveComments,
 );
 ```
 
-Each config is one flat-config object without `files`, so it applies to whatever the rest of your config lints. To limit it, spread it: `{ ...agents.configs.vite, files: ["src/**"] }`.
+| Entry point                            | Config        | Use it when                                                   |
+| -------------------------------------- | ------------- | ------------------------------------------------------------- |
+| `@m-social/eslint-plugin-agents/react` | `recommended` | the project is written in React                               |
+| `@m-social/eslint-plugin-agents`       | `vite`        | a Vite project reads its variables through a typed env module |
 
-| Config              | Use it when                                                    |
-| ------------------- | -------------------------------------------------------------- |
-| `recommended`       | always — conventions that hold for every React project         |
-| `reactCompiler`     | the project is built with React Compiler                       |
-| `vite`              | a Vite project reads its variables through a typed env module  |
-| `directiveComments` | `eslint-disable` comments should be explained and kept minimal |
+Each config is one flat-config object without `files`, so it applies to whatever the rest of your config lints. To limit it, list it in `extends` of an object that has `files`:
+
+```js
+export default defineConfig({
+	files: ["src/**"],
+	extends: [agents.configs.vite],
+});
+```
 
 ## 📏 Rules
 
-| Rule                                                                               | What it reports                                  | Config          |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------ | --------------- |
-| [`no-literal-inline-style`](./docs/rules/no-literal-inline-style.md)               | hardcoded values in the JSX `style` prop         | `recommended`   |
-| [`no-template-literal-class-name`](./docs/rules/no-template-literal-class-name.md) | `className` built with a template literal        | `recommended`   |
-| [`no-manual-memoization`](./docs/rules/no-manual-memoization.md)                   | `useMemo`, `useCallback` and `memo` from `react` | `reactCompiler` |
-| [`no-restricted-import-meta-env`](./docs/rules/no-restricted-import-meta-env.md)   | project variables read from `import.meta.env`    | `vite`          |
+| Rule                                                                               | What it reports                                  | Config              |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------- |
+| [`no-literal-inline-style`](./docs/rules/no-literal-inline-style.md)               | hardcoded values in the JSX `style` prop         | `react.recommended` |
+| [`no-template-literal-class-name`](./docs/rules/no-template-literal-class-name.md) | `className` built with a template literal        | `react.recommended` |
+| [`no-manual-memoization`](./docs/rules/no-manual-memoization.md)                   | `useMemo`, `useCallback` and `memo` from `react` | `react.recommended` |
+| [`no-restricted-import-meta-env`](./docs/rules/no-restricted-import-meta-env.md)   | project variables read from `import.meta.env`    | `vite`              |
 
-Rule names are prefixed with `@m-social/`, for example `@m-social/agents/no-manual-memoization`.
+The React rules are prefixed with `@m-social/agents-react/`, the rest with `@m-social/agents/` — for example `@m-social/agents-react/no-manual-memoization` and `@m-social/agents/no-restricted-import-meta-env`.
 
-## 💬 Directive comments
+`no-manual-memoization` is part of `recommended` because M-Social React projects are built with React Compiler. In a project without it, switch the rule off:
 
-A lint rule only helps while it cannot be switched off silently. `directiveComments` uses [`@eslint-community/eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/) and ESLint's own options to require that every `eslint-disable` comment:
-
-- names the rules it disables — no bare `eslint-disable`;
-- says why, after `--`;
-- is removed once it no longer suppresses anything.
-
-```ts
-// eslint-disable-next-line @m-social/agents/no-literal-inline-style -- the map library reads this value from the style attribute
+```js
+export default defineConfig(agentsReact.configs.recommended, {
+	rules: { "@m-social/agents-react/no-manual-memoization": "off" },
+});
 ```
 
 ## 📄 License
