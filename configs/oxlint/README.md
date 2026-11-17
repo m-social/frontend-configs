@@ -110,29 +110,6 @@ export default mergeConfigs([
 ]);
 ```
 
-## 💬 Unused disable comments
-
-oxlint can report a disable comment that no longer suppresses anything (`options.reportUnusedDisableDirectives`). The shared configs leave it off, because it cannot be switched on for everyone:
-
-- oxlint accepts `options` only in the root config file, so a nested config that exports a shared config would fail to parse;
-- oxlint reads `eslint-disable` comments too, so in a project that also runs ESLint every comment for a rule only ESLint has would be reported as unused.
-
-In a project where neither applies, enable it in the root config:
-
-```typescript
-import typescriptConfig from "@m-social/oxlint-config/typescript";
-import { mergeConfigs } from "@m-social/oxlint-config/utils";
-
-export default mergeConfigs([
-	typescriptConfig,
-	{
-		options: {
-			reportUnusedDisableDirectives: "error",
-		},
-	},
-]);
-```
-
 ## 📄 License
 
 MIT © M-Social

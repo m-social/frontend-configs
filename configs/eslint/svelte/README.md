@@ -39,22 +39,6 @@ export default config({
 });
 ```
 
-## 💬 Directive comments
-
-The config uses [`@eslint-community/eslint-plugin-eslint-comments`](https://eslint-community.github.io/eslint-plugin-eslint-comments/) and ESLint's own options to require that an `eslint-disable` comment in a `<script>` block:
-
-- names the rules it disables — no bare `eslint-disable`;
-- says why, after `--`;
-- is removed once it no longer suppresses anything.
-
-```ts
-// eslint-disable-next-line @typescript-eslint/no-explicit-any -- the payload shape is not known here
-```
-
-Comments in the template (`<!-- eslint-disable-next-line … -->`) are handled by the Svelte plugin. There only the last check applies: a comment that suppresses nothing is reported, a missing rule name or description is not.
-
-For a rule that only oxlint runs, write `oxlint-disable`: ESLint reports an `eslint-disable` comment that suppresses none of its own rules.
-
 ## 📄 License
 
 MIT © M-Social

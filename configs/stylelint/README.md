@@ -36,7 +36,7 @@ export default {
 
 ### Disable comments
 
-The config sets `reportDescriptionlessDisables` and `reportNeedlessDisables`: a `stylelint-disable` comment has to say why after `--`, and it is reported once it no longer suppresses anything.
+The config sets `reportDescriptionlessDisables`, `reportNeedlessDisables` and `reportUnscopedDisables`: a `stylelint-disable` comment has to name the rules it disables and say why after `--`, and it is reported once it no longer suppresses anything.
 
 ```scss
 /* stylelint-disable-next-line selector-max-id -- the id comes from a third-party widget */

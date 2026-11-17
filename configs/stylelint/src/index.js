@@ -5,9 +5,9 @@ import stylelintOrder from "stylelint-order";
 export default {
 	extends: [import.meta.resolve("stylelint-config-recommended-scss")],
 	plugins: [stylelintOrder],
-	// A `stylelint-disable` comment has to say why, and is reported once it is no longer needed
 	reportDescriptionlessDisables: true,
 	reportNeedlessDisables: true,
+	reportUnscopedDisables: true,
 	rules: {
 		"declaration-empty-line-before": [
 			"always",

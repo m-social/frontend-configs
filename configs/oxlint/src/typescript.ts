@@ -2,6 +2,7 @@ import { defineConfig } from "oxlint";
 
 export default defineConfig({
 	plugins: ["typescript"],
+	jsPlugins: ["oxlint-plugin-directive-comments"],
 	categories: {
 		correctness: "error",
 	},
@@ -67,6 +68,11 @@ export default defineConfig({
 		],
 		"@typescript-eslint/no-explicit-any": "warn",
 		"@typescript-eslint/no-namespace": ["error", { allowDeclarations: true }],
+		// #endregion
+
+		// #region comments
+		"directive-comments/no-unlimited-disable": "error",
+		"directive-comments/require-description": "error",
 		// #endregion
 	},
 	overrides: [

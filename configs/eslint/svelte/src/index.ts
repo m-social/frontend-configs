@@ -40,6 +40,16 @@ export default function svelteConfig({ tsconfigRootDir, svelteConfig }: SvelteCo
 	return defineConfig(
 		globalIgnores(["**/.svelte-kit/**", "**/build/**"], "m-social/svelte/ignore"),
 		{
+			name: "m-social/comments",
+			plugins: {
+				"@eslint-community/eslint-comments": comments,
+			},
+			rules: {
+				"@eslint-community/eslint-comments/no-unlimited-disable": "error",
+				"@eslint-community/eslint-comments/require-description": "error",
+			},
+		},
+		{
 			name: "m-social/svelte/rules",
 			files: ["**/*.svelte"],
 			extends: [eslint.configs.recommended, ts.configs.recommendedTypeChecked],
@@ -83,31 +93,6 @@ export default function svelteConfig({ tsconfigRootDir, svelteConfig }: SvelteCo
 					projectService: true,
 					tsconfigRootDir,
 				},
-			},
-		},
-		{
-			// Keeps `eslint-disable` comments honest: each one names its rules, says why it is there
-			// and is reported once it no longer suppresses anything
-			name: "m-social/svelte/directive-comments",
-			plugins: {
-				"@eslint-community/eslint-comments": comments,
-			},
-			linterOptions: {
-				reportUnusedDisableDirectives: "error",
-			},
-			rules: {
-				"@eslint-community/eslint-comments/no-unlimited-disable": "error",
-				"@eslint-community/eslint-comments/require-description": [
-					"error",
-					{ ignore: ["eslint-enable"] },
-				],
-			},
-		},
-		{
-			name: "m-social/svelte/template-directive-comments",
-			files: ["**/*.svelte"],
-			rules: {
-				"svelte/comment-directive": ["error", { reportUnusedDisableDirectives: true }],
 			},
 		},
 		{

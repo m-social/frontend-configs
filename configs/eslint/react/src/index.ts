@@ -1,3 +1,4 @@
+import comments from "@eslint-community/eslint-plugin-eslint-comments";
 import react from "@eslint-react/eslint-plugin";
 import * as parserBase from "@typescript-eslint/parser";
 import type { TSESLint } from "@typescript-eslint/utils";
@@ -30,6 +31,16 @@ export default function reactConfig({ tsconfigRootDir }: ReactConfigSettings) {
 	return defineConfig(
 		{
 			files: ["**/*.ts", "**/*.tsx", "**/*.cts", "**/*.mts", "**/*.jsx"],
+		},
+		{
+			name: "m-social/comments",
+			plugins: {
+				"@eslint-community/eslint-comments": comments,
+			},
+			rules: {
+				"@eslint-community/eslint-comments/no-unlimited-disable": "error",
+				"@eslint-community/eslint-comments/require-description": "error",
+			},
 		},
 		react.configs["recommended-type-checked"],
 		{
