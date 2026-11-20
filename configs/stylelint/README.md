@@ -34,6 +34,42 @@ export default {
 };
 ```
 
+### Disable comments
+
+The config sets `reportDescriptionlessDisables`, `reportNeedlessDisables` and `reportUnscopedDisables`: a `stylelint-disable` comment has to name the rules it disables and say why after `--`, and it is reported once it no longer suppresses anything.
+
+```scss
+/* stylelint-disable-next-line no-descending-specificity -- the order follows the markup */
+```
+
+## 🤖 Rules for AI agents
+
+The base config covers syntax, ordering and empty lines. `agentsConfig()` adds the M-Social style conventions on top: colors, font styles, transitions, states, breakpoints and layers come from shared modules instead of being written by hand in each component. It is meant for AI coding agents: an agent can skip a convention from the docs, but not a failing lint check, and every message says what to do instead.
+
+```js
+import { agentsConfig } from "@m-social/stylelint-config/agents";
+
+export default {
+	extends: [
+		"@m-social/stylelint-config",
+		agentsConfig({
+			globalStyles: ["src/app/styles/**"],
+			sharedStyles: ["src/shared/ui/styles/**"],
+			colorTokens: ["src/shared/ui/styles/_colors.scss"],
+			typography: ["src/shared/ui/typography/**"],
+		}),
+	],
+};
+```
+
+The four options are the files that _define_ what the conventions point to, so the rules are relaxed there. Each one is optional: leave out what the project does not have. They are globs relative to your config file and depend on the project layout — for example `src/_app/styles/**` in a Next.js project.
+
+The sample has no `@type {import('stylelint').Config}` annotation on purpose: Stylelint accepts a config object in `extends`, but its typings describe that only since v18, so on v17 a type-checked config reports an error there.
+
+`agentsConfig()` returns a config object with `plugins`, `rules` and `overrides`. Your own `rules` and `overrides` go next to `extends` as usual and are applied on top of it.
+
+What each rule checks and why: [docs/agents.md](./docs/agents.md).
+
 ## 📄 License
 
 MIT © M-Social
