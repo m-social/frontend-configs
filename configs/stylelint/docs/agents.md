@@ -218,6 +218,20 @@ The namespace is written out because the default one is derived from the URL, an
 
 Built-in modules such as `sass:math` may keep the default namespace. A missing `as` is added by `stylelint --fix`; a renamed namespace is not fixed automatically, because every reference to it has to change as well.
 
+Two cases leave the choice of the namespace to you, as long as it is not `as *`:
+
+- another module of the file already has that name — Sass does not load two modules under one namespace;
+- the name of the module cannot be a namespace, for example `2024-theme`.
+
+```scss
+// ✅
+@use "#shared/ui/styles/colors" as colors;
+@use "./colors" as local-colors;
+@use "#shared/ui/styles/2024-theme" as theme;
+```
+
+The rule is the opposite of `scss/at-use-no-redundant-alias` from `stylelint-scss`, which reports `as colors` as redundant. The base config leaves that rule off; do not enable it next to `agentsConfig()`, because no `@use` can pass both.
+
 ## Disable comments
 
 Not part of `agentsConfig()`: the main config, `@m-social/stylelint-config`, sets `reportDescriptionlessDisables`, `reportNeedlessDisables` and `reportUnscopedDisables` for everyone.

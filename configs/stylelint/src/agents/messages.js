@@ -43,9 +43,16 @@ export function useNamespace(name) {
 	return `Write the namespace of a \`@use\` import out and name it after the module: \`as ${name}\`.`;
 }
 
-// For a module whose name cannot be a namespace, such as `2024-theme`
-export const USE_OWN_NAMESPACE =
-	"Give the `@use` import a namespace of its own with `as`, not `as *`.";
+// For a module whose name is not an identifier, such as `2024-theme`
+export const USE_UNNAMEABLE =
+	"The name of this module cannot be a namespace: give the `@use` import one with `as <name>`.";
+
+/**
+ * @param {string} name The name of the module
+ */
+export function useNamespaceTaken(name) {
+	return `Another module of this file already has the namespace \`${name}\`: give this \`@use\` import a different one with \`as <name>\`.`;
+}
 
 export const WIDTH_MEDIA_QUERY =
 	"Set breakpoints with `@include breakpoints.tablet` / `breakpoints.desktop`, not with a width media query.";

@@ -1,45 +1,74 @@
 import stylelint from "stylelint";
 
-import { docsUrl, USE_OWN_NAMESPACE, useNamespace, WIDTH_MEDIA_QUERY } from "./messages.js";
+import {
+	docsUrl,
+	USE_UNNAMEABLE,
+	useNamespace,
+	useNamespaceTaken,
+	WIDTH_MEDIA_QUERY,
+} from "./messages.js";
 
 export const USE_NAMESPACE = "m-social-agents/use-namespace";
 export const NO_WIDTH_MEDIA_QUERY = "m-social-agents/no-width-media-query";
 
 // The quoted URL of a `@use` and its `as` clause, when there is one. A `with (…)` may follow.
-const USE_PARAMS = /^(\s*(["'])(.+?)\2)(?:\s+as\s+(\*|[^\s;]+))?/;
-const SASS_IDENTIFIER = /^-?[a-z_][\w-]*$/i;
+const USE_PARAMS = /^(\s*(["'])(.+?)\2)(?:\s*as(?:\s+|(?=\*))(\*|[^\s;]+))?/;
+const SASS_IDENTIFIER = /^(?:--|-?[a-z_\u{80}-\u{10ffff}])[\w\u{80}-\u{10ffff}-]*$/iu;
 
 /**
  * The name of the module a `@use` loads, the way Sass makes a default namespace out of a URL:
- * its last component without the leading underscore and the extension.
+ * the last component of its path without the leading underscore and the extension.
  *
  * @param {string} url
  * @returns {string | undefined} `undefined` when the name cannot be a namespace
  */
 function moduleName(url) {
-	const start = Math.max(url.lastIndexOf("/"), url.lastIndexOf(":"), url.lastIndexOf("#")) + 1;
-	const name = url.slice(start).replace(/^_/, "").replace(/\..*$/, "");
+	// A subpath import, `#shared/…`, is a URL of a fragment alone. Sass finds no path in it and
+	// so no name; the name is read from the fragment.
+	const path = url.startsWith("#") ? url.slice(1) : url.replace(/#.*$/, "");
+	const start = Math.max(path.lastIndexOf("/"), path.lastIndexOf(":")) + 1;
+	const name = path.slice(start).replace(/^_/, "").replace(/\..*$/, "");
 
 	return SASS_IDENTIFIER.test(name) ? name : undefined;
 }
 
 /**
- * @param {string} url
- * @param {string | undefined} namespace What follows `as`
- * @param {string | undefined} expected
+ * What a `@use` loads and under which namespace.
+ *
+ * @param {string} params
  */
-function isNamespaceAccepted(url, namespace, expected) {
-	if (namespace === undefined) {
-		// Only the built-in modules may rely on the default: `@use "sass:math"`
-		return url.startsWith("sass:");
+function parseUse(params) {
+	const match = USE_PARAMS.exec(params);
+
+	if (!match) {
+		return undefined;
 	}
 
-	return expected === undefined ? namespace !== "*" : namespace === expected;
+	// `source` is the URL as it is written, with its quotes; `namespace` is what follows `as`
+	const [, source = "", , url = "", namespace] = match;
+
+	return { source, url, namespace, name: moduleName(url), isBuiltIn: url.startsWith("sass:") };
+}
+
+/**
+ * The range of the parameters of an at-rule, to underline them alone: the node of an at-rule
+ * includes its whole block.
+ *
+ * @param {{ name: string, params: string, raws: { afterName?: string, params?: { raw: string, scss?: string } } }} node
+ */
+function paramsRange(node) {
+	const index = 1 + node.name.length + (node.raws.afterName ?? "").length;
+	// The parameters as they are in the source: `params` itself has the comments taken out, and
+	// `raw` has the `//` ones rewritten
+	const source = node.raws.params?.scss ?? node.raws.params?.raw ?? node.params;
+
+	return { index, endIndex: index + source.length };
 }
 
 const useNamespaceMessages = stylelint.utils.ruleMessages(USE_NAMESPACE, {
 	expected: useNamespace,
-	expectedOwn: USE_OWN_NAMESPACE,
+	unnameable: USE_UNNAMEABLE,
+	taken: useNamespaceTaken,
 });
 
 /**
@@ -52,40 +81,79 @@ const useNamespaceRule = (enabled) => (root, result) => {
 		return;
 	}
 
-	root.walkAtRules("use", (node) => {
-		const match = USE_PARAMS.exec(node.params);
+	// Sass does not load two modules under one namespace, so a name that a module of this file
+	// already has is not asked of another one
+	/** @type {Set<string | undefined>} */
+	const taken = new Set();
 
-		if (!match) {
+	root.walkAtRules("use", (node) => {
+		const use = parseUse(node.params);
+
+		if (use) {
+			taken.add(use.namespace ?? (use.isBuiltIn ? use.name : undefined));
+		}
+	});
+
+	root.walkAtRules("use", (node) => {
+		const use = parseUse(node.params);
+
+		// A node without a source was put there by the fix of another rule in this very run and has
+		// no position to report; it is checked on the next run
+		if (!use || !node.source) {
 			return;
 		}
 
-		const [, source, , url, namespace] = match;
-		const expected = moduleName(url);
+		const { source, namespace, name } = use;
 
-		if (isNamespaceAccepted(url, namespace, expected)) {
+		// Only the built-in modules may rely on the default: `@use "sass:math"`
+		if (namespace === undefined ? use.isBuiltIn : namespace === name) {
 			return;
+		}
+
+		const isNameFree = name !== undefined && !taken.has(name);
+
+		// Without a name to take, any namespace of its own will do
+		if (!isNameFree && namespace !== undefined && namespace !== "*") {
+			return;
+		}
+
+		if (isNameFree) {
+			taken.add(name);
 		}
 
 		stylelint.utils.report({
 			ruleName: USE_NAMESPACE,
 			result,
 			node,
-			word: node.params,
-			message:
-				expected === undefined
-					? useNamespaceMessages.expectedOwn
-					: useNamespaceMessages.expected(expected),
+			...paramsRange(node),
+			message: useNamespaceMessage(name, isNameFree),
 			// Writing out the default namespace changes nothing for the rest of the file. Renaming
-			// one would break every reference to it, so that is left to the author.
+			// one would break every reference to it, so that is left to the author. Neither is a
+			// `@use` with a comment in it rewritten: the comment would be lost.
 			fix:
-				namespace === undefined && expected !== undefined
-					? () => {
-							node.params = `${source} as ${expected}${node.params.slice(source.length)}`;
+				isNameFree && namespace === undefined && node.raws.params === undefined
+					? {
+							node,
+							apply: () => {
+								node.params = `${source} as ${name}${node.params.slice(source.length)}`;
+							},
 						}
 					: undefined,
 		});
 	});
 };
+
+/**
+ * @param {string | undefined} name
+ * @param {boolean} isNameFree
+ */
+function useNamespaceMessage(name, isNameFree) {
+	if (name === undefined) {
+		return useNamespaceMessages.unnameable;
+	}
+
+	return isNameFree ? useNamespaceMessages.expected(name) : useNamespaceMessages.taken(name);
+}
 
 useNamespaceRule.ruleName = USE_NAMESPACE;
 useNamespaceRule.messages = useNamespaceMessages;
@@ -111,12 +179,11 @@ function atRuleParamsRule(ruleName, atRuleName, pattern, message, url) {
 
 		root.walkAtRules(atRuleName, (node) => {
 			if (pattern.test(node.params)) {
-				// Only the parameters are underlined: the node of an at-rule includes its whole block
 				stylelint.utils.report({
 					ruleName,
 					result,
 					node,
-					word: node.params,
+					...paramsRange(node),
 					message: messages.rejected,
 				});
 			}
