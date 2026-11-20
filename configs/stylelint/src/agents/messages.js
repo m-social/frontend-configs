@@ -36,8 +36,16 @@ export const STATE_SELECTOR =
 export const FLAT_MODIFIER =
 	"Write a modifier inside its block as `&_name`, not as a separate class with an underscore.";
 
-export const USE_ALIAS =
-	"Do not rename a `@use` import with `as`: keep the module's default namespace.";
+/**
+ * @param {string} name The name of the module
+ */
+export function useNamespace(name) {
+	return `Write the namespace of a \`@use\` import out and name it after the module: \`as ${name}\`.`;
+}
+
+// For a module whose name cannot be a namespace, such as `2024-theme`
+export const USE_OWN_NAMESPACE =
+	"Give the `@use` import a namespace of its own with `as`, not `as *`.";
 
 export const WIDTH_MEDIA_QUERY =
 	"Set breakpoints with `@include breakpoints.tablet` / `breakpoints.desktop`, not with a width media query.";

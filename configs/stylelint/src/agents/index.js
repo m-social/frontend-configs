@@ -10,7 +10,7 @@ import {
 	TRANSITION_PROPERTY,
 	Z_INDEX,
 } from "./messages.js";
-import plugins, { NO_USE_ALIAS, NO_WIDTH_MEDIA_QUERY } from "./plugins.js";
+import plugins, { NO_WIDTH_MEDIA_QUERY, USE_NAMESPACE } from "./plugins.js";
 
 const FONT_PROPERTIES = [
 	"font",
@@ -88,7 +88,7 @@ export function agentsConfig({
 				{ message: FLAT_MODIFIER, resolveNestedSelectors: false, url: docsUrl("modifiers") },
 			],
 			"declaration-no-important": [true, { message: IMPORTANT, url: docsUrl("important") }],
-			[NO_USE_ALIAS]: [true, { url: docsUrl("use-imports") }],
+			[USE_NAMESPACE]: [true, { url: docsUrl("use-imports") }],
 			[NO_WIDTH_MEDIA_QUERY]: [true, { url: docsUrl("breakpoints") }],
 		},
 		// Stylelint rejects an override without files, so an option that was not passed adds none

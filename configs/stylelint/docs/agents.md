@@ -21,7 +21,7 @@ No hex colors, named colors, color functions (`rgb()`, `hsl()`, `oklch()` and th
 }
 
 // ✅
-@use "$shared/ui/styles/colors";
+@use "$shared/ui/styles/colors" as colors;
 
 .button {
 	color: colors.$text;
@@ -197,17 +197,26 @@ No `!important`. When a third-party style has to be overridden, the override mix
 
 ## `@use` imports
 
-Rule: `m-social-agents/no-use-alias`.
+Rule: `m-social-agents/use-namespace`.
 
-No `as` in `@use`, including `as *`. With the default namespace `colors` is always `colors`, which keeps styles readable and searchable across the codebase.
+Every `@use` writes its namespace out with `as`, and the namespace is the name of the module: the file name without the leading underscore and the extension. No renaming and no `as *`. `colors` is then always `colors`, which keeps styles readable and searchable across the codebase.
+
+The namespace is written out because the default one is derived from the URL, and a path with an alias is not always a URL Sass can read a name from. With Node.js subpath imports it cannot: `@use "#shared/ui/styles/colors"` does not compile without `as`. Writing it everywhere gives one form for every kind of path.
 
 ```scss
 // ❌
-@use "$shared/ui/styles/colors" as c;
+@use "$shared/ui/styles/colors";
+@use "#shared/ui/styles/transition" as t;
+@use "#shared/ui/styles/breakpoints" as *;
 
 // ✅
-@use "$shared/ui/styles/colors";
+@use "sass:math";
+@use "$shared/ui/styles/colors" as colors;
+@use "#shared/ui/styles/transition" as transition;
+@use "#shared/ui/styles/breakpoints" as breakpoints;
 ```
+
+Built-in modules such as `sass:math` may keep the default namespace. A missing `as` is added by `stylelint --fix`; a renamed namespace is not fixed automatically, because every reference to it has to change as well.
 
 ## Disable comments
 
