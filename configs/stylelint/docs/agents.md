@@ -21,7 +21,7 @@ No hex colors, named colors, color functions (`rgb()`, `hsl()`, `oklch()` and th
 }
 
 // ✅
-@use "$shared/ui/styles/colors" as colors;
+@use "$shared/ui/styles/colors";
 
 .button {
 	color: colors.$text;
@@ -194,43 +194,6 @@ No `!important`. When a third-party style has to be overridden, the override mix
 	}
 }
 ```
-
-## `@use` imports
-
-Rule: `m-social-agents/use-namespace`.
-
-Every `@use` writes its namespace out with `as`, and the namespace is the name of the module: the file name without the leading underscore and the extension. No renaming and no `as *`. `colors` is then always `colors`, which keeps styles readable and searchable across the codebase.
-
-The namespace is written out because the default one is derived from the URL, and a path with an alias is not always a URL Sass can read a name from. With Node.js subpath imports it cannot: `@use "#shared/ui/styles/colors"` does not compile without `as`. Writing it everywhere gives one form for every kind of path.
-
-```scss
-// ❌
-@use "$shared/ui/styles/colors";
-@use "#shared/ui/styles/transition" as t;
-@use "#shared/ui/styles/breakpoints" as *;
-
-// ✅
-@use "sass:math";
-@use "$shared/ui/styles/colors" as colors;
-@use "#shared/ui/styles/transition" as transition;
-@use "#shared/ui/styles/breakpoints" as breakpoints;
-```
-
-Built-in modules such as `sass:math` may keep the default namespace. A missing `as` is added by `stylelint --fix`; a renamed namespace is not fixed automatically, because every reference to it has to change as well.
-
-Two cases leave the choice of the namespace to you, as long as it is not `as *`:
-
-- another module of the file already has that name — Sass does not load two modules under one namespace;
-- the name of the module cannot be a namespace, for example `2024-theme`.
-
-```scss
-// ✅
-@use "#shared/ui/styles/colors" as colors;
-@use "./colors" as local-colors;
-@use "#shared/ui/styles/2024-theme" as theme;
-```
-
-The rule is the opposite of `scss/at-use-no-redundant-alias` from `stylelint-scss`, which reports `as colors` as redundant. The base config leaves that rule off; do not enable it next to `agentsConfig()`, because no `@use` can pass both.
 
 ## Disable comments
 

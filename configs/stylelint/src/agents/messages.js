@@ -36,23 +36,5 @@ export const STATE_SELECTOR =
 export const FLAT_MODIFIER =
 	"Write a modifier inside its block as `&_name`, not as a separate class with an underscore.";
 
-/**
- * @param {string} name The name of the module
- */
-export function useNamespace(name) {
-	return `Write the namespace of a \`@use\` import out and name it after the module: \`as ${name}\`.`;
-}
-
-// For a module whose name is not an identifier, such as `2024-theme`
-export const USE_UNNAMEABLE =
-	"The name of this module cannot be a namespace: give the `@use` import one with `as <name>`.";
-
-/**
- * @param {string} name The name of the module
- */
-export function useNamespaceTaken(name) {
-	return `Another module of this file already has the namespace \`${name}\`: give this \`@use\` import a different one with \`as <name>\`.`;
-}
-
 export const WIDTH_MEDIA_QUERY =
 	"Set breakpoints with `@include breakpoints.tablet` / `breakpoints.desktop`, not with a width media query.";
