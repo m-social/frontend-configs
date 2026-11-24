@@ -1,5 +1,13 @@
 # @m-social/cspell-config
 
+## 0.4.4
+
+### Patch Changes
+
+- [#67](https://github.com/m-social/frontend-configs/pull/67) [`cf51996`](https://github.com/m-social/frontend-configs/commit/cf51996894789b5b35e2c64611c074066ed69ed6) - ✨ add `oxfmt`, `ianvs`, `vite`, `dbaeumer`, `textnodes`, `polyfillio`, `nonconstructor`, `currentcolor`, `descriptionless`, `autodocs` and `toolsets` words
+
+- [#68](https://github.com/m-social/frontend-configs/pull/68) [`1caabf4`](https://github.com/m-social/frontend-configs/commit/1caabf475303b5184b0ba34bd8bddbcf6dcdbd36) - ✨ add `tsrs` to the `packages` dictionary
+
 ## 0.4.3
 
 ### Patch Changes
