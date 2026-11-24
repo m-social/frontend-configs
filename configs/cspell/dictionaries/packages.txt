@@ -24,6 +24,7 @@ timerset
 titleize
 tsgo
 tsgolint
+tsrs
 turbopack
 unfonts
 usehooks
