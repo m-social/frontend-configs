@@ -17,7 +17,7 @@
 		"cspell": "^10.0.1",
 		"lefthook": "^2.1.10",
 		"oxfmt": "^0.64.0",
-		"oxlint": "^1.79.0",
+		"oxlint": "^1.94.0",
 		"publint": "^0.3.24",
 		"tsdown": "^0.22.14",
 		"tsrs": "7.1.0-beta.tsrs5",
