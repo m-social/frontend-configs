@@ -59,7 +59,6 @@
 		"oxlint-plugin-directive-comments": "0.1.0"
 	},
 	"peerDependencies": {
-		"oxlint": "^1.79.0",
-		"oxlint-tsgolint": "^7.0.2001"
+		"oxlint": "^1.92.0"
 	}
 }

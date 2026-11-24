@@ -18,9 +18,9 @@
 		"lefthook": "^2.1.10",
 		"oxfmt": "^0.64.0",
 		"oxlint": "^1.79.0",
-		"oxlint-tsgolint": "^7.0.2001",
 		"publint": "^0.3.24",
 		"tsdown": "^0.22.14",
+		"tsrs": "7.1.0-beta.tsrs5",
 		"typescript": "^6.0.3"
 	},
 	"packageManager": "pnpm@11.22.0"
