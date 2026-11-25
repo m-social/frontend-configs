@@ -2,7 +2,7 @@
 
 Disallows reading project variables from `import.meta.env`.
 
-Part of the `vite` config. It is meant for projects that declare their variables in a schema and read them through a typed env module (for example `ENV` from `varlock/env`). That module validates the values and converts them to real booleans and numbers; `import.meta.env` returns raw strings, so `import.meta.env.VITE_FLAG` is `"false"` — a truthy value.
+Part of the oxlint `vite` and ESLint `vite/eslint` configs. It is meant for projects that declare their variables in a schema and read them through a typed env module (for example `ENV` from `varlock/env`). That module validates the values and converts them to real booleans and numbers; `import.meta.env` returns raw strings, so `import.meta.env.VITE_FLAG` is `"false"` — a truthy value.
 
 Variables that Vite itself defines stay available.
 

@@ -1,11 +1,11 @@
-import type { AST, Rule } from "eslint";
+import type { ESTree, Rule } from "@oxlint/plugins";
 
 import { docsUrl } from "../utils.ts";
 
 const MEMOIZATION_APIS = new Set(["useMemo", "useCallback", "memo"]);
 
 /** `"use no memo"` at the top of a file switches React Compiler off for it. */
-function optsOutOfCompiler(program: AST.Program): boolean {
+function optsOutOfCompiler(program: ESTree.Program): boolean {
 	return program.body.some(
 		(statement) =>
 			statement.type === "ExpressionStatement" &&
@@ -14,7 +14,7 @@ function optsOutOfCompiler(program: AST.Program): boolean {
 	);
 }
 
-export const noManualMemoization: Rule.RuleModule = {
+export const noManualMemoization: Rule = {
 	meta: {
 		type: "suggestion",
 		docs: {
@@ -27,16 +27,17 @@ export const noManualMemoization: Rule.RuleModule = {
 				"React Compiler memoizes values and components automatically. Remove the manual `{{name}}`.",
 		},
 	},
-	create(context) {
-		// Without the compiler nothing memoizes for the author, so doing it by hand is right there
-		if (optsOutOfCompiler(context.sourceCode.ast)) {
-			return {};
-		}
-
+	createOnce(context) {
 		// Names bound to the whole React module: `import React from "react"`, `import * as R from "react"`.
 		const reactNamespaces = new Set<string>();
 
 		return {
+			before() {
+				reactNamespaces.clear();
+
+				// Without the compiler nothing memoizes for the author, so doing it by hand is right there
+				return !optsOutOfCompiler(context.sourceCode.ast);
+			},
 			ImportDeclaration(node) {
 				if (node.source.value !== "react") {
 					return;

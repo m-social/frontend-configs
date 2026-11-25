@@ -1,4 +1,4 @@
-import type { Rule } from "eslint";
+import type { ESTree, Node, Rule } from "@oxlint/plugins";
 
 import { asNodeLike, docsUrl } from "../utils.ts";
 
@@ -30,14 +30,14 @@ function isImportMetaEnv(value: unknown): boolean {
 
 interface NamedRead {
 	name: string;
-	node: Rule.Node;
+	node: Node;
 }
 
 /**
  * The names read by `const { DEV, MODE } = import.meta.env`. `undefined` when the pattern takes
  * more than a fixed list of names: a rest element or a computed key.
  */
-function destructuredNames(parent: Rule.Node, env: Rule.Node): NamedRead[] | undefined {
+function destructuredNames(parent: ESTree.Node, env: ESTree.Node): NamedRead[] | undefined {
 	if (
 		parent.type !== "VariableDeclarator" ||
 		parent.init !== env ||
@@ -53,13 +53,13 @@ function destructuredNames(parent: Rule.Node, env: Rule.Node): NamedRead[] | und
 			return undefined;
 		}
 
-		names.push({ name: property.key.name, node: property as Rule.Node });
+		names.push({ name: property.key.name, node: property });
 	}
 
 	return names;
 }
 
-export const noRestrictedImportMetaEnv: Rule.RuleModule = {
+export const noRestrictedImportMetaEnv: Rule = {
 	meta: {
 		type: "problem",
 		docs: {
@@ -88,12 +88,16 @@ export const noRestrictedImportMetaEnv: Rule.RuleModule = {
 				"Do not use `import.meta.env` as a whole. Read {{allowed}} by name and everything else through the project's typed env module.",
 		},
 	},
-	create(context) {
-		const [options] = context.options as [Options | undefined];
-		const allow = new Set(options?.allow ?? VITE_BUILT_INS);
-		const allowed = [...allow].map((name) => `\`${name}\``).join(", ");
+	createOnce(context) {
+		let allow = new Set<string>();
+		let allowed = "";
 
 		return {
+			before() {
+				const options = context.options[0] as Options | undefined;
+				allow = new Set(options?.allow ?? VITE_BUILT_INS);
+				allowed = [...allow].map((name) => `\`${name}\``).join(", ");
+			},
 			MemberExpression(node) {
 				if (!isImportMetaEnv(node)) {
 					return;

@@ -1,8 +1,8 @@
-import type { Rule } from "eslint";
+import type { Node, Rule } from "@oxlint/plugins";
 
 import { asNodeLike, asReportNode, childNodes, docsUrl } from "../utils.ts";
 
-export const noTemplateLiteralClassName: Rule.RuleModule = {
+export const noTemplateLiteralClassName: Rule = {
 	meta: {
 		type: "suggestion",
 		docs: {
@@ -15,11 +15,9 @@ export const noTemplateLiteralClassName: Rule.RuleModule = {
 				"Compose class names with a helper such as `cx()` instead of a template literal.",
 		},
 	},
-	create(context) {
+	createOnce(context) {
 		return {
-			"JSXAttribute[name.name='className'] > JSXExpressionContainer > TemplateLiteral"(
-				node: Rule.Node,
-			) {
+			"JSXAttribute[name.name='className'] > JSXExpressionContainer > TemplateLiteral"(node: Node) {
 				const template = asNodeLike(node);
 
 				// A template without `${}` is a plain string: nothing is being composed.

@@ -1,4 +1,4 @@
-import type { Rule } from "eslint";
+import type { Node, Rule } from "@oxlint/plugins";
 
 import { asNodeLike, asReportNode, childNodes, docsUrl, type NodeLike } from "../utils.ts";
 
@@ -70,7 +70,7 @@ function styleObjects(value: unknown): NodeLike[] {
 	return [];
 }
 
-export const noLiteralInlineStyle: Rule.RuleModule = {
+export const noLiteralInlineStyle: Rule = {
 	meta: {
 		type: "suggestion",
 		docs: {
@@ -83,9 +83,9 @@ export const noLiteralInlineStyle: Rule.RuleModule = {
 				"Move this hardcoded value to a stylesheet. The `style` prop is only for values computed at runtime.",
 		},
 	},
-	create(context) {
+	createOnce(context) {
 		return {
-			"JSXAttribute[name.name='style'] > JSXExpressionContainer"(node: Rule.Node) {
+			"JSXAttribute[name.name='style'] > JSXExpressionContainer"(node: Node) {
 				for (const object of styleObjects(asNodeLike(node)?.["expression"])) {
 					for (const property of childNodes(object, "properties")) {
 						const value = asNodeLike(property["value"]);

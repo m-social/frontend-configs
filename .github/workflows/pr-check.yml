@@ -22,6 +22,8 @@ jobs:
             run: pnpm exec oxfmt --check
           - name: Typechecking
             run: pnpm exec tsgo
+          - name: Tests
+            run: pnpm test
           - name: Build
             run: pnpm build
     steps:

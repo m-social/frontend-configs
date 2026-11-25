@@ -18,7 +18,10 @@ A monorepo containing all frontend linting, formatting, and code quality configu
 
 - **[@m-social/eslint-config-react](./configs/eslint/react)** - ESLint configuration for React projects
 - **[@m-social/eslint-config-svelte](./configs/eslint/svelte)** - ESLint configuration for Svelte projects
-- **[@m-social/eslint-plugin-agents](./configs/eslint/agents)** - ESLint rules that keep AI coding agents within M-Social code conventions
+
+### Plugins
+
+- **[@m-social/oxlint-plugin-agents](./plugins/oxlint/agents)** - Oxlint and ESLint rules that keep AI coding agents within M-Social code conventions
 
 ### Prettier Configurations
 
@@ -238,7 +241,6 @@ See [@m-social/oxlint-config](./configs/oxlint) and [@m-social/eslint-config-rea
 ```
 configs/
 ├── eslint/
-│   ├── agents/         # @m-social/eslint-plugin-agents
 │   ├── react/          # @m-social/eslint-config-react
 │   └── svelte/         # @m-social/eslint-config-svelte
 ├── prettier/
@@ -251,6 +253,9 @@ configs/
 ├── oxlint/             # @m-social/oxlint-config
 ├── cspell/             # @m-social/cspell-config
 └── stylelint/          # @m-social/stylelint-config
+plugins/
+└── oxlint/
+    └── agents/         # @m-social/oxlint-plugin-agents
 ```
 
 ## 🛠️ Development
@@ -279,6 +284,9 @@ pnpm install
 
 # Build all packages
 pnpm build
+
+# Run all tests
+pnpm test
 
 # Lint all packages
 pnpm lint
