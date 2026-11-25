@@ -21,7 +21,7 @@ jobs:
           - name: Formatting
             run: pnpm exec oxfmt --check
           - name: Typechecking
-            run: pnpm exec tsgo
+            run: pnpm exec tsrs
           - name: Tests
             run: pnpm test
           - name: Build

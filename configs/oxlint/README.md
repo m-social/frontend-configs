@@ -10,18 +10,20 @@
 Install the package using pnpm (recommended):
 
 ```bash
-pnpm add -D oxlint oxlint-tsgolint @m-social/oxlint-config
+pnpm add -D oxlint tsrs @m-social/oxlint-config
 ```
 
 Or with other package managers:
 
 ```bash
 # npm
-npm install --save-dev oxlint oxlint-tsgolint @m-social/oxlint-config
+npm install --save-dev oxlint tsrs @m-social/oxlint-config
 
 # yarn
-yarn add -D oxlint oxlint-tsgolint @m-social/oxlint-config
+yarn add -D oxlint tsrs @m-social/oxlint-config
 ```
+
+> If you prefer, you can use `oxlint-tsgolint` instead of `tsrs`.
 
 ## 🚀 Usage
 

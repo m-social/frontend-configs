@@ -1,15 +1,18 @@
 auditjs
 bprogress
+dbaeumer
 defu
 embla
 glitchtip
 gsap
+ianvs
 lefthook
 lightningcss
 lingui
 maskito
 neodrag
 neodx
+oxfmt
 oxlint
 oxlintrc
 pandacss
@@ -21,6 +24,7 @@ timerset
 titleize
 tsgo
 tsgolint
+tsrs
 turbopack
 unfonts
 usehooks
@@ -28,4 +32,5 @@ vali
 varlock
 vaul
 virtua
+vite
 xior

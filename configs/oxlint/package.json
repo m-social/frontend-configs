@@ -59,7 +59,6 @@
 		"oxlint-plugin-directive-comments": "0.1.0"
 	},
 	"peerDependencies": {
-		"oxlint": "catalog:production",
-		"oxlint-tsgolint": "^7.0.2001"
+		"oxlint": "catalog:production"
 	}
 }
