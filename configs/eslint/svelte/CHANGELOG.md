@@ -1,5 +1,11 @@
 # @m-social/eslint-config-svelte
 
+## 2.1.0
+
+### Minor Changes
+
+- [#64](https://github.com/m-social/frontend-configs/pull/64) [`fe82d54`](https://github.com/m-social/frontend-configs/commit/fe82d54c18f94e8f384f4a0b140880371e216b6c) - ✨ require descriptions for ESLint disable comments and disallow unlimited disables in the React and Svelte configs
+
 ## 2.0.1
 
 ### Patch Changes
