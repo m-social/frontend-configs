@@ -1,12 +1,13 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import packageJson from "../package.json" with { type: "json" };
 import agents from "../src/index.ts";
 import agentsReact from "../src/react.ts";
 
 void test("root entry point exports oxlint and ESLint vite configs", () => {
 	assert.equal(agents.meta.name, "@m-social/oxlint-plugin-agents");
-	assert.equal(agents.meta.version, "0.0.0");
+	assert.equal(agents.meta.version, packageJson.version);
 	assert.deepEqual(Object.keys(agents.configs).sort(), ["vite", "vite/eslint"].sort());
 	assert.deepEqual(agents.configs.vite, {
 		jsPlugins: [{ name: "@m-social/agents", specifier: "@m-social/oxlint-plugin-agents" }],
@@ -21,7 +22,7 @@ void test("root entry point exports oxlint and ESLint vite configs", () => {
 
 void test("React entry point exports oxlint and ESLint recommended configs", () => {
 	assert.equal(agentsReact.meta.name, "@m-social/oxlint-plugin-agents/react");
-	assert.equal(agentsReact.meta.version, "0.0.0");
+	assert.equal(agentsReact.meta.version, packageJson.version);
 	assert.deepEqual(
 		Object.keys(agentsReact.configs).sort(),
 		["recommended", "recommended/eslint"].sort(),
