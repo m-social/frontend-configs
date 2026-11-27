@@ -1,5 +1,11 @@
 # @m-social/stylelint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- [#63](https://github.com/m-social/frontend-configs/pull/63) [`a6c080f`](https://github.com/m-social/frontend-configs/commit/a6c080f6a731dc23c8a234e39571598947ba2f10) - ✨ add the `@m-social/stylelint-config/agents` entry point with M-Social style conventions as lint rules for AI coding agents
+
 ## 0.3.0
 
 ### Minor Changes

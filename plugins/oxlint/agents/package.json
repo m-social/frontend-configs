@@ -1,6 +1,6 @@
 {
 	"name": "@m-social/oxlint-plugin-agents",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Oxlint and ESLint rules that keep AI coding agents within the code conventions of M-Social projects",
 	"keywords": [
 		"agents",
