@@ -1,0 +1,81 @@
+{
+	"name": "@m-social/oxlint-plugin-agents",
+	"version": "0.0.0",
+	"description": "Oxlint and ESLint rules that keep AI coding agents within the code conventions of M-Social projects",
+	"keywords": [
+		"agents",
+		"ai",
+		"eslint",
+		"eslint-plugin",
+		"eslintplugin",
+		"m-social",
+		"oxlint",
+		"oxlint-plugin",
+		"react"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "M-Social",
+		"url": "https://msocialproduction.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/m-social/frontend-configs.git",
+		"directory": "plugins/oxlint/agents"
+	},
+	"files": [
+		"dist",
+		"docs",
+		"src"
+	],
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		".": {
+			"@m-social/frontend-configs": "./src/index.ts",
+			"types": {
+				"import": "./dist/index.d.mts",
+				"require": "./dist/index.d.cts"
+			},
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		},
+		"./react": {
+			"@m-social/frontend-configs": "./src/react.ts",
+			"types": {
+				"import": "./dist/react.d.mts",
+				"require": "./dist/react.d.cts"
+			},
+			"import": "./dist/react.mjs",
+			"require": "./dist/react.cjs"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"test": "node --test"
+	},
+	"dependencies": {
+		"@oxlint/plugins": "^1.94.0"
+	},
+	"devDependencies": {
+		"eslint": "catalog:development",
+		"oxlint": "catalog:development"
+	},
+	"peerDependencies": {
+		"eslint": "catalog:production",
+		"oxlint": "catalog:production"
+	},
+	"peerDependenciesMeta": {
+		"eslint": {
+			"optional": true
+		},
+		"oxlint": {
+			"optional": true
+		}
+	}
+}

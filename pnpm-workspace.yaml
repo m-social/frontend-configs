@@ -2,14 +2,17 @@ packages:
   - configs/eslint/*
   - configs/prettier/*
   - configs/*
+  - plugins/*/*
 
 catalogs:
   development:
     eslint: ^10.8.1
+    oxlint: ^1.92.0
     prettier: ^3.9.6
   production:
     eslint: ^10.3.0
     globals: ^17.4.0
+    oxlint: ^1.92.0
     prettier: ^3.6.0
     typescript-eslint: ^8.58.0
     "@typescript-eslint/parser": ^8.58.0
